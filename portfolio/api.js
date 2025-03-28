@@ -1,4 +1,3 @@
-// utils/api.js
 import axios from 'axios';
 
 export const submitContactForm = async (formData) => {

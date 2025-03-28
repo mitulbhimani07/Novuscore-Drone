@@ -1,0 +1,26 @@
+// Banner.module.scss
+
+.banner {
+    // ... (previous banner styles)
+  
+    .mainHeading {
+      font-size: 2.25rem; // text-4xl = 36px
+      font-weight: 700; // font-bold
+      margin-top: 2.5rem; // mt-10
+      margin-bottom: 1.5rem; // mb-6
+      line-height: 1.25; // leading-tight
+      color: white;
+  
+      span {
+        color: #fbbf24; // text-yellow-300
+      }
+  
+      @media (min-width: 768px) {
+        font-size: 3rem; // md:text-5xl = 48px
+      }
+    }
+  
+    // ... (rest of your existing SCSS)
+  }
+  
+  // ... (animation keyframes)

@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiUsers, FiAward, FiMapPin, FiBarChart2, FiShield, FiGlobe } from "react-icons/fi";
-
+import AboutImage from "../assets/image/AboutImage.jpg";
+import SmartDrone from "../assets/image/agd.jpg";
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -97,7 +98,7 @@ export default function About() {
             whileHover={{ scale: 1.02 }}
           >
             <img 
-              src="https://marutdrones.com/wp-content/uploads/2023/06/6152fe5a3fd1dabc901b1946_marut-zap-2.jpg" 
+              src={AboutImage} 
               alt="Marut Drone in action" 
               className="w-full h-auto object-cover"
             />
@@ -107,14 +108,14 @@ export default function About() {
 
       {/* Core Values */}
       <motion.section 
-        className="py-16 bg-green-100"
+        className="py-16 bg-green-600"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
-            className="text-3xl font-bold text-center text-green-800 mb-16"
+            className="text-3xl font-bold text-center text-white mb-16"
             variants={itemVariants}
           >
             Why Choose Novuscore Drones
@@ -191,6 +192,7 @@ export default function About() {
                   title: "Crop Monitoring",
                   desc: "Multispectral imaging for early detection of pests, diseases and nutrient deficiencies"
                 },
+                
                 {
                   title: "Training Programs",
                   desc: "Comprehensive drone pilot training and agri-drone operation certification"
@@ -212,7 +214,7 @@ export default function About() {
             variants={itemVariants}
           >
             <img 
-              src="https://marutdrones.com/wp-content/uploads/2023/09/011.png" 
+              src={SmartDrone}
               alt="Novuscore Drone spraying" 
               className="rounded-2xl shadow-xl w-full"
             />
@@ -269,21 +271,21 @@ export default function About() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-20 bg-green-800 text-white"
+        className="py-20 bg-green-100 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready for Drone-Powered Farming?</h2>
-          <p className="text-xl mb-8 text-green-100">
+          <h2 className="text-3xl font-bold mb-6 text-green-800">Ready for Drone-Powered Farming?</h2>
+          <p className="text-xl mb-8 text-green-800">
             Join India's agricultural revolution with Novuscore Drones' certified solutions
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <motion.a
               href="/contact"
-              className="bg-white text-green-800 px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-100 transition"
-              whileHover={{ scale: 1.05 }}
+              className="bg-green-800 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-700 transition"
+              
               whileTap={{ scale: 0.95 }}
             >
               CONTACT US
