@@ -114,10 +114,10 @@ export default function BecomeAPartner() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen ">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-green-800 to-green-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="relative bg-gradient-to-r from-green-800 to-green-600 text-white py-20 ">
+        <div className="max-w-7xl mx-auto px-6 text-center mt-10">
           <motion.h1 
             className="text-4xl md:text-5xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}

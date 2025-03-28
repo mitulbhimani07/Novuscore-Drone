@@ -61,7 +61,7 @@ export default function Navbar() {
             {/* Call to Action Button - More Responsive Sizing */}
             <li>
               <button className="bg-green-500 text-white text-xs md:text-sm px-2 md:px-3 lg:px-4 py-1.5 sm:py-2 rounded-md hover:bg-green-600 transition">
-                BECOME A PARTNER
+              <Link to='/becomepartner'>BECOME A PARTNER</Link>
               </button>
             </li>
           </ul>
@@ -113,7 +113,7 @@ export default function Navbar() {
               {/* Mobile CTA Button */}
               <li className="px-4 pt-2">
                 <button className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition">
-                  BECOME A PARTNER
+                <Link to='/becomepartner'>BECOME A PARTNER</Link>
                 </button>
               </li>
             </ul>

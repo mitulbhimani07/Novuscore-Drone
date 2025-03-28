@@ -12,12 +12,11 @@ const contactUsSchema = new Schema({
         required: true,
         trim: true,
         lowercase: true,
-        match: [/^\S+@\S+\.\S+$/, "Invalid email format"]
     },
     phone: {
         type: String,
         required: true,
-        match: [/^\d{10,15}$/, "Invalid phone number format"]
+       
     },
     message: {
         type: String,
