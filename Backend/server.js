@@ -22,6 +22,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api', require('./routes/contactUs.Routes'));
+app.get('/', (req, res) => {
+    res.send('API is running...');
+}
+);
+// Define the schema for the partner form
 
 // Error handling middleware
 app.use((err, req, res, next) => {
