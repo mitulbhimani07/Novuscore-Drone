@@ -8,6 +8,7 @@ import Blog from "../Pages/Blog";
 import ContactUs from "../Pages/Contact";
 import CountUp from 'react-countup';
 import NovuscoreDrones from "../assets/image/Novuscore-Drones.jpg";
+import "../assets/scss/Home.scss";
 
 const Banner = () => {
    const stats = [
@@ -18,27 +19,27 @@ const Banner = () => {
    ];
 
    return (
-      <div className="relative overflow-hidden bg-gradient-to-r from-green-700 to-green-600 text-white">
+      <div className="banner">
          {/* Content */}
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+         <div className="banner__content">
+            <div className="banner__grid">
                {/* Text content */}
                <motion.div
+                  className="banner__text"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
                >
-                  <h1 className="text-4xl md:text-5xl font-bold mt-10 mb-6 leading-tight">
-                     Pioneering <span className="text-yellow-300">Agri-Drone</span> Solutions in India
+                  <h1>
+                     Pioneering <span>Agri-Drone</span> Solutions in India
                   </h1>
-                  <p className="text-xl md:text-2xl mb-8 max-w-lg">
+                  <p>
                      DGCA-approved drone technology for precision agriculture, crop monitoring, and smart farming.
                   </p>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="banner__buttons">
                      <Link to="/services" className="inline-block">
                         <motion.button
-                           className="bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold px-8 py-3 rounded-lg flex items-center transition-colors"
-                           
+                           className="banner__primary-btn"
                            whileTap={{ scale: 0.95 }}
                         >
                            Explore Services <FiArrowRight className="ml-2" />
@@ -47,8 +48,7 @@ const Banner = () => {
 
                      <Link to="/contact" className="inline-block">
                         <motion.button
-                           className="border-2 border-white hover:bg-white hover:text-green-800 font-bold px-8 py-3 rounded-lg flex items-center transition-colors"
-                           
+                           className="banner__secondary-btn"
                            whileTap={{ scale: 0.95 }}
                         >
                            Contact Us
@@ -59,25 +59,18 @@ const Banner = () => {
 
                {/* Image */}
                <motion.div
+                  className="banner__image-container"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="relative"
                >
                   <img
                      src={NovuscoreDrones}
                      alt="Novuscore Drone in action"
-                     className="w-full max-w-[512px] h-auto md:h-[288px] object-cover relative rounded-lg shadow-2xl mt-12"
+                     className="banner__image"
                   />
                   <motion.div
-                     className="absolute -bottom-5 -left-0 bg-white text-green-800 px-6 py-2 rounded-lg shadow-lg font-bold"
-                     initial={{ scale: 0.8 }}
-                     animate={{ scale: 1 }}
-                     transition={{
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                        duration: 2
-                     }}
+                     className="banner__badge motion-pulse"
                   >
                      DGCA Approved
                   </motion.div>
@@ -86,16 +79,16 @@ const Banner = () => {
          </div>
 
          {/* Stats bar */}
-         <div className="bg-green-900 bg-opacity-50 py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+         <div className="banner__stats">
+            <div className="banner__stats-container">
+               <div className="banner__stats-grid">
                   {stats.map((stat, index) => (
                      <motion.div
                         key={index}
-                        className="p-4"
+                        className="banner__stat-item motion-hover-float"
                         whileHover={{ y: -5 }}
                      >
-                        <div className="text-3xl font-bold text-yellow-300 mb-2">
+                        <div className="banner__stat-value">
                            <CountUp
                               end={stat.value}
                               duration={2}
@@ -103,7 +96,7 @@ const Banner = () => {
                            />
                            {stat.suffix}
                         </div>
-                        <div className="text-white font-medium">{stat.label}</div>
+                        <div className="banner__stat-label">{stat.label}</div>
                      </motion.div>
                   ))}
                </div>

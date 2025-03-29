@@ -206,7 +206,7 @@ return (
 
         {/* Services Section */}
         <motion.div
-         className="mt-20 mb-16"
+         className="mt-20 mb-16 "
          initial={{ opacity: 0 }}
          animate={{ opacity: 1 }}
          transition={{ delay: 0.6 }}

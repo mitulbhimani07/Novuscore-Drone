@@ -199,13 +199,13 @@ return (
     <div className="min-h-screen bg-green-100">
 
      {/* Hero Section */}
-     {/* <motion.section
+     <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="relative bg-gradient-to-r from-green-900 to-gray-900 text-white py-20"
      >
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 text-center mt-10">
          <motion.h1
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -230,7 +230,7 @@ return (
             Explore Our Services
          </motion.button>
         </div>
-     </motion.section> */}
+     </motion.section>
 
      {/* Services Section */}
      <section className="py-16 max-w-7xl mx-auto px-4">

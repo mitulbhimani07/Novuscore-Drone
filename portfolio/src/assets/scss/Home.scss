@@ -1,0 +1,214 @@
+// Banner.scss
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #2e7d32, #388e3c);
+    color: white;
+  
+    // Content container
+    &__content {
+      max-width: 80rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 4rem 1rem;
+  
+      @media (min-width: 768px) {
+        padding: 6rem 1rem;
+      }
+    }
+  
+    // Grid layout
+    &__grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+  
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  
+    // Text content
+    &__text {
+      h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.25;
+  
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+  
+        span {
+          color: #ffb600;
+        }
+      }
+  
+      p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 32rem;
+  
+        @media (min-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  
+    // Buttons container
+    &__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    // Primary button
+    &__primary-btn {
+      display: inline-block;
+      background-color: #ffb600;
+      color: #2e7d32;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #f9a825;
+      }
+  
+      svg {
+        margin-left: 0.5rem;
+      }
+    }
+  
+    // Secondary button
+    &__secondary-btn {
+      display: inline-block;
+      border: 2px solid white;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: white;
+        color: #2e7d32;
+      }
+    }
+  
+    // Image container
+    &__image-container {
+      position: relative;
+    }
+  
+    // Image
+    &__image {
+      width: 100%;
+      max-width: 512px;
+      height: auto;
+      object-fit: cover;
+      position: relative;
+      border-radius: 0.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      margin-top: 3rem;
+  
+      @media (min-width: 768px) {
+        height: 18rem;
+      }
+    }
+  
+    // DGCA badge
+    &__badge {
+      position: absolute;
+      bottom: -1.25rem;
+      left: 0;
+      background-color: white;
+      color: #2e7d32;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      font-weight: 700;
+    }
+  
+    // Stats bar
+    &__stats {
+      background-color: rgba(27, 94, 32, 0.5);
+      padding: 1.5rem 0;
+    }
+  
+    &__stats-container {
+      max-width: 80rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
+    }
+  
+    &__stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      text-align: center;
+  
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  
+    &__stat-item {
+      padding: 1rem;
+    }
+  
+    &__stat-value {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #fbc02d;
+      margin-bottom: 0.5rem;
+    }
+  
+    &__stat-label {
+      color: white;
+      font-weight: 500;
+    }
+  }
+  
+  // Animation classes
+  .animate-opacity-x {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  
+  .animate-opacity-y {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  // Motion component styles
+  .motion {
+    &-hover-float:hover {
+      transform: translateY(-5px);
+    }
+  
+    &-tap-scale:active {
+      transform: scale(0.95);
+    }
+  
+    &-pulse {
+      animation: pulse 2s infinite alternate;
+    }
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.8);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
