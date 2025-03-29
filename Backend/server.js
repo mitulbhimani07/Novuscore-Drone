@@ -16,10 +16,7 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     });
 
 // Middleware
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://novuscore-drones.vercel.app'],
-}));
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
