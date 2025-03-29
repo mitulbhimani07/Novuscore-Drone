@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Blog1 from "../assets/image/Blog1.jpg";
+import Blog2 from "../assets/image/Blog2.jpg";
+import Blog3 from "../assets/image/Blog3.png";
 
 
 // Animation variants
@@ -70,7 +73,7 @@ return (
             variants={cardHoverVariants}
          >
             <motion.img
-             src="https://marutdrones.com/wp-content/uploads/2024/10/image.png"
+             src={Blog1}
              alt="Agricultural Drone"
              className="w-full h-48 object-cover"
              initial={{ opacity: 0 }}
@@ -96,7 +99,7 @@ return (
              <p className="text-green-700 mb-4">
                 How our precision spraying drones are increasing yields while reducing chemical usage by up to 30%.
              </p>
-             <motion.a
+             {/* <motion.a
                 href="#"
                 className="inline-flex items-center text-green-600 font-medium hover:text-green-800 transition"
                 whileHover={{ x: 5 }}
@@ -105,7 +108,7 @@ return (
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-             </motion.a>
+             </motion.a> */}
             </div>
          </motion.div>
 
@@ -117,7 +120,7 @@ return (
             variants={cardHoverVariants}
          >
             <motion.img
-             src="https://marutdrones.com/wp-content/uploads/2023/07/IMG-20221222-WA0008-768x441.jpg"
+             src={Blog2}
              alt="Surveillance Drone"
              className="w-full h-48 object-cover"
              initial={{ opacity: 0 }}
@@ -143,7 +146,7 @@ return (
              <p className="text-green-700 mb-4">
                 Our high-resolution mapping drones provide real-time data for security and infrastructure monitoring.
              </p>
-             <motion.a
+             {/* <motion.a
                 href="#"
                 className="inline-flex items-center text-green-600 font-medium hover:text-green-800 transition"
                 whileHover={{ x: 5 }}
@@ -152,7 +155,7 @@ return (
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-             </motion.a>
+             </motion.a> */}
             </div>
          </motion.div>
 
@@ -164,7 +167,7 @@ return (
             variants={cardHoverVariants}
          >
             <motion.img
-             src="https://marutdrones.com/wp-content/uploads/2024/11/image-1.png"
+             src={Blog3}
              alt="Environmental Drone"
              className="w-full h-48 object-cover"
              initial={{ opacity: 0 }}
@@ -190,7 +193,7 @@ return (
              <p className="text-green-700 mb-4">
                 Innovative approaches to mosquito eradication and large-scale afforestation using drone technology.
              </p>
-             <motion.a
+             {/* <motion.a
                 href="#"
                 className="inline-flex items-center text-green-600 font-medium hover:text-green-800 transition"
                 whileHover={{ x: 5 }}
@@ -199,7 +202,7 @@ return (
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-             </motion.a>
+             </motion.a> */}
             </div>
          </motion.div>
         </motion.div>

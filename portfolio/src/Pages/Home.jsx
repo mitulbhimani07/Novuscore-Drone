@@ -14,8 +14,8 @@ const Banner = () => {
    const stats = [
       { value: 2252, suffix: "+", label: "Farmers Served" },
       { value: 10896, suffix: "+", label: "Acres Covered" },
-      { value: 40, suffix: "%", label: "Chemical Reduction" },
-      { value: 12, suffix: "", label: "States Operating" }
+      { value: 70, suffix: "%", label: "Chemical Reduction" },
+      { value: 23, suffix: "", label: "States Operating" }
    ];
 
    return (
@@ -38,21 +38,22 @@ const Banner = () => {
                   </p>
                   <div className="banner__buttons">
                      <Link to="/services" className="inline-block">
-                        <motion.button
+                        <motion.a
                            className="banner__primary-btn"
                            whileTap={{ scale: 0.95 }}
                         >
-                           Explore Services <FiArrowRight className="ml-2" />
-                        </motion.button>
+                              Explore Services
+                              <FiArrowRight className="ml-2" />
+                        </motion.a>
                      </Link>
 
                      <Link to="/contact" className="inline-block">
-                        <motion.button
+                        <motion.a
                            className="banner__secondary-btn"
                            whileTap={{ scale: 0.95 }}
                         >
                            Contact Us
-                        </motion.button>
+                        </motion.a>
                      </Link>
                   </div>
                </motion.div>
@@ -85,8 +86,7 @@ const Banner = () => {
                   {stats.map((stat, index) => (
                      <motion.div
                         key={index}
-                        className="banner__stat-item motion-hover-float"
-                        whileHover={{ y: -5 }}
+                        className="banner__stat-item"
                      >
                         <div className="banner__stat-value">
                            <CountUp

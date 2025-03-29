@@ -267,33 +267,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </motion.section>
-
-      {/* CTA Section */}
-      <motion.section 
-        className="py-20 bg-green-100 text-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-green-800">Ready for Drone-Powered Farming?</h2>
-          <p className="text-xl mb-8 text-green-800">
-            Join India's agricultural revolution with Novuscore Drones' certified solutions
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.a
-              href="/contact"
-              className="bg-green-800 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-700 transition"
-              
-              whileTap={{ scale: 0.95 }}
-            >
-              CONTACT US
-            </motion.a>
-           
-          </div>
-        </div>
-      </motion.section>
+      </motion.section>  
     </div>
   );
 }

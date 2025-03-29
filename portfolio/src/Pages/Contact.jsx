@@ -353,7 +353,7 @@ export default function Contact() {
                         </motion.div>
                         
                         <motion.div 
-                            className="bg-gradient-to-r from-emerald-500 to-emerald-600 p-8 rounded-2xl shadow-lg text-white"
+                            className="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 rounded-2xl shadow-lg text-white"
                             whileHover={cardHoverVariants.hover}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}

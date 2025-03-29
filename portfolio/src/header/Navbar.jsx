@@ -39,11 +39,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation with 860px Breakpoint */}
-          <ul className="hidden md:flex md:items-center md:space-x-4 lg:space-x-6 xl:space-x-10">
+          <ul className="hidden md:flex md:items-center md:space-x-4 lg:space-x-6 xl:space-x-6">
             {[
               { name: "HOME", path: "/" },
               { name: "ABOUT", path: "/about" },
               { name: "WHAT WE OFFER", path: "/WhatWeOffer" },
+              { name: "CAREERS", path: "/careers" },
               { name: "BLOG", path: "/blog" },
               { name: "CONTACT US", path: "/contact" },
             ].map((item) => (
@@ -91,6 +92,7 @@ export default function Navbar() {
                 { name: "HOME", path: "/" },
                 { name: "ABOUT", path: "/about" },
                 { name: "WHAT WE OFFER", path: "/WhatWeOffer" },
+                { name: "CAREERS", path: "/careers" },
                 { name: "BLOG", path: "/blog" },
                 { name: "CONTACT US", path: "/contact" },
               ].map((item, index) => (
