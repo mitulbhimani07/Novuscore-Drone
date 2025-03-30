@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const submitContactForm = async (formData) => {
     try {
-        const response = await axios.post('http://localhost:3000/api/contact', formData, {
+        const response = await axios.post('https://novuscore-drones.vercel.app/api/contact', formData, {
             headers: {
                 'Content-Type': 'application/json'
             }
