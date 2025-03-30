@@ -3,18 +3,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongoose = require('mongoose');
+// const db = require('./config/db')//off line connect mongodb compass
+// Test PostgreSQL connection
 
-// MongoDB Connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://mitulbhimani281:mF6u0wongMtNZE3l@cluster0.t7dse.mongodb.net/NovuscoreDrones'; // Replace with your MongoDB URI
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log('DB is Connected');
-    })
-    .catch((err) => {
-        console.log('Error connecting to the database:', err);
-    });
-
+const pool = require('./config/pgAdmin')
+pool.connect()
+.then(() => console.log('Connected to PostgreSQL'))
+.catch((err) => console.error('Error connecting to PostgreSQL:', err));
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());

@@ -13,4 +13,5 @@ export const submitContactForm = async (formData) => {
         throw error;
     }
 };
+// http://localhost:3000/api/contact
 // vercel https://novuscore-drones.vercel.app/api/contact

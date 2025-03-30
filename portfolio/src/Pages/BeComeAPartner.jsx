@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiCheckCircle, FiDollarSign, FiTool, FiUsers, FiShield, FiBarChart2 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const PartnerBenefitCard = ({ icon, title, description }) => (
   <motion.div 
@@ -212,14 +213,16 @@ export default function BecomeAPartner() {
           <p className="text-xl mb-8">
             Join our network of agricultural drone partners and help farmers increase yields today.
           </p>
-          <motion.a
-            href="#apply"
+          <Link to='/contact'>
+          <motion.button
+            
             className="inline-block bg-white text-green-600 px-8 py-3 rounded-lg font-bold shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Apply Now
-          </motion.a>
+          </motion.button>
+          </Link>
         </div>
       </section>
     </div>
