@@ -16,3 +16,15 @@ CREATE TABLE ContactUs (
 }
 -- Verify the data in the database:
 SELECT * FROM ContactUs;
+-- Order Data by Creation Date:
+SELECT * FROM ContactUs ORDER BY created_at DESC;
+-- Count Total Rows in the Table:
+SELECT COUNT(*) FROM ContactUs;
+--To delete a specific row based on a condition (e.g., id), use the following query:
+DELETE FROM ContactUs WHERE id = 1;
+--2. Delete Rows Based on a Condition
+DELETE FROM ContactUs WHERE email = 'john@example.com';
+--To delete all rows from the ContactUs table but keep the table structure, use:
+DELETE FROM ContactUs;
+--  Delete Rows Older Than a Specific Date
+DELETE FROM ContactUs WHERE created_at < '2025-01-01';
