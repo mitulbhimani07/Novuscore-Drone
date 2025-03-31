@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div >
+          <div className='md:ms-12'>
             <h3 className="text-2xl font-semibold  text-green-300  mb-4 ">Quick Links</h3>
             <ul className="space-y-3 ">
               <li className="text-white hover:text-green-400 hover:underline cursor-pointer">Products</li>
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex flex-col items-center md:items-start lg:items-start  space-y-4 text-2xl text-green-300">
+          <div className="flex flex-col items-center md:items-start lg:items-start  space-y-4 text-2xl text-green-300  md:ms-12">
             <h3 className="text-2xl font-semibold text-green-300">Follow Us</h3>
             <div className="flex space-x-6 mt-2">
               <FaTwitter className="cursor-pointer text-white hover:text-green-400" />
