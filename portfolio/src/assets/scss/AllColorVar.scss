@@ -1,0 +1,23 @@
+/* // Banner.scss */
+/* // Color Variables */
+$colors: (
+  primary-green: #009b3b,
+  dark-green: rgb(13 84 43),
+  semi-dark-green: rgba(27, 94, 32, 0.5),
+  light-green: #2e7d32,
+  yellow: #ffb600,
+  dark-yellow: #f9a825,
+  darker-yellow: #fbc02d,
+  white: white,
+  black: rgba(0, 0, 0, 0.25),
+  shadow-light: rgba(0, 0, 0, 0.1),
+  shadow-lighter: rgba(0, 0, 0, 0.05)
+);
+html {
+  scroll-behavior: smooth;
+}
+
+/* For Safari and older browsers that don't support scroll-behavior */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
