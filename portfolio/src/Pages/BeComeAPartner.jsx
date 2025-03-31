@@ -10,8 +10,8 @@ const PartnerBenefitCard = ({ icon, title, description }) => (
     transition={{ duration: 0.3 }}
   >
     <div className="text-green-600 text-3xl mb-4">{icon}</div>
-    <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <h3 className="text-xl font-bold text-green-900 mb-2">{title}</h3>
+    <p className="text-green-700">{description}</p>
   </motion.div>
 );
 
@@ -141,8 +141,8 @@ export default function BecomeAPartner() {
       {/* Partnership Types */}
       <section className="py-16 max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Partnership Opportunities</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-green-900 mb-4">Partnership Opportunities</h2>
+          <p className="text-green-700 max-w-2xl mx-auto text-lg">
             We offer different partnership models to match your agricultural business goals.
           </p>
         </div>
@@ -179,8 +179,8 @@ export default function BecomeAPartner() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Partner With Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-green-900 mb-4">Why Partner With Us</h2>
+            <p className="text-green-700 max-w-2xl mx-auto text-lg">
               We provide the tools, training and support to help your agricultural business succeed with drone technology.
             </p>
           </div>

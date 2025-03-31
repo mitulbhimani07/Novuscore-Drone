@@ -49,7 +49,7 @@ const ServiceCard = ({ title, features }) => (
                   className="flex items-start"
                >
                   <FiCheck className="text-green-500 mt-1 mr-2 flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
+                  <span className="text-green-800">{feature}</span>
                </motion.li>
             ))}
          </motion.ul>
@@ -132,7 +132,7 @@ export default function DroneSolutionsWebsite() {
                <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-green-700 px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all"
+                  className="bg-white text-green-700 px-8 py-3 rounded-[8px] font-bold shadow-lg hover:shadow-xl transition-all"
                >
                   Explore Our Services
                </motion.button>
@@ -143,8 +143,8 @@ export default function DroneSolutionsWebsite() {
          {/* Services Section */}
          <section className="py-16 max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-               <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Comprehensive Drone Services</h2>
-               <p className="text-gray-600 max-w-2xl mx-auto">
+               <h2 className="text-3xl font-bold text-green-900 mb-4">Our Comprehensive Drone Services</h2>
+               <p className="text-green-700 max-w-2xl mx-auto text-lg">
                   Innovative solutions tailored to meet the diverse needs of industries worldwide.
                </p>
             </div>
@@ -193,7 +193,7 @@ export default function DroneSolutionsWebsite() {
                <Link to="/becomepartner">
                   <motion.button
                      whileTap={{ scale: 0.95 }}
-                     className="bg-white text-green-700 px-10 py-4 text-lg rounded-full font-bold shadow-xl hover:shadow-2xl transition-all"
+                     className="bg-white text-green-700 px-8 py-3 rounded-[8px] font-bold shadow-lg hover:shadow-xl transition-all"
                   >
                      Schedule Consultation
                   </motion.button>

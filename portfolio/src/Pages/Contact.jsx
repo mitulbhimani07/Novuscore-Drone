@@ -119,7 +119,7 @@ export default function Contact() {
                 animate="animate"
                 variants={gradientVariants}
                 style={{
-                    background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%)'
+                    background: 'white'
                 }}
             >
                 <div className="text-center px-6 z-10 mt-10">

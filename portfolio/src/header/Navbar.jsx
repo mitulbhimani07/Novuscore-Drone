@@ -50,12 +50,13 @@ export default function Navbar() {
             ].map((item) => (
               <motion.li key={item.name} whileTap={{ scale: 0.95 }}>
                 <Link
-                  to={item.path}
-                  className="group relative text-xs md:text-sm lg:text-base font-medium text-gray-700 hover:text-black transition"
-                >
-                  {item.name}
-                  <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
+  to={item.path}
+  className="group relative text-xs md:text-sm lg:text-base font-medium text-gray-700 hover:text-black focus:text-black transition focus:outline-none"
+>
+  {item.name}
+  <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full group-focus:w-full"></span>
+</Link>
+
               </motion.li>
             ))}
 
@@ -103,12 +104,13 @@ export default function Navbar() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link
-                    to={item.path}
-                    className="block px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-black transition"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
+  to={item.path}
+  className="block px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black transition"
+  onClick={() => setIsOpen(false)}
+>
+  {item.name}
+</Link>
+
                 </motion.li>
               ))}
 

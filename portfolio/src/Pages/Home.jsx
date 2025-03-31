@@ -49,7 +49,7 @@ const Banner = () => {
 
                      <Link to="/contact" className="inline-block">
                         <motion.a
-                           className="banner__secondary-btn"
+                           className="banner__secondary-btn h-[48px]"
                            whileTap={{ scale: 0.95 }}
                         >
                            Contact Us

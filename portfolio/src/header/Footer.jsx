@@ -36,8 +36,8 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-2xl font-semibold  text-green-300 ">Quick Links</h3>
+          <div >
+            <h3 className="text-2xl font-semibold  text-green-300  mb-4 ">Quick Links</h3>
             <ul className="space-y-3 ">
               <li className="text-white hover:text-green-400 hover:underline cursor-pointer">Products</li>
               <li className="text-white hover:text-green-400 hover:underline cursor-pointer">Training</li>
