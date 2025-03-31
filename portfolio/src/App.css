@@ -1,3 +1,4 @@
+@import './assets/styles/AppColor.css';
 /* Enhanced Loader Styles */
 #pre-loader {
    position: fixed;
@@ -5,7 +6,7 @@
    left: 0;
    width: 100%;
    height: 100%;
-   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+   background: var(--bg-primary);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -34,7 +35,7 @@
  .loadingText {
    font-family: 'Arial', sans-serif;
    font-size: 1.2rem;
-   color: #333;
+   color: var(--text-primary);
    text-align: center;
    margin-bottom: 2rem;
    font-weight: 500;
@@ -44,7 +45,7 @@
  .progress-container {
    width: 100%;
    height: 6px;
-   background: rgba(0, 155, 59, 0.1);
+   background: rgba(var(--accent-color), 0.1);
    border-radius: 3px;
    overflow: hidden;
  }
@@ -52,7 +53,7 @@
  .progress-bar {
    height: 100%;
    width: 0;
-   background: linear-gradient(90deg, #009B3B 0%, #00D46A 100%);
+   background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-light) 100%);
    border-radius: 3px;
    transition: width 0.3s ease;
  }

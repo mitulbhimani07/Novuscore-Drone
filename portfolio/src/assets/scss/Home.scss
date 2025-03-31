@@ -1,4 +1,4 @@
-@import '../scss/AllColorVar.scss';
+@import '../styles/AllColorVar.scss';
 /* // Function to get colors from map */
 @function color($color-name) {
   @return map-get($colors, $color-name);
