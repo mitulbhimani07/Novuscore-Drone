@@ -1,0 +1,504 @@
+// Variables
+$emerald-50: #ecfdf5;
+$emerald-100: #d1fae5;
+$emerald-200: #a7f3d0;
+$emerald-500: #10b981;
+$emerald-600: #059669;
+$emerald-700: #047857;
+$emerald-800: #065f46;
+$emerald-900: #064e3b;
+
+$slate-600: #475569;
+$slate-800: #1e293b;
+$slate-500: #64748b; 
+$rose-100: #ffe4e6;
+$slate-700: #334155;
+$rose-200: #fecdd3;
+$rose-600: #e11d48;
+$rose-800: #9f1239;
+
+// Base styles
+.contactPage {
+  background-color: $emerald-50;
+  color: $slate-800;
+  min-height: 100vh;
+  overflow: hidden;
+
+  // Hero Section
+  .heroSection {
+    position: relative;
+    width: 100%;
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: white;
+
+    .heroContent {
+      text-align: center;
+      padding: 0 1.5rem;
+      z-index: 10;
+      margin-top: 2.5rem;
+
+      h1 {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: $emerald-800;
+
+        @media (min-width: 768px) {
+          font-size: 3rem;
+          line-height: 1;
+        }
+      }
+
+      p {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        color: $emerald-700;
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  // Contact Content
+  .contactContent {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 1.5rem;
+    position: relative;
+    z-index: 10;
+
+    .gridContainer {
+      display: grid;
+      gap: 3rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    // Contact Form Card
+    .formCard {
+      background-color: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid $emerald-100;
+
+      h2 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: $emerald-700;
+      }
+
+      // Form elements
+      .formGroup {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          color: $emerald-700;
+          font-weight: 500;
+          margin-bottom: 0.25rem;
+        }
+
+        .inputWrapper {
+          position: relative;
+
+          .inputIcon {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding-left: 0.75rem;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            color: $emerald-500;
+          }
+
+          input, textarea {
+            width: 100%;
+            padding-left: 2.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-radius: 0.5rem;
+            background-color: $emerald-50;
+            color: $slate-800;
+            border: 1px solid $emerald-200;
+            transition: all 0.2s ease;
+
+            &:focus {
+              border-color: $emerald-500;
+              outline: none;
+              box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+            }
+          }
+
+          textarea {
+            min-height: 150px;
+          }
+        }
+      }
+
+      // Success/Error messages
+      .alert {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+
+        &.success {
+          color: $emerald-800;
+          background-color: $emerald-100;
+          border: 1px solid $emerald-200;
+        }
+
+        &.error {
+          color: $rose-800;
+          background-color: $rose-100;
+          border: 1px solid $rose-200;
+        }
+
+        svg {
+          margin-right: 0.5rem;
+        }
+      }
+
+      // Submit button
+      .submitButton {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background-color: $emerald-600;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover:not(:disabled) {
+          background-color: $emerald-700;
+        }
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+
+        .buttonBg {
+          position: absolute;
+          inset: 0;
+          background-color: $emerald-700;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        &:hover .buttonBg {
+          opacity: 1;
+        }
+
+        .buttonContent {
+          position: relative;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+
+    // Contact Info Card
+    .infoCard {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid $emerald-100;
+
+      h2 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: $emerald-700;
+      }
+
+      p {
+        color: $slate-600;
+        margin-bottom: 2rem;
+      }
+
+      .infoItem {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+
+        .iconWrapper {
+          background-color: $emerald-100;
+          padding: 0.75rem;
+          border-radius: 9999px;
+          margin-right: 1rem;
+
+          svg {
+            color: $emerald-600;
+            font-size: 1.25rem;
+          }
+        }
+
+        .infoContent {
+          h3 {
+            font-weight: 500;
+            color: $emerald-800;
+          }
+
+          p {
+            color: $slate-600;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .businessHours {
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid $emerald-100;
+
+        h3 {
+          font-weight: 500;
+          color: $emerald-800;
+          margin-bottom: 1rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          color: $slate-600;
+
+          li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+
+    // Support Card
+    .supportCard {
+      background: linear-gradient(to right, $emerald-700, $emerald-800);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      color: white;
+      margin-top: 20px;
+
+      h3 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+      }
+
+      button {
+        background-color: white;
+        color: $emerald-700;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: $emerald-50;
+        }
+      }
+    }
+  }
+
+  // Floating action button
+  .fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+
+    button {
+      background-color: $emerald-600;
+      color: white;
+      padding: 1rem;
+      border-radius: 9999px;
+      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: $emerald-700;
+      }
+
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  // Modal
+  .modalOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .modalContent {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 28rem;
+    position: relative;
+    overflow: hidden;
+
+    .closeButton {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: $slate-500;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $slate-700;
+      }
+
+      svg {
+        font-size: 1.25rem;
+      }
+    }
+
+    .modalBody {
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: $emerald-700;
+      }
+
+      // Reuse form styles from .formCard
+      .formGroup {
+        margin-bottom: 1rem;
+
+        label {
+          display: block;
+          color: $emerald-700;
+          margin-bottom: 0.25rem;
+          font-weight: 500;
+        }
+
+        .inputWrapper {
+          position: relative;
+
+          .inputIcon {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding-left: 0.75rem;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            color: $emerald-500;
+          }
+
+          input, textarea {
+            width: 100%;
+            padding-left: 2.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-radius: 0.5rem;
+            background-color: $emerald-50;
+            color: $slate-800;
+            border: 1px solid $emerald-200;
+            transition: all 0.2s ease;
+
+            &:focus {
+              border-color: $emerald-500;
+              outline: none;
+              box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+            }
+          }
+
+          textarea {
+            min-height: 120px;
+          }
+        }
+      }
+
+      .submitButton {
+        width: 100%;
+        background-color: $emerald-600;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        transition: all 0.2s ease;
+
+        &:hover:not(:disabled) {
+          background-color: $emerald-700;
+          transform: scale(1.02);
+          box-shadow: 0 5px 15px rgba(5, 150, 105, 0.4);
+        }
+
+        &:active:not(:disabled) {
+          transform: scale(0.98);
+        }
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

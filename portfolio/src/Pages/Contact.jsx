@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiSend, FiX } from "react-icons/fi";
 import { submitContactForm } from "../../api";
+import  "../assets/scss/ContactUs.scss"; // Import the SCSS module
 
-// Updated animation variants with green theme
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -110,21 +110,18 @@ export default function Contact() {
         }
     };
 
+
     return (
-        <div className="bg-emerald-50 text-slate-800 min-h-screen overflow-hidden">
+        <div className='contactPage'>
             {/* Hero Section */}
             <motion.section
-                className="relative w-full py-20 flex items-center justify-center overflow-hidden"
+                className='heroSection'
                 initial="initial"
                 animate="animate"
                 variants={gradientVariants}
-                style={{
-                    background: 'white'
-                }}
             >
-                <div className="text-center px-6 z-10 mt-10">
+                <div className='heroContent'>
                     <motion.h1 
-                        className="text-4xl md:text-5xl font-bold mb-4 text-emerald-800"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
@@ -132,7 +129,6 @@ export default function Contact() {
                         Get In Touch
                     </motion.h1>
                     <motion.p 
-                        className="text-lg text-emerald-700 max-w-2xl mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
@@ -144,20 +140,19 @@ export default function Contact() {
 
             {/* Contact Content */}
             <motion.section
-                className="max-w-7xl mx-auto px-6 py-16 relative z-10"
+                className='contactContent'
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
             >
-                <motion.div className="grid md:grid-cols-2 gap-12">
+                <motion.div className='gridContainer'>
                     {/* Contact Form */}
                     <motion.div
-                        className="bg-white rounded-2xl p-8 shadow-lg border border-emerald-100"
+                        className='formCard'
                         variants={itemVariants}
                         whileHover={cardHoverVariants.hover}
                     >
                         <motion.h2
-                            className="text-3xl font-bold mb-6 text-emerald-700"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.3 }}
@@ -170,9 +165,9 @@ export default function Contact() {
                             <motion.div
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="p-4 mb-6 text-emerald-800 bg-emerald-100 border border-emerald-200 rounded-lg flex items-center"
+                                className={`${alert} ${success}`}
                             >
-                                <svg className="w-5 h-5 mr-2 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 Message sent successfully!
@@ -183,9 +178,9 @@ export default function Contact() {
                             <motion.div
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="p-4 mb-6 text-rose-800 bg-rose-100 border border-rose-200 rounded-lg flex items-center"
+                                className={`${alert} ${error}`}
                             >
-                                <svg className="w-5 h-5 mr-2 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 {submitError}
@@ -193,27 +188,27 @@ export default function Contact() {
                         )}
 
                         <motion.form
-                            className="space-y-6"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4 }}
                             onSubmit={handleSubmit}
+                            className='form'
                         >
                             {[
-                                { label: 'Your Name', name: 'name', type: 'text', icon: <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> },
-                                { label: 'Email Address', name: 'email', type: 'email', icon: <FiMail className="w-5 h-5 text-emerald-500" /> },
-                                { label: 'Mobile No', name: 'phone', type: 'tel', icon: <FiPhone className="w-5 h-5 text-emerald-500" /> }
+                                { label: 'Your Name', name: 'name', type: 'text', icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> },
+                                { label: 'Email Address', name: 'email', type: 'email', icon: <FiMail className="w-5 h-5" /> },
+                                { label: 'Mobile No', name: 'phone', type: 'tel', icon: <FiPhone className="w-5 h-5" /> }
                             ].map((field, index) => (
                                 <motion.div
                                     key={field.name}
-                                    className="space-y-1"
+                                    className='formGroup'
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.5 + index * 0.1 }}
                                 >
-                                    <label className="block text-emerald-700 font-medium">{field.label}</label>
-                                    <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <label>{field.label}</label>
+                                    <div className='inputWrapper'>
+                                        <div className='inputIcon'>
                                             {field.icon}
                                         </div>
                                         <input
@@ -221,7 +216,6 @@ export default function Contact() {
                                             name={field.name}
                                             value={formData[field.name]}
                                             onChange={handleChange}
-                                            className="w-full pl-10 p-3 rounded-lg bg-emerald-50 text-slate-800 border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition"
                                             placeholder={field.label}
                                             required
                                             disabled={isSubmitting}
@@ -231,15 +225,15 @@ export default function Contact() {
                             ))}
 
                             <motion.div
-                                className="space-y-1"
+                                className='formGroup'
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.8 }}
                             >
-                                <label className="block text-emerald-700 font-medium">Message</label>
-                                <div className="relative">
-                                    <div className="absolute top-3 left-3">
-                                        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <label>Message</label>
+                                <div className='inputWrapper'>
+                                    <div className='inputIcon'>
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                                         </svg>
                                     </div>
@@ -247,7 +241,6 @@ export default function Contact() {
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className="w-full pl-10 p-3 rounded-lg bg-emerald-50 text-slate-800 border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition min-h-[150px]"
                                         placeholder="Your message here..."
                                         required
                                         disabled={isSubmitting}
@@ -257,7 +250,7 @@ export default function Contact() {
 
                             <motion.button
                                 type="submit"
-                                className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-6 rounded-lg font-medium transition-all relative overflow-hidden group"
+                                className='submitButton'
                                 whileHover={!isSubmitting ? {
                                     scale: 1.02,
                                     boxShadow: "0 5px 15px rgba(5, 150, 105, 0.4)"
@@ -268,8 +261,8 @@ export default function Contact() {
                                 transition={{ delay: 0.9 }}
                                 disabled={isSubmitting}
                             >
-                                <span className="absolute inset-0 bg-emerald-700 opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
-                                <span className="relative z-10 flex items-center gap-2">
+                                <span className='buttonBg'></span>
+                                <span className='buttonContent'>
                                     {isSubmitting ? (
                                         <>
                                             <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -291,60 +284,60 @@ export default function Contact() {
 
                     {/* Contact Info */}
                     <motion.div 
-                        className="space-y-8"
+                        className='infoColumn'
                         variants={itemVariants}
                     >
                         <motion.div 
-                            className="bg-white px-8 py-8 rounded-2xl shadow-lg border border-emerald-100"
+                            className='infoCard'
                             whileHover={cardHoverVariants.hover}
                         >
-                            <h2 className="text-3xl font-bold mb-6 text-emerald-700">Contact Information</h2>
-                            <p className="text-slate-600 mb-8">Fill out the form or reach out to us through these channels:</p>
+                            <h2>Contact Information</h2>
+                            <p>Fill out the form or reach out to us through these channels:</p>
                             
-                            <div className="space-y-6">
-                                <div className="flex items-start">
-                                    <div className="bg-emerald-100 p-3 rounded-full mr-4">
-                                        <FiMail className="text-emerald-600 text-xl" />
+                            <div className='infoItems'>
+                                <div className='infoItem'>
+                                    <div className='iconWrapper'>
+                                        <FiMail />
                                     </div>
-                                    <div>
-                                        <h3 className="font-medium text-emerald-800">Email</h3>
-                                        <p className="text-slate-600">contact@example.com</p>
-                                    </div>
-                                </div>
-                                
-                                <div className="flex items-start">
-                                    <div className="bg-emerald-100 p-3 rounded-full mr-4">
-                                        <FiPhone className="text-emerald-600 text-xl" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-medium text-emerald-800">Phone</h3>
-                                        <p className="text-slate-600">+1 (555) 123-4567</p>
+                                    <div className='infoContent'>
+                                        <h3>Email</h3>
+                                        <p>contact@example.com</p>
                                     </div>
                                 </div>
                                 
-                                <div className="flex items-start">
-                                    <div className="bg-emerald-100 p-3 rounded-full mr-4">
-                                        <FiMapPin className="text-emerald-600 text-xl" />
+                                <div className='infoItem'>
+                                    <div className='iconWrapper'>
+                                        <FiPhone />
                                     </div>
-                                    <div>
-                                        <h3 className="font-medium text-emerald-800">Address</h3>
-                                        <p className="text-slate-600">123 Green Street, Eco City, EC 12345</p>
+                                    <div className='infoContent'>
+                                        <h3>Phone</h3>
+                                        <p>+1 (555) 123-4567</p>
+                                    </div>
+                                </div>
+                                
+                                <div className='infoItem'>
+                                    <div className='iconWrapper'>
+                                        <FiMapPin />
+                                    </div>
+                                    <div className='infoContent'>
+                                        <h3>Address</h3>
+                                        <p>123 Green Street, Eco City, EC 12345</p>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div className="mt-10 pt-6 border-t border-emerald-100">
-                                <h3 className="font-medium text-emerald-800 mb-4">Business Hours</h3>
-                                <ul className="space-y-2 text-slate-600">
-                                    <li className="flex justify-between">
+                            <div className='businessHours'>
+                                <h3>Business Hours</h3>
+                                <ul>
+                                    <li>
                                         <span>Monday - Friday</span>
                                         <span>9:00 AM - 6:00 PM</span>
                                     </li>
-                                    <li className="flex justify-between">
+                                    <li>
                                         <span>Saturday</span>
                                         <span>10:00 AM - 4:00 PM</span>
                                     </li>
-                                    <li className="flex justify-between">
+                                    <li>
                                         <span>Sunday</span>
                                         <span>Closed</span>
                                     </li>
@@ -353,17 +346,15 @@ export default function Contact() {
                         </motion.div>
                         
                         <motion.div 
-                            className="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 rounded-2xl shadow-lg text-white"
+                            className='supportCard'
                             whileHover={cardHoverVariants.hover}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <h3 className="text-xl font-bold mb-4">Need immediate assistance?</h3>
-                            <p className="mb-6 opacity-90">Our customer support team is available to help you with any urgent inquiries.</p>
-                            <button className="bg-white text-emerald-700 hover:bg-emerald-50 px-6 py-3 rounded-lg font-medium transition">
-                                Chat with us
-                            </button>
+                            <h3>Need immediate assistance?</h3>
+                            <p>Our customer support team is available to help you with any urgent inquiries.</p>
+                            <button>Chat with us</button>
                         </motion.div>
                     </motion.div>
                 </motion.div>
@@ -371,7 +362,7 @@ export default function Contact() {
 
             {/* Floating action button */}
             <motion.div
-                className="fixed bottom-8 right-8 z-50"
+                className='fab'
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.5, type: "spring" }}
@@ -380,10 +371,8 @@ export default function Contact() {
             >
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="bg-emerald-600 text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:bg-emerald-700 transition"
-                    style={{ boxShadow: '0 4px 20px rgba(5, 150, 105, 0.3)' }}
                 >
-                    <FiMail className="text-2xl" />
+                    <FiMail />
                 </button>
             </motion.div>
 
@@ -391,14 +380,13 @@ export default function Contact() {
             <AnimatePresence>
                 {isModalOpen && (
                     <motion.div
-                        className="fixed inset-0 bg-opacity-50 z-50 flex items-center justify-center p-4"
-                        style={{backgroundColor:'#00000080'}}
+                        className='modalOverlay'
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
                         <motion.div
-                            className="bg-white rounded-xl shadow-2xl w-full max-w-md relative overflow-hidden"
+                            className='modalContent'
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
@@ -410,24 +398,22 @@ export default function Contact() {
                                     setSubmitError(null);
                                     setSubmitSuccess(false);
                                 }}
-                                className="absolute top-4 right-4 text-slate-500 hover:text-slate-700 z-10"
+                                className='closeButton'
                             >
-                                <FiX className="text-xl" />
+                                <FiX />
                             </button>
 
-                            <div className="p-6">
-                                <h2 className="text-2xl font-bold mb-6 text-emerald-700">
-                                    Quick Contact
-                                </h2>
+                            <div className='modalBody'>
+                                <h2>Quick Contact</h2>
 
                                 {/* Modal Success and Error Messages */}
                                 {submitSuccess && (
                                     <motion.div
                                         initial={{ opacity: 0, y: -20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className="p-4 mb-6 text-emerald-800 bg-emerald-100 border border-emerald-200 rounded-lg flex items-center"
+                                        className={`${alert} ${success}`}
                                     >
-                                        <svg className="w-5 h-5 mr-2 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Message sent successfully!
@@ -438,21 +424,21 @@ export default function Contact() {
                                     <motion.div
                                         initial={{ opacity: 0, y: -20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className="p-4 mb-6 text-rose-800 bg-rose-100 border border-rose-200 rounded-lg flex items-center"
+                                        className={`${alert} ${error}`}
                                     >
-                                        <svg className="w-5 h-5 mr-2 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         {submitError}
                                     </motion.div>
                                 )}
 
-                                <form onSubmit={handleSubmit} className="space-y-4">
-                                    <div>
-                                        <label className="block text-emerald-700 mb-1">Your Name</label>
-                                        <div className="relative">
-                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                                <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <form onSubmit={handleSubmit} className='form'>
+                                    <div className='formGroup'>
+                                        <label>Your Name</label>
+                                        <div className='inputWrapper'>
+                                            <div className='inputIcon'>
+                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                                 </svg>
                                             </div>
@@ -461,7 +447,6 @@ export default function Contact() {
                                                 name="name"
                                                 value={formData.name}
                                                 onChange={handleChange}
-                                                className="w-full pl-10 p-3 rounded-lg bg-emerald-50 text-slate-800 border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition"
                                                 placeholder="John Doe"
                                                 required
                                                 disabled={isSubmitting}
@@ -469,18 +454,17 @@ export default function Contact() {
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <label className="block text-emerald-700 mb-1">Email Address</label>
-                                        <div className="relative">
-                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                                <FiMail className="w-5 h-5 text-emerald-500" />
+                                    <div className='formGroup'>
+                                        <label>Email Address</label>
+                                        <div className='inputWrapper'>
+                                            <div className='inputIcon'>
+                                                <FiMail className="w-5 h-5" />
                                             </div>
                                             <input
                                                 type="email"
                                                 name="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                className="w-full pl-10 p-3 rounded-lg bg-emerald-50 text-slate-800 border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition"
                                                 placeholder="your@email.com"
                                                 required
                                                 disabled={isSubmitting}
@@ -488,18 +472,17 @@ export default function Contact() {
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <label className="block text-emerald-700 mb-1">Mobile No</label>
-                                        <div className="relative">
-                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                                <FiPhone className="w-5 h-5 text-emerald-500" />
+                                    <div className='formGroup'>
+                                        <label>Mobile No</label>
+                                        <div className='inputWrapper'>
+                                            <div className='inputIcon'>
+                                                <FiPhone className="w-5 h-5" />
                                             </div>
                                             <input
                                                 type="text"
                                                 name="phone"
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                className="w-full pl-10 p-3 rounded-lg bg-emerald-50 text-slate-800 border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition"
                                                 placeholder="Enter Mobile No"
                                                 required
                                                 disabled={isSubmitting}
@@ -507,11 +490,11 @@ export default function Contact() {
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <label className="block text-emerald-700 mb-1">Message</label>
-                                        <div className="relative">
-                                            <div className="absolute top-3 left-3">
-                                                <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className='formGroup'>
+                                        <label>Message</label>
+                                        <div className='inputWrapper'>
+                                            <div className='inputIcon'>
+                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                                                 </svg>
                                             </div>
@@ -519,7 +502,6 @@ export default function Contact() {
                                                 name="message"
                                                 value={formData.message}
                                                 onChange={handleChange}
-                                                className="w-full pl-10 p-3 rounded-lg bg-emerald-50 text-slate-800 border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition min-h-[120px]"
                                                 placeholder="Your message here..."
                                                 required
                                                 disabled={isSubmitting}
@@ -529,7 +511,7 @@ export default function Contact() {
 
                                     <motion.button
                                         type="submit"
-                                        className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-6 rounded-lg font-medium flex items-center justify-center gap-2 mt-4"
+                                        className='submitButton'
                                         whileHover={!isSubmitting ? { 
                                             scale: 1.02,
                                             boxShadow: "0 5px 15px rgba(5, 150, 105, 0.4)"
