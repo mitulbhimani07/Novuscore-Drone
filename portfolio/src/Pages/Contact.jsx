@@ -371,6 +371,8 @@ export default function Contact() {
             >
                 <button
                     onClick={() => setIsModalOpen(true)}
+                    className="bg-green-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:bg-emerald-700 transition"
+                    style={{ boxShadow: '0 4px 20px rgba(19, 150, 5, 0.3)' }}
                 >
                     <FiMail />
                 </button>

@@ -4,7 +4,7 @@ const router = express.Router();
 const contactController = require('../controller/ContactUs');
 
 router.post('/contact', contactController.saveContact);
-router.get('/ViewContact', contactController.ViewContact);
+router.get('/ViewContact', contactController.viewContacts);
 
 
 module.exports = router;
