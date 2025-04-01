@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { FiCheck, FiUsers, FiAward, FiMapPin, FiBarChart2, FiShield, FiGlobe } from "react-icons/fi";
 import AboutImage from "../assets/image/AboutImage.jpg";
 import SmartDrone from "../assets/image/agd.jpg";
+import "../assets/scss/AboutUs.scss";
+
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,23 +32,21 @@ const itemVariants = {
 
 export default function About() {
   return (
-    <div className="bg-green-50 min-h-screen">
+    <div className="bg-green-50">
       {/* Hero Section */}
       <motion.section 
-        className="relative py-24 bg-gradient-to-r from-green-700 to-green-600 text-white"
+        className="hero-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold mb-6 mt-6 max-w-3xl mx-auto"
             variants={itemVariants}
           >
             Transforming Agriculture with Novuscore Drones
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl max-w-4xl mx-auto"
             variants={itemVariants}
           >
             India's leading agri-drone solutions provider, empowering farmers with cutting-edge technology
@@ -56,24 +56,24 @@ export default function About() {
 
       {/* Our Story */}
       <motion.section 
-        className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="journey-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid-container">
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold text-green-800 mb-6">Our Journey</h2>
-            <p className="text-green-700 mb-4 text-lg">
+            <h2>Our Journey</h2>
+            <p>
               Founded with a vision to revolutionize Indian agriculture, Novuscore Drones has emerged as a pioneer in 
               drone-based farming solutions. As DGCA-approved drone manufacturers, we combine indigenous technology 
               with global best practices.
             </p>
-            <p className="text-green-700 mb-6 text-lg">
+            <p>
               From our beginnings in Hyderabad, we've grown to serve farmers across 12 states, helping them 
               adopt precision agriculture techniques that boost productivity sustainably.
             </p>
-            <div className="space-y-3">
+            <div className="feature-list">
               {[
                 "DGCA & MoCA approved drones",
                 "2000+ farmers empowered",
@@ -83,24 +83,23 @@ export default function About() {
               ].map((item, index) => (
                 <motion.div 
                   key={index} 
-                  className="flex items-center"
+                  className="feature-item"
                   whileHover={{ x: 5 }}
                 >
-                  <FiCheck className="text-green-600 mr-3 text-xl" />
-                  <span className="text-green-800 font-medium">{item}</span>
+                  <FiCheck className="icon" />
+                  <span>{item}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
           <motion.div 
-            className="rounded-2xl overflow-hidden shadow-xl"
+            className="image-container"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
             <img 
               src={AboutImage} 
               alt="Marut Drone in action" 
-              className="w-full h-auto object-cover"
             />
           </motion.div>
         </div>
@@ -108,51 +107,50 @@ export default function About() {
 
       {/* Core Values */}
       <motion.section 
-        className="py-16 bg-green-600"
+        className="values-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <motion.h2 
-            className="text-3xl font-bold text-center text-white mb-16"
             variants={itemVariants}
           >
             Why Choose Novuscore Drones
           </motion.h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="values-grid">
             {[
               {
-                icon: <FiBarChart2 className="text-4xl text-green-600" />,
+                icon: <FiBarChart2 className="icon" />,
                 title: "Precision Farming",
                 content: "Our drones deliver exact inputs where needed, optimizing resource utilization and maximizing yields"
               },
               {
-                icon: <FiShield className="text-4xl text-green-600" />,
+                icon: <FiShield className="icon" />,
                 title: "DGCA Approved",
                 content: "All our drones and operations comply with strict DGCA regulations for safety and reliability"
               },
               {
-                icon: <FiGlobe className="text-4xl text-green-600" />,
+                icon: <FiGlobe className="icon" />,
                 title: "Made in India",
                 content: "Proudly developing indigenous drone technology tailored for Indian farming conditions"
               }
             ].map((item, index) => (
               <motion.div 
                 key={index} 
-                className="bg-white p-8 rounded-xl shadow-md text-center"
+                className="value-card"
                 variants={itemVariants}
                 whileHover={{ 
                   y: -10,
                   boxShadow: "0 10px 25px -5px rgba(5, 150, 105, 0.2)"
                 }}
               >
-                <div className="bg-green-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                <div className="icon-container">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-green-800 mb-4">{item.title}</h3>
-                <p className="text-green-700">{item.content}</p>
+                <h3>{item.title}</h3>
+                <p>{item.content}</p>
               </motion.div>
             ))}
           </div>
@@ -161,24 +159,24 @@ export default function About() {
 
       {/* Technology & Services */}
       <motion.section 
-        className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="solutions-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         <motion.div 
-          className="text-center mb-16"
+          className="section-header"
           variants={itemVariants}
         >
-          <h2 className="text-3xl font-bold text-green-800 mb-4">Our Agri-Drone Solutions</h2>
-          <p className="text-green-700 max-w-3xl mx-auto text-lg">
+          <h2>Our Agri-Drone Solutions</h2>
+          <p>
             Comprehensive services designed for modern farming needs
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="solutions-grid">
           <motion.div variants={itemVariants}>
-            <div className="space-y-6">
+            <div className="solutions-list">
               {[
                 {
                   title: "Pesticide Spraying",
@@ -192,7 +190,6 @@ export default function About() {
                   title: "Crop Monitoring",
                   desc: "Multispectral imaging for early detection of pests, diseases and nutrient deficiencies"
                 },
-                
                 {
                   title: "Training Programs",
                   desc: "Comprehensive drone pilot training and agri-drone operation certification"
@@ -200,23 +197,22 @@ export default function About() {
               ].map((item, index) => (
                 <motion.div 
                   key={index}
-                  className="p-6 bg-white rounded-lg shadow-sm border border-green-200"
+                  className="solution-card"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <h3 className="text-xl font-semibold text-green-800 mb-2">{item.title}</h3>
-                  <p className="text-green-700">{item.desc}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
           <motion.div 
-            className="flex items-center"
+            className="image-container"
             variants={itemVariants}
           >
             <img 
               src={SmartDrone}
               alt="Novuscore Drone spraying" 
-              className="rounded-2xl shadow-xl w-full"
             />
           </motion.div>
         </div>
@@ -224,20 +220,19 @@ export default function About() {
 
       {/* Awards & Recognition */}
       <motion.section 
-        className="py-16 bg-white"
+        className="recognition-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <motion.h2 
-            className="text-3xl font-bold text-center text-green-800 mb-12"
             variants={itemVariants}
           >
             Recognition & Partnerships
           </motion.h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
+          <div className="logo-grid">
             {[
               "https://marutdrones.com/wp-content/uploads/2023/09/04-7.png",
               "https://marutdrones.com/wp-content/uploads/2023/09/34.png",
@@ -254,14 +249,13 @@ export default function About() {
             ].map((logo, index) => (
               <motion.div 
                 key={index}
-                className="p-4 flex justify-center"
+                className="logo-container"
                 variants={itemVariants}
                 transition={{ delay: index * 0.1 }}
               >
                 <img 
                   src={logo} 
                   alt="Partner logo" 
-                  className="h-16 object-contain grayscale hover:grayscale-0 transition"
                 />
               </motion.div>
             ))}

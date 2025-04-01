@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import '../assets/scss/Services.scss';
 
 export default function Services() {
   {/* Add this Counter component at the top of your file or in a separate components folder */ }
@@ -147,7 +148,7 @@ export default function Services() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-200 to-white">Drone-Powered</span> AgTech Solutions
+              <span className="bg-clip-text bg-gradient-to-r from-green-200 to-white">Drone-Powered AgTech Solutions </span>
             </h1>
             <p className="text-xl text-green-100 max-w-2xl mx-auto">
               Transform your farming operations with our precision agriculture drone services
