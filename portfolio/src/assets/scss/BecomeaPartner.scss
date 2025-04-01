@@ -1,0 +1,254 @@
+$primary-green: #009E3C;
+$primary-green-dark: darken($primary-green, 5%); // #008033
+$primary-green-darker: darken($primary-green,15%); // #006329
+$primary-green-light: lighten($primary-green, 10%); // #00BE47
+$primary-green-lighter: lighten($primary-green, 20%); // #00DE53
+$white: #ffffff;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-700: #374151;
+
+.partner-page {
+  background-color: $gray-50;
+  min-height: 100vh;
+
+  // Hero Section
+  .hero-section {
+    position: relative;
+    background: linear-gradient(to right, $primary-green-darker, $primary-green);
+    color: $white;
+    padding: 5rem 0;
+
+    .container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+      margin-top: 2.5rem;
+
+      h1 {
+        font-size: 2.25rem;
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        max-width: 48rem;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // Partnership Types Section
+  .partnership-types {
+    padding: 6rem 0; // Increased padding top and bottom
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem; // Increased margin bottom for more space
+
+      h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: $primary-green-darker;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $primary-green-dark;
+        max-width: 36rem;
+        margin: 0 auto;
+        font-size: 1.125rem;
+      }
+    }
+
+    .partner-types-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem; // Increased gap for more space between cards
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .partner-type-card {
+        background-color: $white;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border: 1px solid $gray-100;
+
+        .card-header {
+          background: linear-gradient(to right, $primary-green, $primary-green-light);
+          padding: 1.75rem; // Increased padding inside card header
+          color: $white;
+
+          h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+          }
+
+          p {
+            margin-top: 0.5rem;
+            opacity: 0.9;
+          }
+        }
+
+        .card-body {
+          padding: 2rem 1.75rem; // Increased padding inside card body
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem; // Increased gap between list items
+
+            li {
+              display: flex;
+              align-items: flex-start;
+
+              svg {
+                color: $primary-green;
+                margin-top: 0.25rem;
+                margin-right: 0.5rem;
+                flex-shrink: 0;
+              }
+
+              span {
+                color: $gray-700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Benefits Section
+  .benefits-section {
+    padding: 4rem 0;
+    background-color: $white;
+
+    .container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+
+        h2 {
+          font-size: 1.875rem;
+          font-weight: 700;
+          color: $primary-green-darker;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          color: $primary-green-dark;
+          max-width: 36rem;
+          margin: 0 auto;
+          font-size: 1.125rem;
+        }
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+
+        @media (min-width: 640px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 1024px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+
+  // Benefit Card Component
+  .benefit-card {
+    background-color: $white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid $gray-100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon {
+      color: $primary-green;
+      font-size: 1.875rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $primary-green-darker;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $primary-green-dark;
+    }
+  }
+
+  // CTA Section
+  .cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(to right, $primary-green, $primary-green-dark);
+    color: $white;
+
+    .container {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+
+      h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: $white;
+        color: $primary-green;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}

@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiCheckCircle, FiDollarSign, FiTool, FiUsers, FiShield, FiBarChart2 } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import "../assets/scss/BecomeAPartner.scss";
 
 const PartnerBenefitCard = ({ icon, title, description }) => (
   <motion.div 
-    className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
+    className="benefit-card"
     whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
     transition={{ duration: 0.3 }}
   >
-    <div className="text-green-600 text-3xl mb-4">{icon}</div>
-    <h3 className="text-xl font-bold text-green-900 mb-2">{title}</h3>
-    <p className="text-green-700">{description}</p>
+    <div className="icon">{icon}</div>
+    <h3>{title}</h3>
+    <p>{description}</p>
   </motion.div>
 );
 
@@ -115,12 +116,11 @@ export default function BecomeAPartner() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen ">
+    <div className="partner-page">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-green-800 to-green-600 text-white py-20 ">
-        <div className="max-w-7xl mx-auto px-6 text-center mt-10">
+      <section className="hero-section">
+        <div className="container">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -128,7 +128,6 @@ export default function BecomeAPartner() {
             Become an Agricultural Drone Partner
           </motion.h1>
           <motion.p 
-            className="text-xl max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -139,33 +138,33 @@ export default function BecomeAPartner() {
       </section>
 
       {/* Partnership Types */}
-      <section className="py-16 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-green-900 mb-4">Partnership Opportunities</h2>
-          <p className="text-green-700 max-w-2xl mx-auto text-lg">
+      <section className="partnership-types">
+        <div className="section-header">
+          <h2>Partnership Opportunities</h2>
+          <p>
             We offer different partnership models to match your agricultural business goals.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="partner-types-grid">
           {partnerTypes.map((type, index) => (
             <motion.div 
               key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
+              className="partner-type-card"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="bg-gradient-to-r from-green-600 to-green-500 p-6 text-white">
-                <h3 className="text-xl font-bold">{type.title}</h3>
-                <p className="mt-2 opacity-90">{type.description}</p>
+              <div className="card-header">
+                <h3>{type.title}</h3>
+                <p>{type.description}</p>
               </div>
-              <div className="p-6">
-                <ul className="space-y-3">
+              <div className="card-body">
+                <ul>
                   {type.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <FiCheckCircle className="text-green-500 mt-1 mr-2 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                    <li key={i}>
+                      <FiCheckCircle />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -176,16 +175,16 @@ export default function BecomeAPartner() {
       </section>
 
       {/* Partnership Benefits */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-green-900 mb-4">Why Partner With Us</h2>
-            <p className="text-green-700 max-w-2xl mx-auto text-lg">
+      <section className="benefits-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="green-800">Why Partner With Us</h2>
+            <p>
               We provide the tools, training and support to help your agricultural business succeed with drone technology.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="benefits-grid">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -204,24 +203,21 @@ export default function BecomeAPartner() {
         </div>
       </section>
 
-     
-
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Revolutionize Agriculture With Us?</h2>
-          <p className="text-xl mb-8">
+      <section className="cta-section">
+        <div className="container">
+          <h2>Ready to Revolutionize Agriculture With Us?</h2>
+          <p>
             Join our network of agricultural drone partners and help farmers increase yields today.
           </p>
           <Link to='/contact'>
-          <motion.button
-            
-            className="inline-block bg-white text-green-600 px-8 py-3 rounded-lg font-bold shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Apply Now
-          </motion.button>
+            <motion.button
+              className="cta-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Apply Now
+            </motion.button>
           </Link>
         </div>
       </section>
