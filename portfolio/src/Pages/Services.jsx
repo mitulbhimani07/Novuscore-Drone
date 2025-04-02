@@ -228,7 +228,7 @@ export default function Services() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-green-700 text-white">
+      <section className="py-20 from-green-700 text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <motion.div

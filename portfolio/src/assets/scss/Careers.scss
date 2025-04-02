@@ -10,6 +10,7 @@ $gray-50: #f9fafb;
 $gray-200: #e5e7eb;
 $gray-700: #374151;
 $white: #ffffff;
+$primary-green: #009b3b;
 
 .careers-container {
   background-color: $white;
@@ -26,7 +27,8 @@ $white: #ffffff;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-image: linear-gradient(to bottom right, $green-700, $green-800);
+    // background-image: linear-gradient(to bottom right, $green-700, $green-800);
+    background: $primary-green;
 
     .hero-content {
       position: relative;
@@ -181,7 +183,9 @@ $white: #ffffff;
           }
 
           .job-description {
-            color: $gray-700;
+            // color: $gray-700;
+            
+            color: #14532d;
             margin-bottom: 1.5rem;
           }
 
@@ -190,7 +194,8 @@ $white: #ffffff;
 
             h4 {
               font-weight: 600;
-              color: $green-900;
+              // color: $green-900;
+              color: #14532d;
               margin-bottom: 0.75rem;
             }
 

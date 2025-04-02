@@ -84,7 +84,7 @@ export default function About() {
                 <motion.div 
                   key={index} 
                   className="feature-item"
-                  whileHover={{ x: 5 }}
+                  // whileHover={{ x: 5 }}
                 >
                   <FiCheck className="icon" />
                   <span>{item}</span>
@@ -198,7 +198,7 @@ export default function About() {
                 <motion.div 
                   key={index}
                   className="solution-card"
-                  whileHover={{ scale: 1.02 }}
+                  // whileHover={{ scale: 1.02 }}
                 >
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
