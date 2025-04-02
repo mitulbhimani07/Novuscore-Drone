@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiSend, FiX } from "react-icons/fi";
 import { submitContactForm } from "../../api";
-import  "../assets/scss/ContactUs.scss"; // Import the SCSS module
+import "../assets/scss/ContactUs.scss"; // Import the SCSS module
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -80,12 +80,12 @@ export default function Contact() {
         setIsSubmitting(true);
         setSubmitError(null);
         setSubmitSuccess(false);
-        
+
         try {
             console.log('Submitting form data:', formData);
             const response = await submitContactForm(formData);
             console.log('Submission successful:', response);
-            
+
             setSubmitSuccess(true);
             setFormData({
                 name: '',
@@ -93,7 +93,7 @@ export default function Contact() {
                 phone: '',
                 message: ''
             });
-            
+
             setTimeout(() => {
                 setSubmitSuccess(false);
                 setIsModalOpen(false);
@@ -101,8 +101,8 @@ export default function Contact() {
         } catch (error) {
             console.error('Submission error:', error);
             setSubmitError(
-                error.response?.data?.message || 
-                error.message || 
+                error.response?.data?.message ||
+                error.message ||
                 'Failed to send message. Please try again.'
             );
         } finally {
@@ -121,14 +121,14 @@ export default function Contact() {
                 variants={gradientVariants}
             >
                 <div className='heroContent'>
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                     >
                         Get In Touch
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
@@ -165,7 +165,7 @@ export default function Contact() {
                             <motion.div
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className={`${alert} ${success}`}
+                                className='success'
                             >
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
@@ -173,12 +173,12 @@ export default function Contact() {
                                 Message sent successfully!
                             </motion.div>
                         )}
-                        
+
                         {submitError && (
                             <motion.div
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className={`${alert} ${error}`}
+                                className='{`${alert} ${error}`}'
                             >
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -283,17 +283,17 @@ export default function Contact() {
                     </motion.div>
 
                     {/* Contact Info */}
-                    <motion.div 
+                    <motion.div
                         className='infoColumn'
                         variants={itemVariants}
                     >
-                        <motion.div 
+                        <motion.div
                             className='infoCard'
                             whileHover={cardHoverVariants.hover}
                         >
                             <h2>Contact Information</h2>
                             <p>Fill out the form or reach out to us through these channels:</p>
-                            
+
                             <div className='infoItems'>
                                 <div className='infoItem'>
                                     <div className='iconWrapper'>
@@ -304,7 +304,7 @@ export default function Contact() {
                                         <p>contact@example.com</p>
                                     </div>
                                 </div>
-                                
+
                                 <div className='infoItem'>
                                     <div className='iconWrapper'>
                                         <FiPhone />
@@ -314,7 +314,7 @@ export default function Contact() {
                                         <p>+1 (555) 123-4567</p>
                                     </div>
                                 </div>
-                                
+
                                 <div className='infoItem'>
                                     <div className='iconWrapper'>
                                         <FiMapPin />
@@ -325,7 +325,7 @@ export default function Contact() {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className='businessHours'>
                                 <h3>Business Hours</h3>
                                 <ul>
@@ -344,8 +344,8 @@ export default function Contact() {
                                 </ul>
                             </div>
                         </motion.div>
-                        
-                        <motion.div 
+
+                        <motion.div
                             className='supportCard'
                             whileHover={cardHoverVariants.hover}
                             initial={{ opacity: 0, y: 20 }}
@@ -413,7 +413,7 @@ export default function Contact() {
                                     <motion.div
                                         initial={{ opacity: 0, y: -20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className={`${alert} ${success}`}
+                                        className='success'
                                     >
                                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
@@ -421,7 +421,7 @@ export default function Contact() {
                                         Message sent successfully!
                                     </motion.div>
                                 )}
-                                
+
                                 {submitError && (
                                     <motion.div
                                         initial={{ opacity: 0, y: -20 }}
@@ -514,7 +514,7 @@ export default function Contact() {
                                     <motion.button
                                         type="submit"
                                         className='submitButton'
-                                        whileHover={!isSubmitting ? { 
+                                        whileHover={!isSubmitting ? {
                                             scale: 1.02,
                                             boxShadow: "0 5px 15px rgba(5, 150, 105, 0.4)"
                                         } : {}}
