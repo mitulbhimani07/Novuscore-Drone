@@ -9,6 +9,7 @@ import WhatWeOffer from '../Pages/WhatWeOffer'
 import Blog from '../Pages/Blog'
 import BeComeAPartner from '../Pages/BeComeAPartner'
 import BecomeAPartner from '../Pages/BeComeAPartner'
+import Emailicon from '../Pages/Emailicon'
 
 export default function AllRoutes() {
   return (
@@ -24,6 +25,7 @@ export default function AllRoutes() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/becomepartner" element={<BecomeAPartner/>}/>
         </Routes>
+        <Emailicon/>
         </Suspense>
     </div>
   )
