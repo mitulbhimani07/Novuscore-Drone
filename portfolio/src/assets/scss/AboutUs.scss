@@ -3,6 +3,7 @@ $green-200: #bbf7d0;
 $green-600: #16a34a;
 $green-700: #15803d;
 $green-800: #166534;
+$primary-green: #009b3b;
 $white: #ffffff;
 
 // Mixins
@@ -26,7 +27,8 @@ $white: #ffffff;
 .hero-section {
   position: relative;
   padding: 6rem 0; // py-24
-  background: linear-gradient(to right, $green-700, $green-600);
+  // background: linear-gradient(to right, $green-700, $green-600);
+  background: $primary-green;
   color: $white;
 
   .container {
@@ -124,9 +126,9 @@ $white: #ffffff;
       display: flex;
       align-items: center;
 
-      &:hover {
-        transform: translateX(5px);
-      }
+      // &:hover {
+      //   transform: translateX(5px);
+      // }
 
       .icon {
         color: $green-600;
@@ -293,7 +295,7 @@ $white: #ffffff;
         border: 1px solid $green-200; // border border-green-200
 
         &:hover {
-          transform: scale(1.02);
+          transform: scale(1.01);
         }
 
         h3 {

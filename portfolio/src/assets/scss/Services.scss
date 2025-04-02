@@ -4,7 +4,7 @@ $primary-dark: #065f46; // green-800
 $primary-light: #059669; // green-600
 $primary-lighter: #34d399; // green-400
 $primary-lightest: #a7f3d0; // green-200
-
+$primary-green: #009b3b;
 $text-color: #047857; // green-700
 $text-light: #d1fae5; // green-100
 $text-white: #ffffff;
@@ -28,7 +28,8 @@ $border-green-light: #bbf7d0; // green-200
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(135deg, $primary-color, $primary-dark);
+    // background: linear-gradient(135deg, $primary-color, $primary-dark);
+    background: $primary-green;
 
     .hero-content {
       position: relative;
@@ -288,7 +289,7 @@ $border-green-light: #bbf7d0; // green-200
 .to-green-700 { --to-color: #025320; }
 .from-green-300 { background-image: linear-gradient(to right, #009e3c, var(--to-color)); }
 .to-green-400 { --to-color: #025320; }
-.from-green-700 { background-image: linear-gradient(to right, #009e3c, var(--to-color)); }
+.from-green-700 { background: #009b3b }
 .to-green-800 { --to-color: #025320; }
 .from-green-200 { background-image: linear-gradient(to right, #009e3c, var(--to-color)); }
 .to-green-300 { --to-color: #025320; }

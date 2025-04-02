@@ -7,6 +7,7 @@ $white: #ffffff;
 $gray-50: #f9fafb;
 $gray-100: #f3f4f6;
 $gray-700: #374151;
+$green: #009b3b;
 
 .partner-page {
   background-color: $gray-50;
@@ -15,7 +16,8 @@ $gray-700: #374151;
   // Hero Section
   .hero-section {
     position: relative;
-    background: linear-gradient(to right, $primary-green-darker, $primary-green);
+    // background: linear-gradient(to right, $primary-green-darker, $primary-green);
+    background: $green;
     color: $white;
     padding: 5rem 0;
 
@@ -87,7 +89,7 @@ $gray-700: #374151;
         border: 1px solid $gray-100;
 
         .card-header {
-          background: linear-gradient(to right, $primary-green, $primary-green-light);
+          background: linear-gradient(to right, $primary-green, $primary-green-dark);
           padding: 1.75rem; // Increased padding inside card header
           color: $white;
 
@@ -113,6 +115,7 @@ $gray-700: #374151;
             li {
               display: flex;
               align-items: flex-start;
+              
 
               svg {
                 color: $primary-green;
@@ -122,7 +125,8 @@ $gray-700: #374151;
               }
 
               span {
-                color: $gray-700;
+                // color: $gray-700;
+                color: #15803d;
               }
             }
           }
@@ -211,7 +215,8 @@ $gray-700: #374151;
   // CTA Section
   .cta-section {
     padding: 5rem 0;
-    background: linear-gradient(to right, $primary-green, $primary-green-dark);
+    // background: linear-gradient(to right, $primary-green, $primary-green-dark);
+    background: $green;
     color: $white;
 
     .container {

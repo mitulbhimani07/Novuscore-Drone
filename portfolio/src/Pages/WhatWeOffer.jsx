@@ -33,7 +33,7 @@ const ServiceCard = ({ title, features }) => (
     variants={itemVariants}
     className="service-card"
   >
-    <div className="card-header">
+    <div className="card-header bg-green-500">
       <h3>{title}</h3>
     </div>
     <div className="card-body">
@@ -163,7 +163,7 @@ export default function DroneSolutionsWebsite() {
               features={service.features}
             />
           ))}
-        </motion.div>
+        </motion.div> 
       </section>
 
       {/* Call to Action */}
@@ -171,7 +171,7 @@ export default function DroneSolutionsWebsite() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="cta-section"
+        className="cta-section bg-green-500" 
       >
         <div className="cta-container">
           <motion.h2
@@ -194,6 +194,7 @@ export default function DroneSolutionsWebsite() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               className="cta-button"
+              whileHover={{ scale: 1.05 }}
             >
               Schedule Consultation
             </motion.button>
