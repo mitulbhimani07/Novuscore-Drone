@@ -130,9 +130,9 @@ export default function DroneSolutionsWebsite() {
           </motion.p>
           <Link to='/services'>
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="cta-button"
+              className="cta-button "
             >
               Explore Our Services
             </motion.button>
@@ -194,7 +194,6 @@ export default function DroneSolutionsWebsite() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               className="cta-button"
-              whileHover={{ scale: 1.05 }}
             >
               Schedule Consultation
             </motion.button>
