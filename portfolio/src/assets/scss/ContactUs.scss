@@ -2,10 +2,10 @@
 $emerald-50: #ecfdf5;
 $emerald-100: #d1fae5;
 $emerald-200: #a7f3d0;
-$emerald-500: #10b981;
+$emerald-500: #16a34a;
 $emerald-600: #059669;
 $emerald-700: #047857;
-$emerald-800: #065f46;
+$emerald-800: #166534;
 $emerald-900: #064e3b;
 
 $slate-600: #475569;
@@ -96,7 +96,7 @@ $rose-800: #9f1239;
         line-height: 2.25rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
-        color: $emerald-700;
+        color: $emerald-800;
       }
 
       // Form elements
@@ -105,7 +105,7 @@ $rose-800: #9f1239;
 
         label {
           display: block;
-          color: $emerald-700;
+          color: $emerald-500;
           font-weight: 500;
           margin-bottom: 0.25rem;
         }
@@ -181,7 +181,7 @@ $rose-800: #9f1239;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        background-color: $emerald-600;
+        background-color: $emerald-800;
         color: white;
         padding: 0.75rem 1.5rem;
         border-radius: 0.5rem;
@@ -236,7 +236,7 @@ $rose-800: #9f1239;
         line-height: 2.25rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
-        color: $emerald-700;
+        color: $emerald-800;
       }
 
       p {
@@ -264,7 +264,7 @@ $rose-800: #9f1239;
         .infoContent {
           h3 {
             font-weight: 500;
-            color: $emerald-800;
+            color: $emerald-500;
           }
 
           p {
@@ -302,7 +302,7 @@ $rose-800: #9f1239;
 
     // Support Card
     .supportCard {
-      background: linear-gradient(to right, $emerald-700, $emerald-800);
+      background: $emerald-800;
       padding: 2rem;
       border-radius: 1.5rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -323,7 +323,7 @@ $rose-800: #9f1239;
 
       button {
         background-color: white;
-        color: $emerald-700;
+        color: $emerald-800;
         padding: 0.75rem 1.5rem;
         border-radius: 0.5rem;
         font-weight: 500;
@@ -424,7 +424,7 @@ $rose-800: #9f1239;
 
         label {
           display: block;
-          color: $emerald-700;
+          color: $emerald-500;
           margin-bottom: 0.25rem;
           font-weight: 500;
         }

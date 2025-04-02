@@ -51,7 +51,7 @@ export default function Blog() {
           transition={{ duration: 0.6 }}
           className="blog-header"
         >
-          <h1>Drone Technology Blog</h1>
+          <h1 className="text-[30px]">Drone Technology Blog</h1>
           <p>
             Insights and innovations in drone applications for agriculture, surveillance, and environmental management.
           </p>

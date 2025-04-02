@@ -2,8 +2,8 @@
 $green-100: #f0fff4;
 $green-500: #48bb78;
 $green-600: #38a169;
-$green-700: #2f855a;
-$green-800: #276749;
+$green-700: #16a34a;
+$green-800: rgb(13, 84, 43);
 $green-900: #1c4532;
 $white: #ffffff;
 $gray-900: #1a202c;
@@ -24,7 +24,7 @@ $gray-100: #f7fafc;
   // Hero Section
   .hero-section {
     position: relative;
-    background: linear-gradient(to right, $green-900, $gray-900);
+    background-color: $green-800;
     color: $white;
     padding: 5rem 0;
     text-align: center;
@@ -73,13 +73,20 @@ $gray-100: #f7fafc;
     h2 {
       font-size: 1.875rem;
       font-weight: bold;
-      color: $green-900;
+      color: $green-800;
       margin-bottom: 1rem;
+    }
+    p{
+      font-size: 18px !important;
+      color: $green-700;
+      margin-bottom: 20px;
     }
 
     .services-grid {
       display: grid;
       gap: 2rem;
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
 
       @media (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
@@ -95,19 +102,21 @@ $gray-100: #f7fafc;
     overflow: hidden;
     border: 1px solid $gray-100;
     transition: transform 0.3s ease;
+    padding: 0px !important;
 
     &:hover {
       transform: scale(1.05);
     }
 
     .card-header {
-      background: linear-gradient(to right, $green-500, $green-600);
+      // background-color: $green-700;
       padding: 1rem;
       color: $white;
 
       h3 {
         font-size: 1.25rem;
         font-weight: bold;
+        color: $white !important;
       }
     }
 
@@ -118,10 +127,11 @@ $gray-100: #f7fafc;
         li {
           display: flex;
           align-items: flex-start;
-          color: $green-800;
+          color: $green-700;
+          padding-bottom: 5px;
 
           svg {
-            color: $green-500;
+            color: $green-700;
             margin-top: 0.25rem;
             margin-right: 0.5rem;
             flex-shrink: 0;
@@ -134,7 +144,7 @@ $gray-100: #f7fafc;
   // CTA Section
   .cta-section {
     padding: 5rem 0;
-    background: linear-gradient(to right, $green-600, $green-700);
+    background-color: $green-700;
     color: $white;
     text-align: center;
 
