@@ -8,6 +8,20 @@ $green-900: #1c4532;
 $white: #ffffff;
 $gray-900: #1a202c;
 $gray-100: #f7fafc;
+$primary-color: #22c55e; // green-500
+$dark-green: #15803d; // green-700
+$white: #ffffff;
+$black: #333333;
+$gray: #f5f5f5;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+$transition: all 0.3s ease;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$large-desktop: 1200px;
 
 // Mixins
 @mixin hover-scale {
@@ -34,8 +48,7 @@ $gray-100: #f7fafc;
       font-weight: bold;
       margin-bottom: 1.5rem;
       max-width: 56rem;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 26px auto 2rem !important;
 
       @media (min-width: 768px) {
         font-size: 3rem;
@@ -175,5 +188,405 @@ $gray-100: #f7fafc;
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
       }
     }
+  }
+}
+
+
+// ===========
+// Base variables
+// Base variables
+
+
+// Mixins for responsive design
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile + 1px}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet-and-below {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$tablet + 1px}) {
+    @content;
+  }
+}
+
+// General styles
+.drone-solutions {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+// Hero Section
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  color: $white;
+  padding: 120px 20px;
+  position: relative;
+  
+  @include tablet-and-below {
+    padding: 80px 20px;
+  }
+  
+  @include mobile {
+    padding: 60px 15px;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    
+    @include tablet-and-below {
+      font-size: 2.5rem;
+    }
+    
+    @include mobile {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    
+    @include mobile {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .cta-button {
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: $transition;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+    
+    @include mobile {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Services Section
+.services-section {
+  padding: 100px 30px;
+  
+  @include tablet {
+    padding: 80px 35px; // Enhanced tablet padding
+  }
+
+  @media (min-width: 764px) and (max-width: 1208px) {
+    .service-card {
+      margin: 22px !important;
+      
+      .card-body {
+        padding: 30px;
+      }
+      
+      
+    }
+  }
+  
+  
+  @include mobile {
+    padding: 60px 20px; // Enhanced mobile padding
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    
+    @include tablet {
+      margin-bottom: 50px;
+      padding: 0 25px; // Added specific tablet padding
+    }
+    
+    @include mobile {
+      margin-bottom: 40px;
+      padding: 0 15px; // Added specific mobile padding
+    }
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: $black;
+    margin-bottom: 1.5rem;
+    
+    @include tablet {
+      font-size: 2rem;
+      margin-bottom: 1.3rem;
+      padding: 0 15px; // Added specific tablet padding
+    }
+    
+    @include mobile {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      padding: 0 10px; // Added specific mobile padding
+    }
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: rgba($black, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    
+    @include tablet {
+      font-size: 1rem;
+      padding: 0 20px; // Added specific tablet padding
+      margin-bottom: 1.5rem;
+    }
+    
+    @include mobile {
+      font-size: 0.95rem;
+      padding: 0 12px; // Enhanced mobile padding
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      padding: 15px 20px; // Enhanced horizontal padding on tablet
+    }
+    
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 10px 15px; // Enhanced horizontal padding on mobile
+    }
+  }
+}
+
+// Service Card
+.service-card {
+  background-color: $white;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: $transition;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-header {
+    padding: 20px;
+    background-color: $primary-color;
+    color: $white;
+    
+    @include tablet {
+      padding: 22px 25px; // Enhanced tablet padding
+    }
+    
+    @include mobile {
+      padding: 18px 20px; // Enhanced mobile padding
+    }
+    
+    h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      
+      @include tablet {
+        font-size: 1.25rem;
+      }
+      
+      @include mobile {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 20px;
+    flex-grow: 1;
+    
+    @include tablet {
+      padding: 25px; // Enhanced tablet padding
+    }
+    
+    @include mobile {
+      padding: 22px 20px; // Enhanced mobile padding
+    }
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    @include tablet {
+      margin-bottom: 15px; // Enhanced spacing on tablet
+    }
+    
+    @include mobile {
+      font-size: 0.92rem;
+      margin-bottom: 14px; // Enhanced spacing on mobile
+      padding: 0 5px; // Added padding on mobile
+    }
+  }
+
+  .feature-icon {
+    color: $primary-color;
+    margin-right: 10px;
+    min-width: 18px;
+    
+    @include tablet {
+      margin-right: 12px; // Enhanced spacing on tablet
+    }
+    
+    @include mobile {
+      margin-right: 10px;
+    }
+  }
+}
+
+// Call to Action Section
+.cta-section {
+  background-color: $primary-color;
+  color: $white;
+  padding: 80px 20px;
+  text-align: center;
+  
+  @include tablet {
+    padding: 70px 30px; // Enhanced tablet padding
+  }
+  
+  @include mobile {
+    padding: 50px 20px; // Enhanced mobile padding
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    @include tablet-and-below {
+      padding: 0 15px; // Added padding to container on smaller screens
+    }
+  }
+
+  .cta-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    
+    @include tablet {
+      font-size: 2rem;
+      padding: 0 20px; // Added padding on tablet
+    }
+    
+    @include mobile {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      padding: 0 10px; // Added padding on mobile
+    }
+  }
+
+  .cta-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    
+    @include tablet {
+      padding: 0 25px; // Added padding on tablet
+      font-size: 1.05rem;
+    }
+    
+    @include mobile {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 0 15px; // Added padding on mobile
+    }
+  }
+
+  .cta-button {
+    background-color: $white;
+    color: $primary-color;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: $transition;
+    
+    &:hover {
+      background-color: rgba($white, 0.9);
+    }
+    
+    @include tablet {
+      padding: 12px 30px; // Enhanced button size on tablet
+    }
+    
+    @include mobile {
+      padding: 11px 22px; // Enhanced button size on mobile
+      font-size: 0.9rem;
+    }
+  }
+}
+@media (max-width: 764px) {
+  .services-section {
+    padding-top: 3rem; // You can adjust this value based on your needs
+    margin-top: 2rem; // You can adjust this value based on your needs
   }
 }
