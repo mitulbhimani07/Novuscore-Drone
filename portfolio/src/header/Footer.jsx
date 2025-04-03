@@ -38,15 +38,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className='md:ms-12'>
-            <h3 className="text-2xl font-semibold  text-green-300  mb-4 ">Quick Links</h3>
+            <h3 className="text-2xl font-semibold  text-green-300  mb-6 ">Quick Links</h3>
             <ul className="space-y-3 ">
-              <li className="text-white hover:text-green-400 hover:underline cursor-pointer"><Link to='/'>Products</Link></li>
-              <li className="text-white hover:text-green-400 hover:underline cursor-pointer"><Link to='/about'>Training</Link></li>
-              <li className="text-white hover:text-green-400 hover:underline cursor-pointer"><Link to='/services'>Resources</Link></li>
-              <li className="text-white hover:text-green-400 hover:underline cursor-pointer"><Link to='/careers'>Careers</Link></li>
-              <li className="text-white hover:text-green-400 hover:underline cursor-pointer"><Link to='/blog'>Blogs</Link></li>
-              <li className="text-white hover:text-green-400 hover:underline cursor-pointer"><Link to='/contact'>Contact Us</Link></li>
-              <li className="text-white hover:text-green-400 hover:underline cursor-pointer"><Link to='/becomepartner'>Become a Dealer</Link></li>
+              <li className="text-white hover:text-green-400 hover:underline cursor-pointer mb-0"><Link to='/'>Products</Link></li>
+              <li className="text-white hover:text-green-400 hover:underline cursor-pointer mb-0"><Link to='/about'>Training</Link></li>
+              <li className="text-white hover:text-green-400 hover:underline cursor-pointer mb-0"><Link to='/services'>Resources</Link></li>
+              <li className="text-white hover:text-green-400 hover:underline cursor-pointer mb-0"><Link to='/careers'>Careers</Link></li>
+              <li className="text-white hover:text-green-400 hover:underline cursor-pointer mb-0"><Link to='/blog'>Blogs</Link></li>
+              <li className="text-white hover:text-green-400 hover:underline cursor-pointer mb-0"><Link to='/contact'>Contact Us</Link></li>
+              <li className="text-white hover:text-green-400 hover:underline cursor-pointer mb-0"><Link to='/becomepartner'>Become a Dealer</Link></li>
             </ul>
           </div>
 
