@@ -75,6 +75,9 @@ $large-desktop: 1200px;
       }
     }
   }
+  .cta-button:hover{
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
 
   // Services Section
   .services-section {
