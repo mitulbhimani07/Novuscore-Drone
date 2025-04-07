@@ -44,12 +44,12 @@ export default function About() {
           <motion.h1 
             variants={itemVariants}
           >
-            Transforming Agriculture with Novuscore Drones
+            Revolutionizing Industries with AI-Powered Drone Solutions
           </motion.h1>
           <motion.p 
             variants={itemVariants}
           >
-            India's leading agri-drone solutions provider, empowering farmers with cutting-edge technology
+            Pioneering intelligent, data-driven systems to transform AgriTech and beyond
           </motion.p>
         </div>
       </motion.section>
@@ -63,28 +63,24 @@ export default function About() {
       >
         <div className="grid-container">
           <motion.div variants={itemVariants}>
-            <h2>Our Journey</h2>
+            <h2>About Novuscore Softcom Solutions</h2>
             <p>
-              Founded with a vision to revolutionize Indian agriculture, Novuscore Drones has emerged as a pioneer in 
-              drone-based farming solutions. As DGCA-approved drone manufacturers, we combine indigenous technology 
-              with global best practices.
+              At NOVUSCORE SOFTCOM SOLUTION PVT LTD, we are pioneers in revolutionizing drone technology through advanced software solutions powered by Artificial Intelligence (AI) and Machine Learning (ML). Based in the vibrant city of Surat, Gujarat, we specialize in creating intelligent, data-driven systems designed to transform industries—with a dedicated focus on AgriTech.
             </p>
             <p>
-              From our beginnings in Hyderabad, we've grown to serve farmers across 12 states, helping them 
-              adopt precision agriculture techniques that boost productivity sustainably.
+              From precision farming and smart crop monitoring to infrastructure inspection and logistics, our software empowers businesses to optimize operations, reduce costs, and make data-backed decisions.
             </p>
             <div className="feature-list">
               {[
-                "DGCA & MoCA approved drones",
-                "2000+ farmers empowered",
-                "1,00,000+ acres covered",
-                "30% average cost savings",
-                "40% reduction in chemical usage"
+                "AI & ML powered solutions",
+                "Precision agriculture focus",
+                "Industry-specific drone software",
+                "Data-driven decision making",
+                "Sustainable farming practices"
               ].map((item, index) => (
                 <motion.div 
                   key={index} 
                   className="feature-item"
-                  // whileHover={{ x: 5 }}
                 >
                   <FiCheck className="icon" />
                   <span>{item}</span>
@@ -99,13 +95,13 @@ export default function About() {
           >
             <img 
               src={AboutImage} 
-              alt="Marut Drone in action" 
+              alt="Novuscore drone technology" 
             />
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Core Values */}
+      {/* Vision & Mission */}
       <motion.section 
         className="values-section"
         initial="hidden"
@@ -116,25 +112,25 @@ export default function About() {
           <motion.h2 
             variants={itemVariants}
           >
-            Why Choose Novuscore Drones
+            Our Vision & Mission
           </motion.h2>
           
           <div className="values-grid">
             {[
               {
-                icon: <FiBarChart2 className="icon" />,
-                title: "Precision Farming",
-                content: "Our drones deliver exact inputs where needed, optimizing resource utilization and maximizing yields"
-              },
-              {
-                icon: <FiShield className="icon" />,
-                title: "DGCA Approved",
-                content: "All our drones and operations comply with strict DGCA regulations for safety and reliability"
-              },
-              {
                 icon: <FiGlobe className="icon" />,
-                title: "Made in India",
-                content: "Proudly developing indigenous drone technology tailored for Indian farming conditions"
+                title: "Our Vision",
+                content: "To emerge as a global leader in drone and AgriTech innovation, delivering AI-driven solutions that redefine productivity, efficiency, and sustainability across industries."
+              },
+              {
+                icon: <FiBarChart2 className="icon" />,
+                title: "Our Mission",
+                content: "We develop scalable, industry-specific drone software using cutting-edge AI and ML technologies. Our goal is to enhance decision-making, operational excellence, and environmental stewardship in agriculture and beyond."
+              },
+              {
+                icon: <FiMapPin className="icon" />,
+                title: "Why Surat?",
+                content: "Surat's dynamic entrepreneurial spirit, skilled workforce, and robust infrastructure align seamlessly with our mission to drive technological transformation. The city's progressive policies and connectivity fuel our ability to innovate and scale."
               }
             ].map((item, index) => (
               <motion.div 
@@ -157,7 +153,7 @@ export default function About() {
         </div>
       </motion.section>
 
-      {/* Technology & Services */}
+      {/* Leadership */}
       <motion.section 
         className="solutions-section"
         initial="hidden"
@@ -168,9 +164,9 @@ export default function About() {
           className="section-header"
           variants={itemVariants}
         >
-          <h2>Our Agri-Drone Solutions</h2>
+          <h2>Our Leadership</h2>
           <p>
-            Comprehensive services designed for modern farming needs
+            Meet the visionary directors guiding Novuscore's innovation journey
           </p>
         </motion.div>
         
@@ -179,28 +175,22 @@ export default function About() {
             <div className="solutions-list">
               {[
                 {
-                  title: "Pesticide Spraying",
-                  desc: "Precision application that reduces chemical usage by 30-40% with better coverage"
+                  title: "Suresh J.",
+                  subtitle: "Co-Founder & Director – Administration, Personnel & Finance",
+                  desc: "A visionary leader with expertise in corporate governance, Suresh oversees the company's financial strategy, human resources, and operational efficiency. His sharp business acumen ensures sustainable growth and seamless internal operations."
                 },
                 {
-                  title: "Fertilizer Broadcasting",
-                  desc: "Uniform distribution of fertilizers for optimal plant nutrition"
-                },
-                {
-                  title: "Crop Monitoring",
-                  desc: "Multispectral imaging for early detection of pests, diseases and nutrient deficiencies"
-                },
-                {
-                  title: "Training Programs",
-                  desc: "Comprehensive drone pilot training and agri-drone operation certification"
+                  title: "Hemraj J.",
+                  subtitle: "Director – Technology & Product Development",
+                  desc: "Hemraj spearheads our technological innovation, blending his deep knowledge of AI and ML to craft groundbreaking drone solutions. His leadership in AgriTech software development is transforming farming practices."
                 }
               ].map((item, index) => (
                 <motion.div 
                   key={index}
                   className="solution-card"
-                  // whileHover={{ scale: 1.02 }}
                 >
                   <h3>{item.title}</h3>
+                  <h4>{item.subtitle}</h4>
                   <p>{item.desc}</p>
                 </motion.div>
               ))}
@@ -212,7 +202,7 @@ export default function About() {
           >
             <img 
               src={SmartDrone}
-              alt="Novuscore Drone spraying" 
+              alt="Novuscore leadership" 
             />
           </motion.div>
         </div>

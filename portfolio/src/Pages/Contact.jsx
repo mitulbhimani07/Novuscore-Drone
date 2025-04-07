@@ -165,7 +165,7 @@ export default function Contact() {
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className='success flex mb-5 border-r-4'
+                            className='success flex mb-5 rounded-md bg-green-100 text-green-700 p-4'
                             style={{ padding: '10px 20px' }}
                         >
                             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

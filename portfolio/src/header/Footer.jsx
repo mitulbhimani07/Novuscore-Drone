@@ -29,10 +29,9 @@ export default function Footer() {
             </svg>
 
             <p className="mt-4 text-white">
-              Novuscore is an innovative IT company specializing in software
-              development, web solutions, and digital transformation. With a team
-              of passionate experts, we bring cutting-edge technology to
-              businesses worldwide.
+            At Novuscore, we’re not just building software we’re shaping the future of industries. Rooted in Surat’s legacy of 
+            excellence and driven by global ambitions, we invite you to join us in this journey 
+            of innovation and impact.
             </p>
           </div>
 
@@ -52,9 +51,9 @@ export default function Footer() {
 
           {/* Address Section */}
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-green-300">Contact Us</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-green-300">Registered Office</h3>
             <p className="py-2 text-white">
-              SHOP-408, A R MALL, OPP-PANVEL POINT, Utran Chorasi - 394105, Gujarat
+              SHOP-408, A R MALL, OPP-PANVEL POINT, Utran , Surat ,Chorasi , Gujarat , India - 394105
             </p>
             <p className="text-white hover:text-green-400 hover:underline cursor-pointer">info@novuscore.co.in</p>
             <p className="text-white hover:text-green-400 hover:underline cursor-pointer">support@novuscore.com</p>
