@@ -48,7 +48,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation with 860px Breakpoint */}
-          <ul className="hidden md:flex md:items-center md:space-x-4 lg:space-x-6 xl:space-x-6">
+          <ul className="hidden lg:flex lg:items-center md:space-x-4 lg:space-x-6 xl:space-x-6">
             {[
               { name: "HOME", path: "/" },
               { name: "ABOUT", path: "/about" },
@@ -78,7 +78,7 @@ export default function Navbar() {
           </ul>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.9 }}
@@ -95,7 +95,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white shadow-md"
+            className="lg:hidden bg-white shadow-md"
           >
             <ul className="pt-2 pb-4 space-y-1 text-gray-500">
               {[
@@ -114,7 +114,7 @@ export default function Navbar() {
                 >
                   <Link
                     to={item.path}
-                    className="block px-4 py-2 text-gray-500 hover:bg-green-500 hover:text-white focus:bg-gray-100 focus:text-black transition"
+                    className="block px-4 py-2 text-gray-500  focus:bg-gray-100 focus:text-black transition"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
