@@ -51,8 +51,8 @@ export default function Footer() {
 
           {/* Address Section */}
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-green-300">Registered Office</h3>
-            <p className="py-2 text-white">
+            <h3 className="text-2xl font-semibold mb-6 text-green-300 pt-[5px]">Registered Office</h3>
+            <p className="pb-2 text-white">
               SHOP-408, A R MALL, OPP-PANVEL POINT, Utran , Surat ,Chorasi , Gujarat , India - 394105
             </p>
             <p className="text-white hover:text-green-400 hover:underline cursor-pointer">info@novuscore.co.in</p>
@@ -63,8 +63,8 @@ export default function Footer() {
 
           {/* Social Media Icons */}
           <div className="flex flex-col items-center md:items-start lg:items-start  space-y-4 text-2xl text-green-300  md:ms-12">
-            <h3 className="text-2xl font-semibold text-green-300">Follow Us</h3>
-            <div className="flex space-x-6 mt-2">
+            <h3 className="text-2xl font-semibold text-green-300 pt-[5px] mb-6">Follow Us</h3>
+            <div className="flex space-x-6 ">
               <FaTwitter className="cursor-pointer text-white hover:text-green-400" />
               <FaLinkedin className="cursor-pointer text-white hover:text-green-400" />
               <FaFacebook className="cursor-pointer text-white hover:text-green-400" />
