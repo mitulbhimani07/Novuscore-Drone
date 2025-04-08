@@ -4,7 +4,7 @@ $emerald-100: #d1fae5;
 $emerald-200: #a7f3d0;
 $emerald-500: #16a34a;
 $emerald-600: #059669;
-$emerald-700: #047857;
+$emerald-700: #009B3B;
 $emerald-800: #166534;
 $emerald-900: #064e3b;
 
@@ -28,12 +28,12 @@ $rose-800: #9f1239;
   .heroSection {
     position: relative;
     width: 100%;
-    padding: 5rem 0;
+    padding: 9.6rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: white;
+    background: $emerald-700;
 
     .heroContent {
       text-align: center;
@@ -46,7 +46,7 @@ $rose-800: #9f1239;
         line-height: 2.5rem;
         font-weight: 700;
         margin-bottom: 1rem;
-        color: $emerald-800;
+        color: white;
 
         @media (min-width: 768px) {
           font-size: 3rem;
@@ -61,6 +61,7 @@ $rose-800: #9f1239;
         max-width: 42rem;
         margin-left: auto;
         margin-right: auto;
+        color: white;
       }
     }
   }

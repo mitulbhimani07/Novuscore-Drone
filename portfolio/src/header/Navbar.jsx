@@ -63,7 +63,7 @@ export default function Navbar() {
                   className="group relative text-xs md:text-sm lg:text-base font-medium text-gray-700 hover:text-black focus:text-black transition focus:outline-none"
                 >
                   {item.name}
-                  <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full group-focus:w-full"></span>
+                  <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-lime-800 transition-all duration-300 group-hover:w-full group-focus:w-full"></span>
                 </Link>
 
               </motion.li>

@@ -22,7 +22,7 @@ $primary-green: #009b3b;
     position: relative;
     width: 100%;
     padding-top: 7rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 11rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,6 +42,7 @@ $primary-green: #009b3b;
         font-size: 2.25rem;
         font-weight: 700;
         color: $white;
+        padding-top: 30px;
         margin-bottom: 1.5rem;
 
         @media (min-width: 768px) {
