@@ -33,7 +33,7 @@ const ServiceCard = ({ title, features }) => (
     variants={itemVariants}
     className="service-card"
   >
-    <div className="card-header bg-green-500">
+    <div className="card-header bg-green-900 ">
       <h3>{title}</h3>
     </div>
     <div className="card-body">
