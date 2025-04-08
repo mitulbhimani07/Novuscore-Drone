@@ -142,7 +142,7 @@ export default function Services() {
   return (
     <div className="bg-white text-green-700 min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full pt-28 pb-10 flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-700 to-green-800">
+      <section className="relative w-full pt-40 pb-27 flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-700 to-green-800">
         <div className="relative z-10 px-6 text-center max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
