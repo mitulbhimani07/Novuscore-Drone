@@ -120,14 +120,14 @@ export default function DroneSolutionsWebsite() {
           >
             Revolutionizing Business with Advanced Drone Technology
           </motion.h1>
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="hero-subtitle"
           >
             Cutting-edge aerial solutions that transform data collection, inspection, and delivery processes.
-          </motion.p>
+          </motion.p> */}
           <Link to='/services'>
             <motion.button
               // whileHover={{ scale: 1.05 }}

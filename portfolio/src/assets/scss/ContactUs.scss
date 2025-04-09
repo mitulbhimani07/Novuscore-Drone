@@ -2,9 +2,9 @@
 $emerald-50: #ecfdf5;
 $emerald-100: #d1fae5;
 $emerald-200: #a7f3d0;
-$emerald-500: #16a34a;
+$emerald-500: #009B3B;
 $emerald-600: #059669;
-$emerald-700: #009B3B;
+$emerald-700: #0D542B;
 $emerald-800: #166534;
 $emerald-900: #064e3b;
 
@@ -33,7 +33,7 @@ $rose-800: #9f1239;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: $emerald-700;
+    background: $emerald-500;
 
     .heroContent {
       text-align: center;
