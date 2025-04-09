@@ -115,7 +115,7 @@ export default function Contact() {
         <div className='contactPage'>
             {/* Hero Section */}
             <motion.section
-                className='heroSection'
+                className='heroSection' style={{padding:"162px 0px"}}
                 initial="initial"
                 animate="animate"
                 variants={gradientVariants}

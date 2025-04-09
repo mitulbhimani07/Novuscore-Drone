@@ -35,7 +35,7 @@ export default function About() {
     <div className="bg-green-50">
       {/* Hero Section */}
       <motion.section 
-        className="hero-section"
+        className="hero-section" style={{padding:"112px 20px"}}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
