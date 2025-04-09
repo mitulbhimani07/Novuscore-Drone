@@ -91,7 +91,7 @@ export default function Careers() {
   return (
     <div className="careers-container">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section" >
         <div className="hero-content">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
