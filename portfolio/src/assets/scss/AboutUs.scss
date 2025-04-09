@@ -26,7 +26,7 @@ $white: #ffffff;
 // Hero Section
 .hero-section {
   position: relative;
-  padding: 6rem 0; // py-24
+  padding: 98px 0 !important; // py-24
   // background: linear-gradient(to right, $green-700, $green-600);
   background: $primary-green;
   color: $white;
