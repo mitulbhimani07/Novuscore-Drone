@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from 'react'
+import React,{lazy,Suspense, useEffect, useState} from 'react'
 import Home from '../Pages/Home'
 import AboutUs from '../Pages/AboutUs'
 import Services from '../Pages/Services'
@@ -11,7 +11,24 @@ import BeComeAPartner from '../Pages/BeComeAPartner'
 import BecomeAPartner from '../Pages/BeComeAPartner'
 import Emailicon from '../Pages/Emailicon'
 
+
+
 export default function AllRoutes() {
+  const [theme, setTheme] = useState("default");
+  
+  useEffect(() => {
+     document.documentElement.setAttribute("data-theme", theme);
+   }, [theme]);
+   
+
+   const toggleTheme = () => {
+    setTheme((prev) => {
+      const nextTheme = prev === "default" ? "earth" : prev === "earth" ? "forest" : "default";
+      return nextTheme;
+    });
+  };
+  
+  
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
@@ -25,8 +42,13 @@ export default function AllRoutes() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/becomepartner" element={<BecomeAPartner/>}/>
         </Routes>
+         <div style={{ textAlign: "right", padding: "1rem" }}>
+                    <button onClick={toggleTheme} className="banner__primary-btn">
+                       Switch Theme
+                    </button>
+                 </div>
         <Emailicon/>
-        </Suspense>
+        </Suspense> 
     </div>
   )
 }

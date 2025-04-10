@@ -1,26 +1,74 @@
-// Variables
-$emerald-50: #ecfdf5;
-$emerald-100: #d1fae5;
-$emerald-200: #a7f3d0;
-$emerald-500: #009B3B;
-$emerald-600: #059669;
-$emerald-700: #0D542B;
-$emerald-800: #166534;
-$emerald-900: #064e3b;
+// Define CSS variables at the root
+// Default Theme Variables
+:root {
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-500: #009B3B;
+  --emerald-600: #059669;
+  --emerald-700: #0D542B;
+  --emerald-800: #166534;
+  --emerald-900: #064e3b;
 
-$slate-600: #475569;
-$slate-800: #1e293b;
-$slate-500: #64748b; 
-$rose-100: #ffe4e6;
-$slate-700: #334155;
-$rose-200: #fecdd3;
-$rose-600: #e11d48;
-$rose-800: #9f1239;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+
+  --rose-100: #ffe4e6;
+  --rose-200: #fecdd3;
+  --rose-600: #e11d48;
+  --rose-800: #9f1239;
+}
+
+// Earth Theme
+[data-theme='earth'] {
+  --emerald-50: #f4f1ee;
+  --emerald-100: #e2d7c3;
+  --emerald-200: #cdb69a;
+  --emerald-500: #a67953;
+  --emerald-600: #8b653f;
+  --emerald-700: #745233;
+  --emerald-800: #5c3f27;
+  --emerald-900: #422c1c;
+
+  --slate-500: #7a6a58;
+  --slate-600: #655844;
+  --slate-700: #514535;
+  --slate-800: #3d3328;
+
+  --rose-100: #fff1f0;
+  --rose-200: #f8d6d1;
+  --rose-600: #c94f4f;
+  --rose-800: #833535;
+}
+
+// Forest Theme
+[data-theme='forest'] {
+  --emerald-50: #eafaf1;
+  --emerald-100: #c9e4d6;
+  --emerald-200: #a7cfbb;
+  --emerald-500: #3b945e;
+  --emerald-600: #2e7b4e;
+  --emerald-700: #245f3d;
+  --emerald-800: #1a452d;
+  --emerald-900: #102c1d;
+
+  --slate-500: #5e7b73;
+  --slate-600: #4a625a;
+  --slate-700: #394e47;
+  --slate-800: #283b35;
+
+  --rose-100: #f0f5f4;
+  --rose-200: #c8dad9;
+  --rose-600: #557977;
+  --rose-800: #3a5351;
+}
 
 // Base styles
 .contactPage {
-  background-color: $emerald-50;
-  color: $slate-800;
+  background-color: var(--emerald-50);
+  color: var(--slate-800);
   min-height: 100vh;
   overflow: hidden;
 
@@ -33,7 +81,7 @@ $rose-800: #9f1239;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: $emerald-500;
+    background: var(--emerald-500);
 
     .heroContent {
       text-align: center;
@@ -57,7 +105,7 @@ $rose-800: #9f1239;
       p {
         font-size: 1.125rem;
         line-height: 1.75rem;
-        color: $emerald-700;
+        color: var(--emerald-700);
         max-width: 42rem;
         margin-left: auto;
         margin-right: auto;
@@ -90,14 +138,14 @@ $rose-800: #9f1239;
       border-radius: 1.5rem;
       padding: 2rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      border: 1px solid $emerald-100;
+      border: 1px solid var(--emerald-100);
 
       h2 {
         font-size: 1.875rem;
         line-height: 2.25rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
-        color: $emerald-800;
+        color: var(--emerald-800);
       }
 
       // Form elements
@@ -106,7 +154,7 @@ $rose-800: #9f1239;
 
         label {
           display: block;
-          color: $emerald-500;
+          color: var(--emerald-500);
           font-weight: 500;
           margin-bottom: 0.25rem;
         }
@@ -123,7 +171,7 @@ $rose-800: #9f1239;
             display: flex;
             align-items: center;
             pointer-events: none;
-            color: $emerald-500;
+            color: var(--emerald-500);
           }
 
           input, textarea {
@@ -132,13 +180,13 @@ $rose-800: #9f1239;
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
             border-radius: 0.5rem;
-            background-color: $emerald-50;
-            color: $slate-800;
-            border: 1px solid $emerald-200;
+            background-color: var(--emerald-50);
+            color: var(--slate-800);
+            border: 1px solid var(--emerald-200);
             transition: all 0.2s ease;
 
             &:focus {
-              border-color: $emerald-500;
+              border-color: var(--emerald-500);
               outline: none;
               box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
             }
@@ -158,23 +206,19 @@ $rose-800: #9f1239;
         display: flex;
         align-items: center;
 
-        
-
-        
-
         svg {
           margin-right: 0.5rem;
         }
 
         .success {
-          color: $emerald-800;
-          background-color: $emerald-100;
-          border: 1px solid $emerald-200;
+          color: var(--emerald-800);
+          background-color: var(--emerald-100);
+          border: 1px solid var(--emerald-200);
         }
         .error {
-          color: $rose-800;
-          background-color: $rose-100;
-          border: 1px solid $rose-200;
+          color: var(--rose-800);
+          background-color: var(--rose-100);
+          border: 1px solid var(--rose-200);
         }
       }
 
@@ -185,7 +229,7 @@ $rose-800: #9f1239;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        background-color: $emerald-800;
+        background-color: var(--emerald-800);
         color: white;
         padding: 0.75rem 1.5rem;
         border-radius: 0.5rem;
@@ -197,7 +241,7 @@ $rose-800: #9f1239;
         transition: all 0.2s ease;
 
         &:hover:not(:disabled) {
-          background-color: $emerald-700;
+          background-color: var(--emerald-700);
         }
 
         &:disabled {
@@ -208,7 +252,7 @@ $rose-800: #9f1239;
         .buttonBg {
           position: absolute;
           inset: 0;
-          background-color: $emerald-700;
+          background-color: var(--emerald-700);
           opacity: 0;
           transition: opacity 0.3s;
         }
@@ -233,18 +277,18 @@ $rose-800: #9f1239;
       padding: 2rem;
       border-radius: 1.5rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      border: 1px solid $emerald-100;
+      border: 1px solid var(--emerald-100);
 
       h2 {
         font-size: 1.875rem;
         line-height: 2.25rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
-        color: $emerald-800;
+        color: var(--emerald-800);
       }
 
       p {
-        color: $slate-600;
+        color: var(--slate-600);
         margin-bottom: 2rem;
       }
 
@@ -254,13 +298,13 @@ $rose-800: #9f1239;
         margin-bottom: 1.5rem;
 
         .iconWrapper {
-          background-color: $emerald-100;
+          background-color: var(--emerald-100);
           padding: 0.75rem;
           border-radius: 9999px;
           margin-right: 1rem;
 
           svg {
-            color: $emerald-600;
+            color: var(--emerald-600);
             font-size: 1.25rem;
           }
         }
@@ -268,11 +312,11 @@ $rose-800: #9f1239;
         .infoContent {
           h3 {
             font-weight: 500;
-            color: $emerald-500;
+            color: var(--emerald-500);
           }
 
           p {
-            color: $slate-600;
+            color: var(--slate-600);
             margin-bottom: 0;
           }
         }
@@ -281,11 +325,11 @@ $rose-800: #9f1239;
       .businessHours {
         margin-top: 2.5rem;
         padding-top: 1.5rem;
-        border-top: 1px solid $emerald-100;
+        border-top: 1px solid var(--emerald-100);
 
         h3 {
           font-weight: 500;
-          color: $emerald-800;
+          color: var(--emerald-800);
           margin-bottom: 1rem;
         }
 
@@ -293,7 +337,7 @@ $rose-800: #9f1239;
           list-style: none;
           padding: 0;
           margin: 0;
-          color: $slate-600;
+          color: var(--slate-600);
 
           li {
             display: flex;
@@ -306,7 +350,7 @@ $rose-800: #9f1239;
 
     // Support Card
     .supportCard {
-      background: $emerald-800;
+      background: var(--emerald-800);
       padding: 2rem;
       border-radius: 1.5rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -327,7 +371,7 @@ $rose-800: #9f1239;
 
       button {
         background-color: white;
-        color: $emerald-800;
+        color: var(--emerald-800);
         padding: 0.75rem 1.5rem;
         border-radius: 0.5rem;
         font-weight: 500;
@@ -336,7 +380,7 @@ $rose-800: #9f1239;
         transition: background-color 0.2s ease;
 
         &:hover {
-          background-color: $emerald-50;
+          background-color: var(--emerald-50);
         }
       }
     }
@@ -350,7 +394,7 @@ $rose-800: #9f1239;
     z-index: 50;
 
     button {
-      background-color: $emerald-600;
+      background-color: var(--emerald-600);
       color: white;
       padding: 1rem;
       border-radius: 9999px;
@@ -363,7 +407,7 @@ $rose-800: #9f1239;
       transition: background-color 0.2s ease;
 
       &:hover {
-        background-color: $emerald-700;
+        background-color: var(--emerald-700);
       }
 
       svg {
@@ -397,13 +441,13 @@ $rose-800: #9f1239;
       position: absolute;
       top: 1rem;
       right: 1rem;
-      color: $slate-500;
+      color: var(--slate-500);
       background: none;
       border: none;
       cursor: pointer;
 
       &:hover {
-        color: $slate-700;
+        color: var(--slate-700);
       }
 
       svg {
@@ -419,7 +463,7 @@ $rose-800: #9f1239;
         line-height: 2rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
-        color: $emerald-700;
+        color: var(--emerald-700);
       }
 
       // Reuse form styles from .formCard
@@ -428,7 +472,7 @@ $rose-800: #9f1239;
 
         label {
           display: block;
-          color: $emerald-500;
+          color: var(--emerald-500);
           margin-bottom: 0.25rem;
           font-weight: 500;
         }
@@ -445,7 +489,7 @@ $rose-800: #9f1239;
             display: flex;
             align-items: center;
             pointer-events: none;
-            color: $emerald-500;
+            color: var(--emerald-500);
           }
 
           input, textarea {
@@ -454,13 +498,13 @@ $rose-800: #9f1239;
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
             border-radius: 0.5rem;
-            background-color: $emerald-50;
-            color: $slate-800;
-            border: 1px solid $emerald-200;
+            background-color: var(--emerald-50);
+            color: var(--slate-800);
+            border: 1px solid var(--emerald-200);
             transition: all 0.2s ease;
 
             &:focus {
-              border-color: $emerald-500;
+              border-color: var(--emerald-500);
               outline: none;
               box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
             }
@@ -474,7 +518,7 @@ $rose-800: #9f1239;
 
       .submitButton {
         width: 100%;
-        background-color: $emerald-600;
+        background-color: var(--emerald-600);
         color: white;
         padding: 0.75rem 1.5rem;
         border-radius: 0.5rem;
@@ -489,7 +533,7 @@ $rose-800: #9f1239;
         transition: all 0.2s ease;
 
         &:hover:not(:disabled) {
-          background-color: $emerald-700;
+          background-color: var(--emerald-700);
           transform: scale(1.02);
           box-shadow: 0 5px 15px rgba(5, 150, 105, 0.4);
         }

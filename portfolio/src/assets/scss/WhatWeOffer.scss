@@ -1,31 +1,109 @@
-// Variables
-$green-100: #f0fff4;
-$green-500: #48bb78;
-$green-600: #38a169;
-$green-700: #009B3B;
-$green-800: rgb(13, 84, 43);
-$green-900: #1c4532;
-$white: #ffffff;
-$gray-900: #1a202c;
-$gray-100: #f7fafc;
-$primary-color: #22c55e; // green-500
-$dark-green: #15803d; // green-700
-$white: #ffffff;
-$black: #333333;
-$gray: #f5f5f5;
-$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-$border-radius: 8px;
-$transition: all 0.3s ease;
-$primary-green: #009E3C;
-$primary-green-dark: darken($primary-green, 5%);
+// Convert SCSS variables to CSS variables
+/* variables.scss */
 
-// Breakpoints
+/* Default Theme (Light or Base) */
+:root {
+  --green-50: #f0fff4;
+  --green-200: #bbf7d0;
+  --green-500: #48bb78;
+  --green-600: #38a169;
+  --green-700: #009B3B;
+  --green-800: rgb(13, 84, 43);
+  --green-900: #1c4532;
+
+  --white: #ffffff;
+  --gray-100: #f7fafc;
+  --gray-900: #1a202c;
+  --gray: #f5f5f5;
+  --black: #333333;
+
+  --primary-color: #22c55e;
+  --dark-green: #15803d;
+  --primary-green: #009E3C;
+  --primary-green-dark: #008f36;
+
+  --yellow: #ffb600;
+  --dark-yellow: #f9a825;
+  --darker-yellow: #fbc02d;
+
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+
+  --primary-bg: #ffffff;
+  --primary-text: #000000;
+  --accent-color: #C78665;
+
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-lighter: rgba(0, 0, 0, 0.05);
+}
+
+/* Earth Theme */
+[data-theme="earth"] {
+  --green-50: #f9f5ec;
+  --green-200: #e2d3b8;
+  --green-600: #8b5c2d;
+  --green-700: #6d3f1e;
+  --green-800: #4e2f14;
+  --primary-green: #6c4b3a;
+  --primary-green-dark: #5a3c29;
+
+  --white: #f5f5dc;
+  --black: rgba(0, 0, 0, 0.15);
+
+  --dark-green: #4b3621;
+  --semi-dark-green: rgba(139, 69, 19, 0.5);
+  --light-green: #a0522d;
+
+  --yellow: #d2b48c;
+  --dark-yellow: #b8860b;
+  --darker-yellow: #cd853f;
+
+  --shadow-light: rgba(102, 51, 0, 0.15);
+  --shadow-lighter: rgba(102, 51, 0, 0.07);
+
+  --primary-bg: #F5F5DC;
+  --primary-text: #3E2C1C;
+  --accent-color: #8B4513;
+}
+
+/* Forest Theme */
+[data-theme="forest"] {
+  --green-50: #e6efe9;
+  --green-200: #c7eacb;
+  --green-600: #2e7d32;
+  --green-700: #1f5f24;
+  --green-800: #154518;
+  --primary-green: #1b5e20;
+  --primary-green-dark: #154518;
+
+  --white: #f0fff4;
+  --black: rgba(0, 0, 0, 0.2);
+
+  --dark-green: #1F3D1A;
+  --semi-dark-green: rgba(27, 94, 32, 0.6);
+  --light-green: #2e7d32;
+
+  --yellow: #cddc39;
+  --dark-yellow: #afb42b;
+  --darker-yellow: #9e9d24;
+
+  --shadow-light: rgba(0, 100, 0, 0.1);
+  --shadow-lighter: rgba(0, 100, 0, 0.05);
+
+  --primary-bg: #E6EFE9;
+  --primary-text: #1F3D1A;
+  --accent-color: #228B22;
+}
+
+
+// Breakpoints (these can remain as SCSS variables since they're not colors)
 $mobile: 576px;
 $tablet: 768px;
 $desktop: 992px;
 $large-desktop: 1200px;
 
-// Mixins
+// Mixins (unchanged)
 @mixin hover-scale {
   &:hover {
     transform: scale(1.05);
@@ -35,15 +113,13 @@ $large-desktop: 1200px;
 // Base styles
 .drone-solutions {
   min-height: 100vh;
-  background-color: $green-100;
+  background-color: var(--green-100);
 
   // Hero Section
   .hero-section {
     position: relative;
-    background-color: $green-700;
-    color: $white;
-    // margin-top: 6rem;
-    // padding-top: 32px;
+    background-color: var(--green-700);
+    color: var(--white);
     padding-bottom: 80px;
     text-align: center;
 
@@ -68,13 +144,13 @@ $large-desktop: 1200px;
     }
 
     .cta-button {
-      background-color: $white;
-      color: $green-700;
+      background-color: var(--white);
+      color: var(--green-700);
       padding: 0.75rem 2rem;
-      border-radius: 8px;
+      border-radius: var(--border-radius);
       font-weight: bold;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      transition: var(--transition);
 
       &:hover {
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -95,12 +171,12 @@ $large-desktop: 1200px;
     h2 {
       font-size: 1.875rem;
       font-weight: bold;
-      color: $green-800;
+      color: var(--green-800);
       margin-bottom: 1rem;
     }
     p{
       font-size: 18px !important;
-      color: $green-700;
+      color: var(--green-700);
       margin-bottom: 20px;
     }
 
@@ -118,12 +194,12 @@ $large-desktop: 1200px;
 
   // Service Card
   .service-card {
-    background-color: $white;
+    background-color: var(--white);
     border-radius: 0.75rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     overflow: hidden;
-    border: 1px solid $gray-100;
-    transition: transform 0.3s ease;
+    border: 1px solid var(--gray-100);
+    transition: transform var(--transition);
     padding: 0px !important;
 
     &:hover {
@@ -131,14 +207,14 @@ $large-desktop: 1200px;
     }
 
     .card-header {
-      // background-color: $green-700;
       padding: 1rem;
-      color: $white;
+      color: var(--white);
+      background: var(--primary-green-dark);
 
       h3 {
         font-size: 1.25rem;
         font-weight: bold;
-        color: $white !important;
+        color: var(--white) !important;
       }
     }
 
@@ -149,11 +225,11 @@ $large-desktop: 1200px;
         li {
           display: flex;
           align-items: flex-start;
-          color: $green-700;
+          color: var(--green-700);
           padding-bottom: 5px;
 
           svg {
-            color: $green-700;
+            color: var(--green-700);
             margin-top: 0.25rem;
             margin-right: 0.5rem;
             flex-shrink: 0;
@@ -166,8 +242,8 @@ $large-desktop: 1200px;
   // CTA Section
   .cta-section {
     padding: 5rem 0;
-    background-color: $green-700;
-    color: $white;
+    background-color: var(--green-700);
+    color: var(--white);
     text-align: center;
 
     h2 {
@@ -185,13 +261,13 @@ $large-desktop: 1200px;
     }
 
     .cta-button {
-      background-color: $white;
-      color: $green-700;
+      background-color: var(--white);
+      color: var(--green-700);
       padding: 0.75rem 2rem;
-      border-radius: 8px;
+      border-radius: var(--border-radius);
       font-weight: bold;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      transition: var(--transition);
 
       &:hover {
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -199,12 +275,6 @@ $large-desktop: 1200px;
     }
   }
 }
-
-
-// ===========
-// Base variables
-// Base variables
-
 
 // Mixins for responsive design
 @mixin mobile {
@@ -242,7 +312,7 @@ $large-desktop: 1200px;
 .hero-section {
   background-size: cover;
   background-position: center;
-  color: $white;
+  color: var(--white);
   padding: 120px 20px;
   position: relative;
   
@@ -288,18 +358,18 @@ $large-desktop: 1200px;
   }
 
   .cta-button {
-    background-color: $primary-color;
-    color: $white;
+    background-color: var(--primary-color);
+    color: var(--white);
     border: none;
     padding: 12px 28px;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: $transition;
+    transition: var(--transition);
     
     &:hover {
-      background-color: darken($primary-color, 10%);
+      background-color: var(--primary-color);
     }
     
     @include mobile {
@@ -314,7 +384,7 @@ $large-desktop: 1200px;
   padding: 100px 30px;
   
   @include tablet {
-    padding: 80px 35px; // Enhanced tablet padding
+    padding: 80px 35px;
   }
 
   @media (min-width: 764px) and (max-width: 1208px) {
@@ -324,14 +394,11 @@ $large-desktop: 1200px;
       .card-body {
         padding: 30px;
       }
-      
-      
     }
   }
   
-  
   @include mobile {
-    padding: 60px 20px; // Enhanced mobile padding
+    padding: 60px 20px;
   }
 
   .section-header {
@@ -341,48 +408,48 @@ $large-desktop: 1200px;
     
     @include tablet {
       margin-bottom: 50px;
-      padding: 0 25px; // Added specific tablet padding
+      padding: 0 25px;
     }
     
     @include mobile {
       margin-bottom: 40px;
-      padding: 0 15px; // Added specific mobile padding
+      padding: 0 15px;
     }
   }
 
   .section-title {
     font-size: 2.2rem;
-    color: $black;
+    color: var(--black);
     margin-bottom: 1.5rem;
     
     @include tablet {
       font-size: 2rem;
       margin-bottom: 1.3rem;
-      padding: 0 15px; // Added specific tablet padding
+      padding: 0 15px;
     }
     
     @include mobile {
       font-size: 1.6rem;
       margin-bottom: 1.2rem;
-      padding: 0 10px; // Added specific mobile padding
+      padding: 0 10px;
     }
   }
 
   .section-description {
     font-size: 1.1rem;
-    color: rgba($black, 0.8);
+    color: rgba(var(--black), 0.8);
     line-height: 1.6;
     margin-bottom: 1rem;
     
     @include tablet {
       font-size: 1rem;
-      padding: 0 20px; // Added specific tablet padding
+      padding: 0 20px;
       margin-bottom: 1.5rem;
     }
     
     @include mobile {
       font-size: 0.95rem;
-      padding: 0 12px; // Enhanced mobile padding
+      padding: 0 12px;
       margin-bottom: 1.2rem;
     }
   }
@@ -398,27 +465,27 @@ $large-desktop: 1200px;
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
-      padding: 15px 20px; // Enhanced horizontal padding on tablet
+      padding: 15px 20px;
     }
     
     @include mobile {
       grid-template-columns: 1fr;
       gap: 20px;
-      padding: 10px 15px; // Enhanced horizontal padding on mobile
+      padding: 10px 15px;
     }
   }
 }
 
 // Service Card
 .service-card {
-  background-color: $white;
-  border-radius: $border-radius;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: $box-shadow;
+  box-shadow: var(--box-shadow);
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: $transition;
+  transition: var(--transition);
   
   &:hover {
     transform: translateY(-5px);
@@ -427,16 +494,15 @@ $large-desktop: 1200px;
 
   .card-header {
     padding: 20px;
-    // background-color: $primary-color;
-    background: linear-gradient(to right, $primary-green, $primary-green-dark);
-    color: $white;
+    background: linear-gradient(to right, var(--primary-green), var(--primary-green-dark));
+    color: var(--white);
     
     @include tablet {
-      padding: 22px 25px; // Enhanced tablet padding
+      padding: 22px 25px;
     }
     
     @include mobile {
-      padding: 18px 20px; // Enhanced mobile padding
+      padding: 18px 20px;
     }
     
     h3 {
@@ -459,11 +525,11 @@ $large-desktop: 1200px;
     flex-grow: 1;
     
     @include tablet {
-      padding: 25px; // Enhanced tablet padding
+      padding: 25px;
     }
     
     @include mobile {
-      padding: 22px 20px; // Enhanced mobile padding
+      padding: 22px 20px;
     }
   }
 
@@ -484,23 +550,23 @@ $large-desktop: 1200px;
     }
     
     @include tablet {
-      margin-bottom: 15px; // Enhanced spacing on tablet
+      margin-bottom: 15px;
     }
     
     @include mobile {
       font-size: 0.92rem;
-      margin-bottom: 14px; // Enhanced spacing on mobile
-      padding: 0 5px; // Added padding on mobile
+      margin-bottom: 14px;
+      padding: 0 5px;
     }
   }
 
   .feature-icon {
-    color: $primary-color;
+    color: var(--primary-color);
     margin-right: 10px;
     min-width: 18px;
     
     @include tablet {
-      margin-right: 12px; // Enhanced spacing on tablet
+      margin-right: 12px;
     }
     
     @include mobile {
@@ -511,17 +577,17 @@ $large-desktop: 1200px;
 
 // Call to Action Section
 .cta-section {
-  background-color: $primary-color;
-  color: $white;
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 80px 20px;
   text-align: center;
   
   @include tablet {
-    padding: 70px 30px; // Enhanced tablet padding
+    padding: 70px 30px;
   }
   
   @include mobile {
-    padding: 50px 20px; // Enhanced mobile padding
+    padding: 50px 20px;
   }
 
   .cta-container {
@@ -529,7 +595,7 @@ $large-desktop: 1200px;
     margin: 0 auto;
     
     @include tablet-and-below {
-      padding: 0 15px; // Added padding to container on smaller screens
+      padding: 0 15px;
     }
   }
 
@@ -539,13 +605,13 @@ $large-desktop: 1200px;
     
     @include tablet {
       font-size: 2rem;
-      padding: 0 20px; // Added padding on tablet
+      padding: 0 20px;
     }
     
     @include mobile {
       font-size: 1.6rem;
       margin-bottom: 1rem;
-      padding: 0 10px; // Added padding on mobile
+      padding: 0 10px;
     }
   }
 
@@ -558,45 +624,46 @@ $large-desktop: 1200px;
     line-height: 1.6;
     
     @include tablet {
-      padding: 0 25px; // Added padding on tablet
+      padding: 0 25px;
       font-size: 1.05rem;
     }
     
     @include mobile {
       font-size: 1rem;
       margin-bottom: 1.5rem;
-      padding: 0 15px; // Added padding on mobile
+      padding: 0 15px;
     }
   }
 
   .cta-button {
-    background-color: $white;
-    color: $primary-color;
+    background-color: var(--white);
+    color: var(--primary-color);
     border: none;
     padding: 12px 28px;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: $transition;
+    transition: var(--transition);
     
     &:hover {
-      background-color: rgba($white, 0.9);
+      background-color: rgba(var(--white), 0.9);
     }
     
     @include tablet {
-      padding: 12px 30px; // Enhanced button size on tablet
+      padding: 12px 30px;
     }
     
     @include mobile {
-      padding: 11px 22px; // Enhanced button size on mobile
+      padding: 11px 22px;
       font-size: 0.9rem;
     }
   }
 }
+
 @media (max-width: 764px) {
   .services-section {
-    padding-top: 3rem; // You can adjust this value based on your needs
-    margin-top: 2rem; // You can adjust this value based on your needs
+    padding-top: 3rem;
+    margin-top: 2rem;
   }
 }

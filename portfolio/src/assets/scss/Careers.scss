@@ -1,20 +1,103 @@
-$green-50: #f0fdf4;
-$green-100: #dcfce7;
-$green-200: #bbf7d0;
-$green-500: #22c55e;
-$green-600: #16a34a;
-$green-700: #15803d;
-$green-800: #166534;
-$green-900: #14532d;
-$gray-50: #f9fafb;
-$gray-200: #e5e7eb;
-$gray-700: #374151;
-$white: #ffffff;
-$primary-green: #009b3b;
+:root {
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
+
+  --gray-50: #f9fafb;
+  --gray-200: #e5e7eb;
+  --gray-700: #374151;
+
+  --white: #ffffff;
+  --black: #333333;
+
+  --primary-green: #009b3b;
+  --primary-green-dark: #008634;
+
+  --yellow: #ffb600;
+  --dark-yellow: #f9a825;
+  --darker-yellow: #fbc02d;
+
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+
+  --primary-bg: #ffffff;
+  --primary-text: #000000;
+  --accent-color: #C78665;
+
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-lighter: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="earth"] {
+  --green-50: #f9f5ec;
+  --green-200: #e2d3b8;
+  --green-600: #8b5c2d;
+  --green-700: #6d3f1e;
+  --green-800: #4e2f14;
+  --green-900: #3b2a18;
+
+  --primary-green: #6c4b3a;
+  --primary-green-dark: #5a3c29;
+
+  --white: #f5f5dc;
+  --black: rgba(0, 0, 0, 0.15);
+
+  --dark-green: #4b3621;
+  --semi-dark-green: rgba(139, 69, 19, 0.5);
+  --light-green: #a0522d;
+
+  --yellow: #d2b48c;
+  --dark-yellow: #b8860b;
+  --darker-yellow: #cd853f;
+
+  --shadow-light: rgba(102, 51, 0, 0.15);
+  --shadow-lighter: rgba(102, 51, 0, 0.07);
+
+  --primary-bg: #F5F5DC;
+  --primary-text: #3E2C1C;
+  --accent-color: #8B4513;
+}
+
+[data-theme="forest"] {
+  --green-50: #e6efe9;
+  --green-200: #c7eacb;
+  --green-600: #2e7d32;
+  --green-700: #1f5f24;
+  --green-800: #154518;
+  --green-900: #0d3a15;
+
+  --primary-green: #1b5e20;
+  --primary-green-dark: #154518;
+
+  --white: #f0fff4;
+  --black: rgba(0, 0, 0, 0.2);
+
+  --dark-green: #1F3D1A;
+  --semi-dark-green: rgba(27, 94, 32, 0.6);
+  --light-green: #2e7d32;
+
+  --yellow: #cddc39;
+  --dark-yellow: #afb42b;
+  --darker-yellow: #9e9d24;
+
+  --shadow-light: rgba(0, 100, 0, 0.1);
+  --shadow-lighter: rgba(0, 100, 0, 0.05);
+
+  --primary-bg: #E6EFE9;
+  --primary-text: #1F3D1A;
+  --accent-color: #228B22;
+}
+
 
 .careers-container {
-  background-color: $white;
-  color: $green-900;
+  background-color: var(--white);
+  color: var(--green-900);
   min-height: 100vh;
 
   // Hero Section
@@ -27,8 +110,7 @@ $primary-green: #009b3b;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    // background-image: linear-gradient(to bottom right, $green-700, $green-800);
-    background: $primary-green;
+    background: var(--primary-green);
 
     .hero-content {
       position: relative;
@@ -41,7 +123,7 @@ $primary-green: #009b3b;
       h1 {
         font-size: 2.25rem;
         font-weight: 700;
-        color: $white;
+        color: var(--white);
         padding-top: 30px;
         margin-bottom: 1.5rem;
 
@@ -52,7 +134,7 @@ $primary-green: #009b3b;
 
       p {
         font-size: 1.25rem;
-        color: $green-100;
+        color: var(--green-100);
         max-width: 36rem;
         margin: 0 auto;
       }
@@ -72,13 +154,13 @@ $primary-green: #009b3b;
       h2 {
         font-size: 1.875rem;
         font-weight: 700;
-        color: $green-900;
+        color: var(--green-900);
         margin-bottom: 1rem;
       }
 
       p {
         font-size: 1.125rem;
-        color: $green-700;
+        color: var(--green-700);
         max-width: 48rem;
         margin: 0 auto;
       }
@@ -86,7 +168,7 @@ $primary-green: #009b3b;
       .divider {
         width: 6rem;
         height: 0.375rem;
-        background-image: linear-gradient(to right, $green-500, $green-600);
+        background-image: linear-gradient(to right, var(--green-500), var(--green-600));
         margin: 1.5rem auto 0;
         border-radius: 9999px;
       }
@@ -101,10 +183,10 @@ $primary-green: #009b3b;
         position: relative;
         overflow: hidden;
         border-radius: 1rem;
-        background-color: $white;
+        background-color: var(--white);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         transition: all 0.3s;
-        border: 1px solid $gray-200;
+        border: 1px solid var(--gray-200);
 
         &:hover {
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -128,7 +210,7 @@ $primary-green: #009b3b;
             h3 {
               font-size: 1.5rem;
               font-weight: 700;
-              color: $green-900;
+              color: var(--green-900);
               margin-bottom: 0.5rem;
             }
 
@@ -143,8 +225,8 @@ $primary-green: #009b3b;
                 align-items: center;
                 padding: 0.25rem 0.75rem;
                 border-radius: 9999px;
-                background-color: $green-100;
-                color: $green-800;
+                background-color: var(--green-100);
+                color: var(--green-800);
                 font-size: 0.875rem;
                 font-weight: 500;
               }
@@ -152,7 +234,7 @@ $primary-green: #009b3b;
               .job-location {
                 display: flex;
                 align-items: center;
-                color: $green-700;
+                color: var(--green-700);
 
                 .location-icon {
                   height: 1.25rem;
@@ -164,8 +246,8 @@ $primary-green: #009b3b;
 
             .apply-button {
               padding: 0.5rem 1.5rem;
-              background-color: $green-600;
-              color: $white;
+              background-color: var(--green-600);
+              color: var(--white);
               font-weight: 500;
               border-radius: 0.5rem;
               transition: all 0.3s;
@@ -177,16 +259,14 @@ $primary-green: #009b3b;
               }
 
               &:hover {
-                background-color: $green-700;
+                background-color: var(--green-700);
                 box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
               }
             }
           }
 
           .job-description {
-            // color: $gray-700;
-            
-            color: #14532d;
+            color: var(--green-900);
             margin-bottom: 1.5rem;
           }
 
@@ -195,8 +275,7 @@ $primary-green: #009b3b;
 
             h4 {
               font-weight: 600;
-              // color: $green-900;
-              color: #14532d;
+              color: var(--green-900);
               margin-bottom: 0.75rem;
             }
 
@@ -208,12 +287,12 @@ $primary-green: #009b3b;
               li {
                 display: flex;
                 align-items: start;
-                color: $green-700;
+                color: var(--green-700);
 
                 .check-icon {
                   height: 1.25rem;
                   width: 1.25rem;
-                  color: $green-500;
+                  color: var(--green-500);
                   margin-right: 0.5rem;
                   margin-top: 0.125rem;
                   flex-shrink: 0;
@@ -229,7 +308,7 @@ $primary-green: #009b3b;
   // Perks Section
   .perks-section {
     padding: 5rem 0;
-    background-color: $gray-50;
+    background-color: var(--gray-50);
 
     .section-container {
       max-width: 72rem;
@@ -243,13 +322,13 @@ $primary-green: #009b3b;
         h2 {
           font-size: 1.875rem;
           font-weight: 700;
-          color: $green-900;
+          color: var(--green-900);
           margin-bottom: 1rem;
         }
 
         p {
           font-size: 1.125rem;
-          color: $green-700;
+          color: var(--green-700);
           max-width: 48rem;
           margin: 0 auto;
         }
@@ -257,7 +336,7 @@ $primary-green: #009b3b;
         .divider {
           width: 6rem;
           height: 0.375rem;
-          background-image: linear-gradient(to right, $green-500, $green-600);
+          background-image: linear-gradient(to right, var(--green-500), var(--green-600));
           margin: 1.5rem auto 0;
           border-radius: 9999px;
         }
@@ -277,7 +356,7 @@ $primary-green: #009b3b;
         }
 
         .perk-card {
-          background-color: $white;
+          background-color: var(--white);
           padding: 2rem;
           border-radius: 0.75rem;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -296,12 +375,12 @@ $primary-green: #009b3b;
           h3 {
             font-size: 1.25rem;
             font-weight: 600;
-            color: $green-900;
+            color: var(--green-900);
             margin-bottom: 0.5rem;
           }
 
           p {
-            color: $green-700;
+            color: var(--green-700);
           }
         }
       }
@@ -311,7 +390,7 @@ $primary-green: #009b3b;
   // Culture Section
   .culture-section {
     padding: 5rem 0;
-    background-color: $white;
+    background-color: var(--white);
 
     .section-container {
       max-width: 72rem;
@@ -352,12 +431,12 @@ $primary-green: #009b3b;
           h2 {
             font-size: 1.875rem;
             font-weight: 700;
-            color: $green-900;
+            color: var(--green-900);
             margin-bottom: 1.5rem;
           }
 
           p {
-            color: $green-700;
+            color: var(--green-700);
             margin-bottom: 1.5rem;
           }
 
@@ -372,7 +451,7 @@ $primary-green: #009b3b;
 
               .icon-container {
                 flex-shrink: 0;
-                background-color: $green-100;
+                background-color: var(--green-100);
                 border-radius: 0.5rem;
                 padding: 0.5rem;
                 margin-right: 1rem;
@@ -380,18 +459,18 @@ $primary-green: #009b3b;
                 .culture-icon {
                   height: 1.5rem;
                   width: 1.5rem;
-                  color: $green-600;
+                  color: var(--green-600);
                 }
               }
 
               div {
                 h4 {
                   font-weight: 600;
-                  color: $green-900;
+                  color: var(--green-900);
                 }
 
                 p {
-                  color: $green-700;
+                  color: var(--green-700);
                   margin-bottom: 0;
                 }
               }
@@ -402,3 +481,4 @@ $primary-green: #009b3b;
     }
   }
 }
+

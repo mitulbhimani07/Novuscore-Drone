@@ -1,18 +1,46 @@
 // Blog.scss
-$primary-color: #166534; // green-800
-$primary-light: #14532d; // green-900
-$secondary-color: #047857; // green-700
-$accent-color: #dcfce7; // green-100
-$background-color: #f0fdf4; // green-50
-$border-color: #bbf7d0; // green-200
-$border-hover-color: #86efac; // green-400
-$shadow-color: rgba(5, 150, 105, 0.1);
+:root {
+  // Green Theme (Default)
+  --green-color: #166534;
+  --primary-light: #14532d;
+  --secondary-color: #047857;
+  --light-color: #dcfce7;
+  --background-color: #f0fdf4;
+  --border-color: #bbf7d0;
+  --border-hover-color: #86efac;
+  --shadow-color: rgba(5, 150, 105, 0.1);
+}
+
+// Earth Theme (Warm Browns)
+[data-theme="earth"] {
+  --green-color: #78350f;
+  --primary-light: #451a03;
+  --secondary-color: #92400e;
+  --light-color: #fef3c7;
+  --background-color: #fffbeb;
+  --border-color: #fcd34d;
+  --border-hover-color: #f59e0b;
+  --shadow-color: rgba(180, 83, 9, 0.1);
+}
+
+// Forest Theme (Deep Blues)
+[data-theme="forest"] {
+  --green-color: #1e3a8a;
+  --primary-light: #172554;
+  --secondary-color: #1d4ed8;
+  --light-color: #dbeafe;
+  --background-color: #eff6ff;
+  --border-color: #bfdbfe;
+  --border-hover-color: #93c5fd;
+  --shadow-color: rgba(29, 78, 216, 0.1);
+}
+
 
 .blog-container {
   padding-top: 6rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: $background-color;
+  background-color: var(--background-color);
   min-height: 100vh;
 
   @media (min-width: 640px) {
@@ -38,12 +66,12 @@ $shadow-color: rgba(5, 150, 105, 0.1);
     font-weight: 700;
     margin-bottom: 1.5rem;
     text-align: center;
-    color: $primary-color;
+    color: var(--green-color);
   }
 
   p {
     font-size: 1.125rem;
-    color: $secondary-color;
+    color: var(--secondary-color);
     text-align: center;
     margin-bottom: 3rem;
     max-width: 48rem;
@@ -69,14 +97,14 @@ $shadow-color: rgba(5, 150, 105, 0.1);
 .blog-card {
   background-color: #fff;
   border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px var(--black-alpha-10);
   overflow: hidden;
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    border-color: $border-hover-color;
+    box-shadow: 0 20px 25px -5px var(--black-alpha-10);
+    border-color: var(--border-hover-color);
   }
 
   img {
@@ -98,8 +126,8 @@ $shadow-color: rgba(5, 150, 105, 0.1);
 
   .tag {
     padding: 0.25rem 0.75rem;
-    background-color: $accent-color;
-    color: $primary-color;
+    background-color: var(--light-color);
+    color: var(--green-color);
     font-size: 0.875rem;
     font-weight: 500;
     border-radius: 9999px;
@@ -108,12 +136,12 @@ $shadow-color: rgba(5, 150, 105, 0.1);
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: $primary-color;
+    color: var(--green-color);
     margin-bottom: 0.75rem;
   }
 
   p {
-    color: $secondary-color;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
   }
 }
@@ -126,7 +154,7 @@ $shadow-color: rgba(5, 150, 105, 0.1);
     font-size: 1.875rem;
     font-weight: 700;
     text-align: center;
-    color: $primary-color;
+    color: var(--green-color);
     margin-bottom: 2rem;
   }
 }
@@ -149,17 +177,17 @@ $shadow-color: rgba(5, 150, 105, 0.1);
   background-color: #fff;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid #bbf7d0;
+  box-shadow: 0 1px 2px 0 var(--black-alpha-5);
+  border: 1px solid var(--border-color);
   transition: all 0.3s ease;
   text-align: center;
 
   &:hover {
-    border-color: #86efac;
+    border-color: var(--border-hover-color);
   }
 
   .service-icon {
-    background-color: $accent-color;
+    background-color: var(--light-color);
     width: 3rem;
     height: 3rem;
     margin: 0 auto;
@@ -172,12 +200,12 @@ $shadow-color: rgba(5, 150, 105, 0.1);
     .icon {
       width: 1.5rem;
       height: 1.5rem;
-      color: $secondary-color;
+      color: var(--secondary-color);
     }
   }
 
   h3 {
     font-weight: 500;
-    color: $primary-color;
+    color: var(--green-color);
   }
 }

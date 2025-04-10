@@ -1,215 +1,251 @@
-@import '../styles/AllColorVar.scss';
-/* // Function to get colors from map */
-@function color($color-name) {
-  @return map-get($colors, $color-name);
+:root {
+  /* Default theme (your original colors) */
+  --primary-green: #009b3b;
+  --dark-green: rgb(13 84 43);
+  --semi-dark-green: rgba(27, 94, 32, 0.5);
+  --light-green: #2e7d32;
+  --yellow: #ffb600;
+  --dark-yellow: #f9a825;
+  --darker-yellow: #fbc02d;
+  --white: white;
+  --black: rgba(0, 0, 0, 0.25);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-lighter: rgba(0, 0, 0, 0.05);
 }
 
+/* Earth Theme */
+[data-theme="earth"] {
+  --primary-green: #6b4423;
+  --dark-green: #4a2c1a;
+  --semi-dark-green: rgba(74, 44, 26, 0.5);
+  --light-green: #8b5a2b;
+  --yellow: #d4a017;
+  --dark-yellow: #b58a14;
+  --darker-yellow: #c7991a;
+}
 
-.banner__stats{
-  background-color: color(dark-green) !important;
+/* Forest Theme */
+[data-theme="forest"] {
+  --primary-green: #1a472a;
+  --dark-green: #0d2c1a;
+  --semi-dark-green: rgba(13, 44, 26, 0.5);
+  --light-green: #2d5739;
+  --yellow: #e9c46a;
+  --dark-yellow: #d4b15f;
+  --darker-yellow: #dfbb65;
+}
+
+.banner__stats {
+  background-color: var(--dark-green) !important;
 }
 
 .banner {
   position: relative;
   overflow: hidden;
-  background: color(primary-green);
-  color: color(white);
+  background: var(--primary-green);
+  color: var(--white);
+}
 
-  /* // Content container */
-  &__content {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 4rem 1rem;
-    
+/* Content container */
+.banner__content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem 1rem;
+}
 
-    @media (min-width: 768px) {
-      padding: 6rem 1rem;
-    }
-  }
-
-  /* // Grid layout */
-  &__grid {
-    display: grid;
-    gap: 3rem;
-    align-items: center;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  /* // Text content */
-  &__text {
-    h1 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-top: 2.5rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.25;
-      perspective: 500px;
-      transform-style: preserve-3d;
-
-      @media (min-width: 768px) {
-        font-size: 3rem;
-      }
-
-      span {
-        color: color(yellow);
-        display: inline-block; /*/ For GSAP animation*/
-      }
-
-      /* // GSAP split text lines */
-      .line-child {
-        display: inline-block;
-        overflow: hidden;
-        vertical-align: top;
-      }
-    }
-
-    p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      max-width: 32rem;
-
-      @media (min-width: 768px) {
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  /* // Buttons container */
-  &__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  /* // Primary button */
-  &__primary-btn {
-    display: inline-block;
-    background-color: color(yellow);
-    color: color(light-green);
-    font-weight: 700;
-    padding: 0.75rem 2rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: color(dark-yellow);
-    }
-
-    svg {
-      margin-left: 0.5rem;
-    }
-  }
-
-  /* // Secondary button */
-  &__secondary-btn {
-    display: inline-block;
-    border: 2px solid color(white);
-    font-weight: 700;
-    padding: 0.75rem 2rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: color(white);
-      color: color(light-green);
-    }
-  }
-
-  /* // Image container */
-  &__image-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end; 
-    
-    @media (max-width: 768px) {
-      justify-content: center !important; 
-    }
-  }
-  
-
-  /* // Image */
-  &__image {
-    width: 100%;
-    max-width: 512px;
-    height: auto;
-    object-fit: cover;
-    position: relative;
-    border-radius: 0.5rem;
-    box-shadow: 0 25px 50px -12px color(black);
-    margin-top: 3rem;
-
-    @media (min-width: 768px) {
-      height: 18rem;
-      
-      
-    }
-  }
-
-  /* // DGCA badge */
-  &__badge {
-    position: absolute;
-    bottom: -1.25rem;
-    left: 0;
-    background-color: color(white);
-    color: color(light-green);
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px color(shadow-light), 0 4px 6px -2px color(shadow-lighter);
-    font-weight: 700;
-  }
-
-  /* // Stats bar */
-  &__stats {
-    background-color: color(semi-dark-green);
-    padding: 1.5rem 0;
-  }
-
-  &__stats-container {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1rem;
-  }
-
-  &__stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    text-align: center;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(4, 1fr);
-      
-
-    }
-  }
-
-  &__stat-item {
-    padding: 1rem;
-  }
-
-  &__stat-value {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: color(darker-yellow);
-    margin-bottom: 0.5rem;
-  }
-
-  &__stat-label {
-    color: color(white);
-    font-weight: 500;
+@media (min-width: 768px) {
+  .banner__content {
+    padding: 6rem 1rem;
   }
 }
 
-/* // Animation classes */
+/* Grid layout */
+.banner__grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .banner__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Text content */
+.banner__text h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.25;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+@media (min-width: 768px) {
+  .banner__text h1 {
+    font-size: 3rem;
+  }
+}
+
+.banner__text h1 span {
+  color: var(--yellow);
+  display: inline-block; // For GSAP animation
+}
+
+/* GSAP split text lines */
+.banner__text h1 .line-child {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.banner__text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+}
+
+@media (min-width: 768px) {
+  .banner__text p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Buttons container */
+.banner__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Primary button */
+.banner__primary-btn {
+  display: inline-block;
+  background-color: var(--yellow);
+  color: var(--light-green);
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.banner__primary-btn:hover {
+  background-color: var(--dark-yellow);
+}
+
+.banner__primary-btn svg {
+  margin-left: 0.5rem;
+}
+
+/* Secondary button */
+.banner__secondary-btn {
+  display: inline-block;
+  border: 2px solid var(--white);
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.banner__secondary-btn:hover {
+  background-color: var(--white);
+  color: var(--light-green);
+}
+
+/* Image container */
+.banner__image-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .banner__image-container {
+    justify-content: center !important;
+  }
+}
+
+/* Image */
+.banner__image {
+  width: 100%;
+  max-width: 512px;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px var(--black);
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .banner__image {
+    height: 18rem;
+  }
+}
+
+/* DGCA badge */
+.banner__badge {
+  position: absolute;
+  bottom: -1.25rem;
+  left: 0;
+  background-color: var(--white);
+  color: var(--light-green);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px var(--shadow-light), 0 4px 6px -2px var(--shadow-lighter);
+  font-weight: 700;
+}
+
+/* Stats bar */
+.banner__stats {
+  background-color: var(--semi-dark-green);
+  padding: 1.5rem 0;
+}
+
+.banner__stats-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.banner__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .banner__stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.banner__stat-item {
+  padding: 1rem;
+}
+
+.banner__stat-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--darker-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.banner__stat-label {
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* Animation classes */
 .animate-opacity-x {
   opacity: 0;
   transform: translateX(-20px);
@@ -220,19 +256,17 @@
   transform: translateY(20px);
 }
 
-/* // Motion component styles */
-.motion {
-  &-hover-float:hover {
-    transform: translateY(-5px);
-  }
+/* Motion component styles */
+.motion-hover-float:hover {
+  transform: translateY(-5px);
+}
 
-  &-tap-scale:active {
-    transform: scale(0.95);
-  }
+.motion-tap-scale:active {
+  transform: scale(0.95);
+}
 
-  &-pulse {
-    animation: pulse 2s infinite alternate;
-  }
+.motion-pulse {
+  animation: pulse 2s infinite alternate;
 }
 
 @keyframes pulse {

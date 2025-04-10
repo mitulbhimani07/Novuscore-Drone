@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from 'react-router-dom';
@@ -11,6 +11,19 @@ import NovuscoreDrones from "../assets/image/Novuscore-Drones.jpg";
 import "../assets/scss/Home.scss";
 
 const Banner = () => {
+   // const [theme, setTheme] = useState("default");
+
+   // useEffect(() => {
+   //    document.documentElement.setAttribute("data-theme", theme);
+   //  }, [theme]);
+    
+
+   // const toggleTheme = () => {
+   //    const nextTheme = theme === "default" ? "earth" : theme === "earth" ? "forest" : "default";
+   //    setTheme(nextTheme);
+   //    console.log("change color----",theme)
+   // };
+
    const stats = [
       { value: 2252, suffix: "+", label: "Farmers Served" },
       { value: 10896, suffix: "+", label: "Acres Covered" },
@@ -20,9 +33,17 @@ const Banner = () => {
 
    return (
       <div className="banner">
+         {/* Theme Switch Button */}
+         {/* <div style={{ textAlign: "right", padding: "1rem" }}>
+            <button onClick={toggleTheme} className="banner__primary-btn">
+               Switch Theme
+            </button>
+         </div> */}
+
          {/* Content */}
          <div className="banner__content">
             <div className="banner__grid">
+               
                {/* Text content */}
                <motion.div
                   className="banner__text"
@@ -42,8 +63,8 @@ const Banner = () => {
                            className="banner__primary-btn"
                            whileTap={{ scale: 0.95 }}
                         >
-                              Explore Services
-                              <FiArrowRight className="ml-2" />
+                           Explore Services
+                           <FiArrowRight className="ml-2" />
                         </motion.a>
                      </Link>
 
@@ -60,7 +81,8 @@ const Banner = () => {
 
                {/* Image */}
                <motion.div
-                  className="banner__image-container " style={{display:"flex", justifyContent:"flex-end"}}
+                  className="banner__image-container"
+                  style={{ display: "flex", justifyContent: "flex-end" }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -70,9 +92,7 @@ const Banner = () => {
                      alt="Novuscore Drone in action"
                      className="banner__image"
                   />
-                  <motion.div
-                     className="banner__badge motion-pulse"
-                  >
+                  <motion.div className="banner__badge motion-pulse">
                      DGCA Approved
                   </motion.div>
                </motion.div>
@@ -84,16 +104,9 @@ const Banner = () => {
             <div className="banner__stats-container">
                <div className="banner__stats-grid">
                   {stats.map((stat, index) => (
-                     <motion.div
-                        key={index}
-                        className="banner__stat-item"
-                     >
+                     <motion.div key={index} className="banner__stat-item">
                         <div className="banner__stat-value">
-                           <CountUp
-                              end={stat.value}
-                              duration={2}
-                              separator=","
-                           />
+                           <CountUp end={stat.value} duration={2} separator="," />
                            {stat.suffix}
                         </div>
                         <div className="banner__stat-label">{stat.label}</div>
@@ -102,6 +115,8 @@ const Banner = () => {
                </div>
             </div>
          </div>
+
+         {/* Other Sections */}
          <AboutUs />
          <WhatWeOffer />
          <Blog />
