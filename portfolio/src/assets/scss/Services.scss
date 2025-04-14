@@ -11,18 +11,26 @@
   --earth-tan: #D7CCC8;            /* Light tan */
   --earth-light: #EFEBE9;          /* Very light earth tone */
   
-  /* Text Colors */
-  --text-color: var(--primary-darker);
-  --text-light: var(--earth-light);
+  /* Text Colors - Direct values for default theme */
+  --text-color: #0D3B13;
+  --text-light: #EFEBE9;
   --text-white: #ffffff;
+  --heading-color: #1B5E20;
+  --paragraph-color: #0D3B13;
   
   /* Backgrounds and Borders */
-  --bg-light: var(--earth-light);
-  --border-light: var(--earth-tan);
-  --border-green-light: var(--primary-lighter);
+  --bg-light: #EFEBE9;
+  --border-light: #D7CCC8;
+  --border-green-light: #81C784;
+  
+  /* Gradient colors */
+  --gradient-start: #4CAF50;
+  --gradient-end: #5D4037;
 }
 
+/* Earth Theme */
 [data-theme='earth'] {
+  /* Color palette */
   --primary-color: #7C4D00;
   --primary-dark: #663F00;
   --primary-darker: #4D3000;
@@ -34,16 +42,26 @@
   --earth-tan: #D7CCC8;
   --earth-light: #EFEBE9;
 
-  --text-color: var(--primary-darker);
-  --text-light: var(--earth-light);
+  /* Text Colors - Direct values for earth theme */
+  --text-color: #4D3000;
+  --text-light: #EFEBE9;
   --text-white: #ffffff;
+  --heading-color: #5D4037;      /* Earth theme heading color */
+  --paragraph-color: #4D3000;    /* Earth theme paragraph color */
 
-  --bg-light: var(--earth-light);
-  --border-light: var(--earth-tan);
-  --border-green-light: var(--primary-lighter);
+  /* Backgrounds and Borders */
+  --bg-light: #EFEBE9;
+  --border-light: #D7CCC8;
+  --border-green-light: #B37400;
+  
+  /* Gradient colors */
+  --gradient-start: #996100;
+  --gradient-end: #5D4037;
 }
 
+/* Forest Theme */
 [data-theme='forest'] {
+  /* Color palette */
   --primary-color: #2F6B2F;
   --primary-dark: #265826;
   --primary-darker: #1F471F;
@@ -55,21 +73,40 @@
   --earth-tan: #CFE3D1;
   --earth-light: #EBF5EB;
 
-  --text-color: var(--primary-darker);
-  --text-light: var(--earth-light);
+  /* Text Colors - Direct values for forest theme */
+  --text-color: #1F471F;
+  --text-light: #EBF5EB;
   --text-white: #ffffff;
+  --heading-color: #265826;      /* Forest theme heading color */
+  --paragraph-color: #1F471F;    /* Forest theme paragraph color */
 
-  --bg-light: var(--earth-light);
-  --border-light: var(--earth-tan);
-  --border-green-light: var(--primary-lighter);
+  /* Backgrounds and Borders */
+  --bg-light: #EBF5EB;
+  --border-light: #CFE3D1;
+  --border-green-light: #43A043;
+  
+  /* Gradient colors */
+  --gradient-start: #398439;
+  --gradient-end: #3E4D3A;
 }
-
 
 /* Base styles */
 .services-page {
   background-color: var(--text-white);
-  color: var(--text-color);
+  color: var(--paragraph-color);
   min-height: 100vh;
+  
+  /* Explicit heading styles to ensure theme changes are applied */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    transition: color 0.3s ease;
+  }
+  
+  /* Explicit paragraph styles */
+  p {
+    color: var(--paragraph-color);
+    transition: color 0.3s ease;
+  }
 
   // Hero Section
   .hero-section {
@@ -81,6 +118,7 @@
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, var(--primary-dark), var(--earth-brown));
+    transition: background 0.3s ease;
 
     /* Leaf pattern overlay */
     &::before {
@@ -134,7 +172,7 @@
     max-width: 80rem;
     margin: 0 auto;
     padding: 5rem 1.5rem;
-
+    
     .section-header {
       text-align: center;
       margin-bottom: 4rem;
@@ -142,23 +180,26 @@
       h2 {
         font-size: 1.875rem;
         font-weight: 700;
-        color: var(--text-color);
+        color: var(--heading-color);
         margin-bottom: 1rem;
+        transition: color 0.3s ease;
       }
 
       p {
         font-size: 1.125rem;
-        color: var(--text-color);
+        color: var(--paragraph-color);
         max-width: 48rem;
         margin: 0 auto;
+        transition: color 0.3s ease;
       }
 
       .divider {
         width: 6rem;
         height: 0.375rem;
-        background: linear-gradient(to right, var(--primary-light), var(--earth-brown));
+        background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
         margin: 1.5rem auto 0;
         border-radius: 9999px;
+        transition: background 0.3s ease;
       }
     }
 
@@ -195,7 +236,8 @@
         left: 0;
         width: 100%;
         height: 0.375rem;
-        background: linear-gradient(to right, var(--primary-light), var(--earth-brown));
+        background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+        transition: background 0.3s ease;
       }
 
       .card-content {
@@ -210,28 +252,37 @@
           justify-content: center;
           color: var(--text-white);
           margin-bottom: 1.5rem;
-          background: linear-gradient(to bottom right, var(--primary-light), var(--earth-brown));
+          background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+          transition: background 0.3s ease;
         }
 
         h3 {
           font-size: 1.25rem;
           font-weight: 700;
-          color: var(--text-color);
+          color: var(--heading-color);
           margin-bottom: 0.75rem;
+          transition: color 0.3s ease;
         }
 
         p {
-          color: var(--text-color);
+          color: var(--paragraph-color);
           margin-bottom: 1.5rem;
+          transition: color 0.3s ease;
         }
       }
     }
+  }
+  
+  .text-color1 {
+    color: var(--paragraph-color) !important;
+    transition: color 0.3s ease;
   }
 
   // Technology Section
   .technology-section {
     padding: 5rem 0;
     background-color: var(--bg-light);
+    transition: background-color 0.3s ease;
 
     .section-container {
       max-width: 72rem;
@@ -245,23 +296,26 @@
         h2 {
           font-size: 1.875rem;
           font-weight: 700;
-          color: var(--earth-brown);
+          color: var(--heading-color);
           margin-bottom: 1rem;
+          transition: color 0.3s ease;
         }
 
         p {
           font-size: 1.125rem;
-          color: var(--earth-brown);
+          color: var(--paragraph-color);
           max-width: 48rem;
           margin: 0 auto;
+          transition: color 0.3s ease;
         }
 
         .divider {
           width: 6rem;
           height: 0.375rem;
-          background: linear-gradient(to right, var(--primary-lighter), var(--earth-brown-light));
+          background: linear-gradient(to right, var(--gradient-start), var(--earth-tan));
           margin: 1.5rem auto 0;
           border-radius: 9999px;
+          transition: background 0.3s ease;
         }
       }
 
@@ -283,7 +337,7 @@
         padding: 2rem;
         border-radius: 0.75rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        transition: box-shadow 0.3s ease;
+        transition: box-shadow 0.3s ease, border 0.3s ease;
         border: 1px solid var(--earth-tan);
 
         &:hover {
@@ -293,18 +347,21 @@
         .feature-icon {
           font-size: 2.25rem;
           margin-bottom: 1rem;
-          color: var(--earth-brown);
+          color: var(--heading-color);
+          transition: color 0.3s ease;
         }
 
         h3 {
           font-size: 1.25rem;
           font-weight: 600;
-          color: var(--earth-brown);
+          color: var(--heading-color);
           margin-bottom: 0.5rem;
+          transition: color 0.3s ease;
         }
 
         p {
-          color: var(--earth-brown);
+          color: var(--paragraph-color);
+          transition: color 0.3s ease;
         }
       }
     }
@@ -315,6 +372,7 @@
     padding: 5rem 0;
     background: linear-gradient(135deg, var(--earth-brown), var(--primary-dark));
     color: var(--text-white);
+    transition: background 0.3s ease;
 
     .stats-container {
       max-width: 72rem;
@@ -336,6 +394,7 @@
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 0.5rem;
         backdrop-filter: blur(5px);
+        transition: background-color 0.3s ease;
 
         .stat-value {
           font-size: 3rem;
@@ -345,22 +404,50 @@
 
         .stat-label {
           color: var(--text-light);
+          transition: color 0.3s ease;
         }
       }
     }
   }
 }
 
+/* Add Javascript to ensure theme changes take immediate effect */
+/* This code can be added to your JS file */
+/*
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to handle theme changes
+  function handleThemeChange(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Force a repaint for immediate color changes
+    document.body.style.display = 'none';
+    setTimeout(function() {
+      document.body.style.display = '';
+    }, 10);
+  }
+  
+  // Add event listeners to theme toggle buttons if they exist
+  const themeToggles = document.querySelectorAll('[data-theme-toggle]');
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const theme = this.getAttribute('data-theme-toggle');
+      handleThemeChange(theme);
+    });
+  });
+});
+*/
+
 /* Gradient utility classes */
-.from-green-500 { background-image: linear-gradient(to right, var(--primary-light), var(--to-color)); }
+.from-green-500 { background-image: linear-gradient(to right, var(--gradient-start), var(--to-color)); transition: background-image 0.3s ease; }
 .to-green-600 { --to-color: var(--primary-color); }
-.from-green-400 { background-image: linear-gradient(to right, var(--primary-lighter), var(--to-color)); }
-.to-green-500 { --to-color: var(--primary-light); }
-.from-green-600 { background-image: linear-gradient(to right, var(--primary-color), var(--to-color)); }
+.from-green-400 { background-image: linear-gradient(to right, var(--gradient-start), var(--to-color)); transition: background-image 0.3s ease; }
+.to-green-500 { --to-color: var(--gradient-start); }
+.from-green-600 { background-image: linear-gradient(to right, var(--primary-color), var(--to-color)); transition: background-image 0.3s ease; }
 .to-green-700 { --to-color: var(--primary-dark); }
-.from-green-300 { background-image: linear-gradient(to right, var(--primary-lightest), var(--to-color)); }
-.to-green-400 { --to-color: var(--primary-lighter); }
-.from-green-700 { background: var(--primary-color); }
+.from-green-300 { background-image: linear-gradient(to right, var(--primary-lightest), var(--to-color)); transition: background-image 0.3s ease; }
+.to-green-400 { --to-color: var(--gradient-start); }
+.from-green-700 { background: var(--primary-color); transition: background 0.3s ease; }
+.from-green-600 { background: var(--gradient-start); transition: background 0.3s ease; }
 .to-green-800 { --to-color: var(--primary-dark); }
-.from-green-200 { background-image: linear-gradient(to right, var(--primary-lightest), var(--to-color)); }
-.to-green-300 { --to-color: var(--primary-lighter); }
+.from-green-200 { background-image: linear-gradient(to right, var(--primary-lightest), var(--to-color)); transition: background-image 0.3s ease; }
+.to-green-300 { --to-color: var(--gradient-start); }

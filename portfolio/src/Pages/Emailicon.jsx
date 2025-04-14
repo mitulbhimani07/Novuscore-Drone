@@ -1,66 +1,68 @@
-import React, { useState } from 'react'
-import { FiMail, FiPhone, FiSend, FiX } from 'react-icons/fi'
-import '../assets/scss/ContactUs.scss'
-import { AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { FiMail, FiPhone, FiSend, FiX } from 'react-icons/fi';
+import '../assets/scss/ContactUs.scss';
+import { AnimatePresence, motion } from 'framer-motion';
 import { submitContactForm } from '../../api';
+import "../assets/scss/Emailicon.scss";
 
 function Emailicon() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-        const [formData, setFormData] = useState({
-            name: '',
-            email: '',
-            phone: '',
-            message: ''
-        });
-        const [isSubmitting, setIsSubmitting] = useState(false);
-        const [submitError, setSubmitError] = useState(null);
-        const [submitSuccess, setSubmitSuccess] = useState(false);
-    
-        const handleChange = (e) => {
-            const { name, value } = e.target;
-            setFormData(prev => ({
-                ...prev,
-                [name]: value
-            }));
-        };
-    
-        const handleSubmit = async (e) => {
-            e.preventDefault();
-            setIsSubmitting(true);
-            setSubmitError(null);
-            setSubmitSuccess(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState(null);
+    const [submitSuccess, setSubmitSuccess] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitError(null);
+        setSubmitSuccess(false);
+        
+        try {
+            console.log('Submitting form data:', formData);
+            const response = await submitContactForm(formData);
+            console.log('Submission successful:', response);
             
-            try {
-                console.log('Submitting form data:', formData);
-                const response = await submitContactForm(formData);
-                console.log('Submission successful:', response);
-                
-                setSubmitSuccess(true);
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    message: ''
-                });
-                
-                setTimeout(() => {
-                    setSubmitSuccess(false);
-                    setIsModalOpen(false);
-                }, 3000);
-            } catch (error) {
-                console.error('Submission error:', error);
-                setSubmitError(
-                    error.response?.data?.message || 
-                    error.message || 
-                    'Failed to send message. Please try again.'
-                );
-            } finally {
-                setIsSubmitting(false);
-            }
-        };
-  return (
-    <>
-          <div
+            setSubmitSuccess(true);
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                message: ''
+            });
+            
+            setTimeout(() => {
+                setSubmitSuccess(false);
+                setIsModalOpen(false);
+            }, 3000);
+        } catch (error) {
+            console.error('Submission error:', error);
+            setSubmitError(
+                error.response?.data?.message || 
+                error.message || 
+                'Failed to send message. Please try again.'
+            );
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
+        <>
+            <motion.div
                 className='fab'
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -70,22 +72,22 @@ function Emailicon() {
             >
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="bg-green-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:bg-emerald-700 transition"
+                    className="email-icon bg-green-700 text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:bg-emerald-700 transition"
                     style={{ boxShadow: '0 4px 20px rgba(19, 150, 5, 0.3)' }}
                 >
                     <FiMail />
                 </button>
-            </div>
+            </motion.div>
 
             <AnimatePresence>
                 {isModalOpen && (
-                    <div
+                    <motion.div
                         className='modalOverlay'
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
-                        <div
+                        <motion.div
                             className='modalContent'
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
@@ -104,24 +106,24 @@ function Emailicon() {
                             </button>
 
                             <div className='modalBody'>
-                                <h2>Quick Contact</h2>
+                                <h2 className='heading'>Quick Contact</h2>
 
                                 {/* Modal Success and Error Messages */}
                                 {submitSuccess && (
-                                    <div
+                                    <motion.div
                                         initial={{ opacity: 0, y: -20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className='success flex mb-5 rounded-md bg-green-100 text-green-700 p-4'
+                                        className='success'
                                     >
                                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Message sent successfully!
-                                    </div>
-                                 )} 
+                                    </motion.div>
+                                )} 
                                 
                                 {submitError && (
-                                    <div
+                                    <motion.div
                                         initial={{ opacity: 0, y: -20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         className='error'
@@ -130,15 +132,15 @@ function Emailicon() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         {submitError}
-                                    </div>
+                                    </motion.div>
                                 )}
 
                                 <form onSubmit={handleSubmit} className='form'>
                                     <div className='formGroup'>
-                                        <label>Your Name</label>
+                                        <label className='label'>Your Name</label>
                                         <div className='inputWrapper'>
                                             <div className='inputIcon'>
-                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-5 h-5 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                                 </svg>
                                             </div>
@@ -155,10 +157,10 @@ function Emailicon() {
                                     </div>
 
                                     <div className='formGroup'>
-                                        <label>Email Address</label>
+                                        <label className='label'>Email Address</label>
                                         <div className='inputWrapper'>
                                             <div className='inputIcon'>
-                                                <FiMail className="w-5 h-5" />
+                                                <FiMail className="w-5 h-5 icon" />
                                             </div>
                                             <input
                                                 type="email"
@@ -173,10 +175,10 @@ function Emailicon() {
                                     </div>
 
                                     <div className='formGroup'>
-                                        <label>Mobile No</label>
+                                        <label className='label'>Mobile No</label>
                                         <div className='inputWrapper'>
                                             <div className='inputIcon'>
-                                                <FiPhone className="w-5 h-5" />
+                                                <FiPhone className="w-5 h-5 icon" />
                                             </div>
                                             <input
                                                 type="text"
@@ -191,10 +193,10 @@ function Emailicon() {
                                     </div>
 
                                     <div className='formGroup'>
-                                        <label>Message</label>
+                                        <label className='label'>Message</label>
                                         <div className='inputWrapper'>
                                             <div className='inputIcon'>
-                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-5 h-5 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                                                 </svg>
                                             </div>
@@ -209,7 +211,7 @@ function Emailicon() {
                                         </div>
                                     </div>
 
-                                    <button
+                                    <motion.button
                                         type="submit"
                                         className='submitButton'
                                         whileHover={!isSubmitting ? { 
@@ -229,19 +231,19 @@ function Emailicon() {
                                             </>
                                         ) : (
                                             <>
-                                                <FiSend />
+                                                <FiSend className="mr-1" />
                                                 Send Message
                                             </>
                                         )}
-                                    </button>
+                                    </motion.button>
                                 </form>
                             </div>
-                        </div>
-                    </  div>
+                        </motion.div>
+                    </motion.div>
                 )}
             </AnimatePresence>
-    </>
-  )
+        </>
+    );
 }
 
-export default Emailicon
+export default Emailicon;

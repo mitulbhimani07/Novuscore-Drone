@@ -163,8 +163,8 @@ export default function Services() {
       {/* Services Grid */}
       <section className="max-w-7xl mx-auto py-20 px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-green-9 00 mb-4">Precision Agriculture Services</h2>
-          <p className="text-lg text-green-700 max-w-3xl mx-auto">
+          <h2 className="text-color text-3xl font-bold  mb-4">Precision Agriculture Services</h2>
+          <p className="text-lg  max-w-3xl mx-auto">
             Our drone solutions deliver 40% reduction in chemical usage and 30% higher yields through data-driven farming
           </p>
           <div className="w-24 h-1.5 bg-gradient-to-r from-green-500 to-green-600 mx-auto mt-6 rounded-full"></div>
@@ -185,8 +185,8 @@ export default function Services() {
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-6`}>
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-green-9 00 mb-3">{service.title}</h3>
-                <p className="text-green-700 mb-6">{service.desc}</p>
+                <h3 className="text-xl font-bold  mb-3">{service.title}</h3>
+                <p className=" mb-6">{service.desc}</p>
                 {/* <div className="text-green-600 font-medium flex items-center group-hover:underline">
                   Learn more
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -203,8 +203,8 @@ export default function Services() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-green-9 00 mb-4">Advanced Drone Technology</h2>
-            <p className="text-lg text-green-700 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-color1  mb-4">Advanced Drone Technology</h2>
+            <p className="text-color1 text-lg  max-w-3xl mx-auto">
               We use cutting-edge agricultural drone systems with specialized sensors and AI capabilities
             </p>
             <div className="w-24 h-1.5 bg-gradient-to-r from-green-400 to-green-500 mx-auto mt-6 rounded-full"></div>
@@ -230,7 +230,7 @@ export default function Services() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 from-green-700 text-white">
+      <section className="py-20 from-green-600 text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <motion.div

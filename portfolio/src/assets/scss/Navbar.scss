@@ -1,0 +1,304 @@
+// Variables
+
+:root {
+  --primary-color: #16A34A;
+}
+
+// $primary-color: #16A34A;
+$text-color: #000;
+$background-color: #fff;
+$transition-speed: 0.3s;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+
+[data-theme='earth'] {
+
+  --primary-color: #5c3f27;
+  // $primary-color: #422c1c;
+}
+
+// Forest Theme
+[data-theme='forest'] {
+
+  --primary-color: #1a452d;
+
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $background-color;
+  box-shadow: 0 2px 10px $shadow-color;
+  z-index: 1000;
+  transition: all $transition-speed ease;
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    @media (max-width: $laptop) {
+      height: 70px;
+    }
+
+    @media (max-width: $mobile) {
+      height: 60px;
+    }
+  }
+
+  //   &__logo {
+  //     flex: 0 0 auto;
+
+  //     &-link {
+  //       display: block;
+
+  //       svg {
+  //         width: auto;
+  //         height: 40px;
+
+  //         @media (max-width: $tablet) {
+  //           height: 35px;
+  //         }
+
+  //         @media (max-width: $mobile) {
+  //           height: 30px;
+  //         }
+  //       }
+  //     }
+  //   }
+
+  &__menu-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: $laptop) {
+      display: none;
+    }
+  }
+
+  &__menu-item {
+    margin: 0 0.8rem;
+    position: relative;
+
+    @media (max-width: $desktop) {
+      margin: 0 0.5rem;
+    }
+
+    &-link {
+      color: $text-color;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.05rem;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color $transition-speed ease;
+
+      @media (max-width: $desktop) {
+        font-size: 0.8rem;
+      }
+
+      &:hover {
+        color: var(--primary-color);
+      }
+
+      &-underline {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: width $transition-speed ease;
+      }
+
+      &:hover &-underline {
+        width: 100%;
+      }
+    }
+  }
+
+  &__menu-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: background-color $transition-speed ease;
+
+    @media (max-width: $desktop) {
+      font-size: 0.75rem;
+      padding: 0.5rem 0.8rem;
+    }
+
+    &:hover {
+      background-color: var(--primary-color);
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &__toggle {
+    display: none;
+
+    @media (max-width: $laptop) {
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+      padding: 0.5rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__mobile-menu {
+    background-color: $background-color;
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+    @media (min-width: $laptop ) {
+      display: none;
+    }
+
+    &-list {
+      list-style: none;
+      margin: 0;
+      padding: 1rem 0;
+    }
+
+    &-item {
+      padding: 0.8rem 1.5rem;
+
+      @media (max-width: $mobile) {
+        padding: 0.7rem 1.5rem;
+      }
+
+      &-link {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        display: block;
+        transition: color $transition-speed ease;
+
+        @media (max-width: $mobile) {
+          font-size: 0.9rem;
+        }
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+
+    &-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      cursor: pointer;
+      transition: background-color $transition-speed ease;
+
+      @media (max-width: $mobile) {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+      }
+
+      &:hover {
+        background-color: var(--primary-color);
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Animation helpers for mobile menu items
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Handle sticky behavior on scroll
+.navbar--scrolled {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.98);
+
+  @media (max-width: $mobile) {
+    height: 60px;
+  }
+}
+
+// Additional responsive tweaks for very small screens
+@media (max-width: 360px) {
+  .navbar {
+    &__content {
+      height: 55px;
+    }
+
+    &__logo-link svg {
+      height: 25px;
+    }
+
+    &__mobile-menu-item {
+      padding: 0.6rem 1.5rem;
+
+      &-link {
+        font-size: 0.85rem;
+      }
+    }
+
+    &__mobile-menu-button {
+      padding: 0.6rem;
+      font-size: 0.75rem;
+    }
+  }
+}

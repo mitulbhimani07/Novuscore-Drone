@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, createContext } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import './App.css';
@@ -9,13 +9,34 @@ import Footer from './header/Footer';
 // Register the ScrollToPlugin
 gsap.registerPlugin(ScrollToPlugin);
 
+// Create theme context to share theme state across components
+export const ThemeContext = createContext();
+
 function App() {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState("default");
+  
   const loaderRef = useRef(null);
   const droneRef = useRef(null);
   const bladesRef = useRef([]);
   const textRef = useRef(null);
   const progressRef = useRef(null);
+
+  // Function to toggle theme
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const nextTheme = prev === "default" ? "earth" : prev === "earth" ? "forest" : "default";
+      console.log(theme);
+
+      return nextTheme;
+      
+    });
+  };
+
+  // Update document theme attribute whenever theme changes
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     // Enable smooth scrolling globally
@@ -90,9 +111,42 @@ function App() {
     };
   }, []);
 
+  // Function to get button background color based on current theme
+  const getThemeColors = () => {
+    switch(theme) {
+      case "default":
+        return {
+          background: "#f6f8fa",
+          text: "#555"
+        };
+      case "earth":
+        return {
+          background: "#b58863",
+          text: "#ffffff"
+        };
+      case "forest":
+        return {
+          background: "#2c7c4c",
+          text: "#ffffff"
+        };
+      default:
+        return {
+          background: "#f6f8fa",
+          text: "#555"
+        };
+    }
+  };
+  
+  // Theme values to be shared across components
+  const themeValues = {
+    theme,
+    toggleTheme,
+    colors: getThemeColors()
+  };
+
   if (loading) {
     return (
-      <div id="pre-loader" ref={loaderRef}>
+      <div id="pre-loader" ref={loaderRef} style={{ backgroundColor: getThemeColors().background }}>
         <div className="loading-container">
           <div className="drone-container" ref={droneRef}>
             <svg className="drone" width="300" height="300" viewBox="-55 -40 450 420">
@@ -138,10 +192,16 @@ function App() {
             </svg>
           </div>
           
-          <p className="loadingText" ref={textRef}>Preparing your drone experience...</p>
+          <p className="loadingText" ref={textRef} style={{ color: getThemeColors().text }}>
+            Preparing your drone experience...
+          </p>
           
           <div className="progress-container">
-            <div className="progress-bar" ref={progressRef}></div>
+            <div 
+              className="progress-bar" 
+              ref={progressRef} 
+              style={{ backgroundColor: theme === "default" ? "#009B3B" : getThemeColors().background }}
+            ></div>
           </div>
         </div>
       </div>
@@ -149,11 +209,122 @@ function App() {
   }
 
   return (
-    <>
-      <Navbar />
-      <AllRoutes />
-      <Footer />
-    </>
+    <ThemeContext.Provider value={themeValues}>
+      <div className={`app-container theme-${theme}`}>
+        <main>
+        <Navbar />
+
+          <AllRoutes />
+          
+          {/* Theme Toggle Button - Now global at App level */}
+          <button 
+            onClick={toggleTheme}
+            className="theme-toggle-btn"
+            title={`Current Theme: ${theme}`}
+            style={{ 
+              backgroundColor: getThemeColors().background,
+              color: getThemeColors().text
+            }}
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="settings-icon"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </button>
+          <Footer />
+
+        </main>
+      </div>
+      
+      <style jsx>{`
+        .app-container {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        main {
+          flex: 1;
+          position: relative;
+        }
+        
+        .theme-toggle-btn {
+          position: fixed;
+          left: 5px;
+          top: 350px;
+          z-index: 1000;
+          width: 50px;
+          height: 50px;
+          border-radius: 8px;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        
+        .theme-toggle-btn:hover {
+          transform: translateY(-2px);
+        }
+        
+        .theme-toggle-btn:active {
+          transform: translateY(0);
+        }
+        
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        .settings-icon {
+          animation: spin 10s linear infinite;
+        }
+        
+        .theme-toggle-btn:hover .settings-icon {
+          animation: spin 3s linear infinite;
+        }
+        
+        /* Theme-specific styles */
+        .theme-default {
+          background-color: #ffffff;
+          color: #333333;
+        }
+        
+        .theme-earth {
+          background-color: #e8/* Theme-specific styles */
+        .theme-default {
+          background-color: #ffffff;
+          color: #333333;
+        }
+        
+        .theme-earth {
+          background-color: #e8d0b3;
+          color: #5d4037;
+        }
+        
+        .theme-forest {
+          background-color: #b3d0e8;
+          color: #333333;
+        }
+      `}</style>
+    </ThemeContext.Provider>
   );
 }
 
