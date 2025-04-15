@@ -140,7 +140,7 @@ export default function Services() {
   
 
   return (
-    <div className="bg-white text-green-700 min-h-screen">
+    <div className="bg-white services-page min-h-screen">
       {/* Hero Section */}
       <section className="relative w-full pt-40 pb-27 flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-700 to-green-800">
         <div className="relative z-10 px-6 text-center max-w-4xl mx-auto">
@@ -150,9 +150,10 @@ export default function Services() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              <span className="bg-clip-text bg-gradient-to-r from-green-200 to-white">Drone-Powered AgTech Solutions </span>
+              <span className="bg-clip-text bg-gradient-to-r text-white ">Drone-Powered AgTech Solutions </span>
             </h1>
-            <p className="text-xl text-green-100 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto" style={{color: "#ffff"
+            }}>
               Transform your farming operations with our precision agriculture drone services
             </p>
 
@@ -187,12 +188,6 @@ export default function Services() {
                 </div>
                 <h3 className="text-xl font-bold  mb-3">{service.title}</h3>
                 <p className=" mb-6">{service.desc}</p>
-                {/* <div className="text-green-600 font-medium flex items-center group-hover:underline">
-                  Learn more
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </div> */}
               </div>
             </motion.div>
           ))}
@@ -212,6 +207,7 @@ export default function Services() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {technologyFeatures.map((feature, index) => (
+               
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -230,7 +226,7 @@ export default function Services() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 from-green-600 text-white">
+      <section className="py-20  from-green-600 text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <motion.div
@@ -243,7 +239,7 @@ export default function Services() {
               <div className="text-5xl font-bold mb-2">
                 <Counter from={0} to={95} duration={2} />%
               </div>
-              <div className="text-green-200">Reduction in water usage for targeted irrigation</div>
+              <div className="text-white">Reduction in water usage for targeted irrigation</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -255,7 +251,7 @@ export default function Services() {
               <div className="text-5xl font-bold mb-2">
                 <Counter from={0} to={50} duration={2} />+
               </div>
-              <div className="text-green-200">Crop varieties we've successfully analyzed</div>
+              <div className="text-white">Crop varieties we've successfully analyzed</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -267,7 +263,7 @@ export default function Services() {
               <div className="text-5xl font-bold mb-2">
                 <Counter from={0} to={10} duration={2} />x
               </div>
-              <div className="text-green-200">Faster than manual field surveying</div>
+              <div className="text-white">Faster than manual field surveying</div>
             </motion.div>
           </div>
         </div>
