@@ -441,13 +441,13 @@ document.addEventListener('DOMContentLoaded', function() {
 .from-green-500 { background-image: linear-gradient(to right, var(--gradient-start), var(--to-color)); transition: background-image 0.3s ease; }
 .to-green-600 { --to-color: var(--primary-color); }
 .from-green-400 { background-image: linear-gradient(to right, var(--gradient-start), var(--to-color)); transition: background-image 0.3s ease; }
-.to-green-500 { --to-color: var(--gradient-start); }
-.from-green-600 { background-image: linear-gradient(to right, var(--primary-color), var(--to-color)); transition: background-image 0.3s ease; }
-.to-green-700 { --to-color: var(--primary-dark); }
-.from-green-300 { background-image: linear-gradient(to right, var(--primary-lightest), var(--to-color)); transition: background-image 0.3s ease; }
-.to-green-400 { --to-color: var(--gradient-start); }
+.to-green-500 { --to-color: var(--primary-color); }
+.from-green-600 { background-image: linear-gradient(to right, var(--gradient-start), var(--to-color)); transition: background-image 0.3s ease; }
+.to-green-700 { --to-color: var(--primary-color); }
+.from-green-300 { background-image: linear-gradient(to right, var(--gradient-start), var(--to-color)); transition: background-image 0.3s ease; }
+.to-green-400 { --to-color: var(--primary-color); }
 .from-green-700 { background: var(--primary-color); transition: background 0.3s ease; }
 .from-green-600 { background: var(--gradient-start); transition: background 0.3s ease; }
-.to-green-800 { --to-color: var(--primary-dark); }
-.from-green-200 { background-image: linear-gradient(to right, var(--primary-lightest), var(--to-color)); transition: background-image 0.3s ease; }
-.to-green-300 { --to-color: var(--gradient-start); }
+.to-green-800 { --to-color: var(--primary-color); }
+.from-green-200 { background-image: linear-gradient(to right, var(--gradient-start), var(--to-color)); transition: background-image 0.3s ease; }
+.to-green-300 { --to-color: var(--primary-color); }
