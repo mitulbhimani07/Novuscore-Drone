@@ -4,7 +4,7 @@ import '../assets/scss/ContactUs.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitContactForm } from '../../api';
 
-import '../assets/scss/Emailicon.scss'
+import '../assets/scss/EmailIcon.scss'
 
 function Emailicon() {
     const [isModalOpen, setIsModalOpen] = useState(false);
