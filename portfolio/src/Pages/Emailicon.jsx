@@ -1,9 +1,9 @@
     import React, { useState } from 'react';
     import { FiMail, FiPhone, FiSend, FiX } from 'react-icons/fi';
-    import '../assets/scss/emailIcon.scss'
     import '../assets/scss/ContactUs.scss';
     import { AnimatePresence, motion } from 'framer-motion';
     import { submitContactForm } from '../../api';
+    import '../assets/scss/emailIcon.scss'
 
 
     function Emailicon() {
