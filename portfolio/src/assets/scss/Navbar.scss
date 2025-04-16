@@ -52,11 +52,11 @@ $desktop: 1200px;
     height: 80px;
 
     @media (max-width: $laptop) {
-      height: 70px;
+      height: 80px;
     }
 
     @media (max-width: $mobile) {
-      height: 60px;
+      height: 80px;
     }
   }
 
