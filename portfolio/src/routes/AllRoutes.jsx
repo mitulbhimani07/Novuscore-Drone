@@ -8,7 +8,7 @@ import Contact from '../Pages/Contact';
 import WhatWeOffer from '../Pages/WhatWeOffer';
 import Blog from '../Pages/Blog';
 import BecomeAPartner from '../Pages/BeComeAPartner';
-import Emailicon from '../Pages/Emailicon';
+import Emailicon from '../Pages/Emailicon.jsx';
 
 export default function AllRoutes() {
   return (

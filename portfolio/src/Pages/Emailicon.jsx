@@ -3,7 +3,7 @@
     import '../assets/scss/ContactUs.scss';
     import { AnimatePresence, motion } from 'framer-motion';
     import { submitContactForm } from '../../api';
-    import '../assets/scss/emailicon.scss'
+    import '../assets/scss/emailIcon.scss'
 
 
     function Emailicon() {
