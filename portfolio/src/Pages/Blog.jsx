@@ -327,7 +327,7 @@ export default function Blog() {
                 <h3 className="text-lg font-semibold text-center mt-3">{service.title}</h3>
                 <ul className="mt-4 space-y-2 text-sm text-gray-700">
                   {service.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-2 text-gray-600 font-normal">
+                    <li key={i} className="flex items-start gap-2 text-gray-600 font-normal text-[15px]">
                       <span className="mt-1 text-[#0a9396]">
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L9 13.414l4.707-4.707z" clipRule="evenodd" />
