@@ -313,7 +313,7 @@ export default function Contact() {
                                     </div>
                                     <div className='infoContent'>
                                         <h3>Phone</h3>
-                                        <p>+1 (555) 123-4567</p>
+                                        <a href="tel:9510716322">+91 95107 16322</a>
                                     </div>
                                 </div>
 

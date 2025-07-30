@@ -57,7 +57,7 @@ export default function Footer() {
               408, A R MALL, OPP-PANVEL POINT, Utran , Surat ,Chorasi , Gujarat , India - 394105
             </p>
             <p className="email">info@novuscore.co.in</p>
-            <p className="contact">+1 234 567 890</p>
+            <a href='tel:9510716322' className="contact">+91 95107 16322</a>
             <p>Monday - Friday: 9:30 AM - 6:30 PM</p>
           </div>
           {/* Social Media Icons */}
