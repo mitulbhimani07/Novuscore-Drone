@@ -28,7 +28,7 @@ module.exports.saveContact = async (req, res) => {
   
     try {
       const { data, error } = await supabase
-        .from('ContactUs')
+        .from('contactus')
         .insert([{
           name: String(name),
           email: String(email),
@@ -60,7 +60,7 @@ module.exports.saveContact = async (req, res) => {
 module.exports.viewContacts = async (req, res) => {
   try {
     // Fetch data from Supabase
-    const { data, error } = await supabase.from('ContactUs').select('*');
+    const { data, error } = await supabase.from('contactus').select('*');
 
     if (error) {
       throw error;

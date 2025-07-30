@@ -1,30 +1,29 @@
--- Run the SQL script in your PostgreSQL database to create the ContactUs table.
-CREATE TABLE ContactUs (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  phone VARCHAR(15) NOT NULL,
+-- Create ContactUs table
+CREATE TABLE public.ContactUs (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
   message TEXT NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
--- Use Postman or any HTTP client to test the /api/contact endpoint:
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "1234567890",
-  "message": "This is a test message."
-}
--- Verify the data in the database:
-SELECT * FROM ContactUs;
--- Order Data by Creation Date:
+
+-- Enable Row Level Security
+ALTER TABLE public.ContactUs ENABLE ROW LEVEL SECURITY;
+
+-- Allow public inserts (for contact form)
+CREATE POLICY "Allow public inserts" ON public.ContactUs
+FOR INSERT TO public
+WITH CHECK (true);
+
+-- Allow authenticated reads (for admin panel)
+CREATE POLICY "Allow authenticated reads" ON public.ContactUs
+FOR SELECT TO authenticated
+USING (true);
+
+-- Insert sample data
+INSERT INTO ContactUs (name, email, phone, message) VALUES 
+('John Doe', 'john@example.com', '+1234567890', 'Hello, I have a question about your services');
+
+-- Verify data
 SELECT * FROM ContactUs ORDER BY created_at DESC;
--- Count Total Rows in the Table:
-SELECT COUNT(*) FROM ContactUs;
---To delete a specific row based on a condition (e.g., id), use the following query:
-DELETE FROM ContactUs WHERE id = 1;
---2. Delete Rows Based on a Condition
-DELETE FROM ContactUs WHERE email = 'john@example.com';
---To delete all rows from the ContactUs table but keep the table structure, use:
-DELETE FROM ContactUs;
---  Delete Rows Older Than a Specific Date
-DELETE FROM ContactUs WHERE created_at < '2025-01-01';
