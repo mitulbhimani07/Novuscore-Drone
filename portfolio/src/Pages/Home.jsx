@@ -52,10 +52,10 @@ const Banner = () => {
                   transition={{ duration: 0.8 }}
                >
                   <h1>
-                     Pioneering <span>Agri-Drone</span> Solutions in India
+                     Empowering Indian <span>Agriculture</span> Through Technology
                   </h1>
-                  <p>
-                     DGCA-approved drone technology for precision agriculture, crop monitoring, and smart farming.
+                  <p style={{fontSize: "1.2rem"}}>
+                     Welcome to Novuscore Softcom Solution Pvt. Ltd., where innovation meets impact. We are transforming the agricultural ecosystem by bridging the gap between farmers and markets with a tech-enabled platform for the seamless buying and selling of agri-product
                   </p>
                   <div className="banner__buttons">
                      <Link to="/services" className="inline-block">

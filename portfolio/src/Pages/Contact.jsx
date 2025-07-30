@@ -302,7 +302,7 @@ export default function Contact() {
                                     </div>
                                     <div className='infoContent'>
                                         <h3>Email</h3>
-                                        <p>contact@example.com</p>
+                                        <p>info@novuscore.co.in</p>
                                     </div>
                                 </div>
 
@@ -331,12 +331,8 @@ export default function Contact() {
                                 <h3>Business Hours</h3>
                                 <ul>
                                     <li>
-                                        <span>Monday - Friday</span>
-                                        <span>9:00 AM - 6:00 PM</span>
-                                    </li>
-                                    <li>
-                                        <span>Saturday</span>
-                                        <span>10:00 AM - 4:00 PM</span>
+                                        <span>Monday - Saturday</span>
+                                        <span>9:30 AM - 6:30 PM</span>
                                     </li>
                                     <li>
                                         <span>Sunday</span>

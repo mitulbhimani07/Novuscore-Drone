@@ -34,19 +34,19 @@ export default function About() {
   return (
     <div className="bg-green-50">
       {/* Hero Section */}
-      <motion.section 
-        className="hero-section" style={{padding:"112px 20px"}}
+      <motion.section
+        className="hero-section" style={{ padding: "112px 20px" }}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         <div className="container">
-          <motion.h1 
+          <motion.h1
             variants={itemVariants}
           >
             Revolutionizing Industries with AI-Powered Drone Solutions
           </motion.h1>
-          <motion.p 
+          <motion.p
             variants={itemVariants}
           >
             Pioneering intelligent, data-driven systems to transform AgriTech and beyond
@@ -55,7 +55,7 @@ export default function About() {
       </motion.section>
 
       {/* Our Story */}
-      <motion.section 
+      <motion.section
         className="journey-section"
         initial="hidden"
         animate="visible"
@@ -63,23 +63,19 @@ export default function About() {
       >
         <div className="grid-container">
           <motion.div variants={itemVariants}>
-            <h2>About Novuscore Softcom Solutions</h2>
+            <h2>Driving Agricultural Transformation with Technology</h2>
             <p>
-              At NOVUSCORE SOFTCOM SOLUTION PVT LTD, we are pioneers in revolutionizing drone technology through advanced software solutions powered by Artificial Intelligence (AI) and Machine Learning (ML). Based in the vibrant city of Surat, Gujarat, we specialize in creating intelligent, data-driven systems designed to transform industries—with a dedicated focus on AgriTech.
-            </p>
-            <p>
-              From precision farming and smart crop monitoring to infrastructure inspection and logistics, our software empowers businesses to optimize operations, reduce costs, and make data-backed decisions.
-            </p>
+              At Novuscore, we believe technology is the key to revolutionizing India's agricultural value chain. Founded by a team of agri-tech and software experts, we started with smart solutions for farmers and are now evolving into a full-stack platform facilitating the procurement and sale of agricultural goods.            </p>
+           
             <div className="feature-list">
               {[
-                "AI & ML powered solutions",
-                "Precision agriculture focus",
+                "Farmers",
+                "Self-Help Groups (SHGs)",
                 "Industry-specific drone software",
-                "Data-driven decision making",
-                "Sustainable farming practices"
+                "Institutional Buyers across marts, mandis, and marketplaces",
               ].map((item, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="feature-item"
                 >
                   <FiCheck className="icon" />
@@ -87,34 +83,37 @@ export default function About() {
                 </motion.div>
               ))}
             </div>
+             <p className="mt-4">
+              Our goal is to create a transparent, efficient, and inclusive digital supply chain that boosts farmers’ income while ensuring quality and reliability for buyers.
+              </p>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="image-container"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
-            <img 
-              src={AboutImage} 
-              alt="Novuscore drone technology" 
+            <img
+              src={AboutImage}
+              alt="Novuscore drone technology"
             />
           </motion.div>
         </div>
       </motion.section>
 
       {/* Vision & Mission */}
-      <motion.section 
+      <motion.section
         className="values-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         <div className="container">
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
           >
             Our Vision & Mission
           </motion.h2>
-          
+
           <div className="values-grid">
             {[
               {
@@ -133,11 +132,11 @@ export default function About() {
                 content: "Surat's dynamic entrepreneurial spirit, skilled workforce, and robust infrastructure align seamlessly with our mission to drive technological transformation. The city's progressive policies and connectivity fuel our ability to innovate and scale."
               }
             ].map((item, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="value-card"
                 variants={itemVariants}
-                whileHover={{ 
+                whileHover={{
                   y: -10,
                   boxShadow: "0 10px 25px -5px rgba(5, 150, 105, 0.2)"
                 }}
@@ -154,13 +153,13 @@ export default function About() {
       </motion.section>
 
       {/* Leadership */}
-      <motion.section 
+      <motion.section
         className="solutions-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.div 
+        <motion.div
           className="section-header"
           variants={itemVariants}
         >
@@ -169,7 +168,7 @@ export default function About() {
             Meet the visionary directors guiding Novuscore's innovation journey
           </p>
         </motion.div>
-        
+
         <div className="solutions-grid">
           <motion.div variants={itemVariants}>
             <div className="solutions-list">
@@ -185,7 +184,7 @@ export default function About() {
                   desc: "Hemraj spearheads our technological innovation, blending his deep knowledge of AI and ML to craft groundbreaking drone solutions. His leadership in AgriTech software development is transforming farming practices."
                 }
               ].map((item, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   className="solution-card"
                 >
@@ -196,32 +195,32 @@ export default function About() {
               ))}
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="image-container"
             variants={itemVariants}
           >
-            <img 
+            <img
               src={SmartDrone}
-              alt="Novuscore leadership" 
+              alt="Novuscore leadership"
             />
           </motion.div>
         </div>
       </motion.section>
 
       {/* Awards & Recognition */}
-      <motion.section 
+      <motion.section
         className="recognition-section"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         <div className="container">
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
           >
             Recognition & Partnerships
           </motion.h2>
-          
+
           <div className="logo-grid">
             {[
               "https://marutdrones.com/wp-content/uploads/2023/09/04-7.png",
@@ -237,21 +236,21 @@ export default function About() {
               "https://marutdrones.com/wp-content/uploads/2023/09/18.png",
               "https://marutdrones.com/wp-content/uploads/2023/09/15-1.png",
             ].map((logo, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="logo-container"
                 variants={itemVariants}
                 transition={{ delay: index * 0.1 }}
               >
-                <img 
-                  src={logo} 
-                  alt="Partner logo" 
+                <img
+                  src={logo}
+                  alt="Partner logo"
                 />
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.section>  
+      </motion.section>
     </div>
   );
 }
