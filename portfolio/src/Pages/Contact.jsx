@@ -133,7 +133,8 @@ export default function Contact() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
                     >
-                        We'd love to hear from you! Reach out for inquiries, collaborations, or just to say hello.
+                       Let’s transform agri-commerce, together.
+
                     </motion.p>
                 </div>
             </motion.section>
@@ -275,7 +276,7 @@ export default function Contact() {
                                     ) : (
                                         <>
                                             <FiSend className="text-lg" />
-                                            Send Message
+                                            Send Us a Message
                                         </>
                                     )}
                                 </span>
@@ -293,7 +294,7 @@ export default function Contact() {
                             whileHover={cardHoverVariants.hover}
                         >
                             <h2>Contact Information</h2>
-                            <p>Fill out the form or reach out to us through these channels:</p>
+                            <p>Whether you’re a farmer, buyer, or government partner, we’d love to hear from you.</p>
 
                             <div className='infoItems'>
                                 <div className='infoItem'>
@@ -322,7 +323,7 @@ export default function Contact() {
                                     </div>
                                     <div className='infoContent'>
                                         <h3>Address</h3>
-                                        <p>123 Green Street, Eco City, EC 12345</p>
+                                        <p>408, A R MALL, OPP-PANVEL POINT, Utran , Surat ,Chorasi , Gujarat , India - 394105</p>
                                     </div>
                                 </div>
                             </div>
@@ -331,11 +332,11 @@ export default function Contact() {
                                 <h3>Business Hours</h3>
                                 <ul>
                                     <li>
-                                        <span>Monday - Saturday</span>
+                                        <span>Monday - Friday</span>
                                         <span>9:30 AM - 6:30 PM</span>
                                     </li>
                                     <li>
-                                        <span>Sunday</span>
+                                        <span>Saturday-Sunday</span>
                                         <span>Closed</span>
                                     </li>
                                 </ul>
@@ -351,7 +352,7 @@ export default function Contact() {
                         >
                             <h3>Need immediate assistance?</h3>
                             <p>Our customer support team is available to help you with any urgent inquiries.</p>
-                            <button>Chat with us</button>
+                            <button>Partner With Us</button>
                         </motion.div>
                     </motion.div>
                 </motion.div>

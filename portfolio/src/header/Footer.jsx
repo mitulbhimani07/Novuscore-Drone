@@ -54,14 +54,12 @@ export default function Footer() {
           <div className="footer__address">
             <h3>Registered Office</h3>
             <p>
-              SHOP-408, A R MALL, OPP-PANVEL POINT, Utran , Surat ,Chorasi , Gujarat , India - 394105
+              408, A R MALL, OPP-PANVEL POINT, Utran , Surat ,Chorasi , Gujarat , India - 394105
             </p>
             <p className="email">info@novuscore.co.in</p>
-            <p className="support">support@novuscore.com</p>
             <p className="contact">+1 234 567 890</p>
-            <p>Mon-Fri: 9am-6pm</p>
+            <p>Monday - Friday: 9:30 AM - 6:30 PM</p>
           </div>
-
           {/* Social Media Icons */}
           <div className="footer__social">
             <h3>Follow Us</h3>

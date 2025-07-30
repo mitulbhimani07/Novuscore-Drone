@@ -42,8 +42,8 @@ export default function Services() {
   };
   const services = [
     {
-      title: "Aerial Crop Spraying",
-      desc: "Precision drone spraying with 90% less chemical waste compared to traditional methods. Our systems cover 50 acres per hour with pinpoint accuracy.",
+      title: "Procurement",
+      desc: "We onboard and aggregate supply from farmers, SHGs, and local agri-entities through verified channels.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18v4H3V4z" />
@@ -52,8 +52,8 @@ export default function Services() {
       color: "from-green-500 to-green-600"
     },
     {
-      title: "NDVI Crop Analysis",
-      desc: "Advanced Normalized Difference Vegetation Index mapping detects plant health issues 2-3 weeks before visible symptoms appear.",
+      title: "Quality Check",
+      desc: "All goods undergo standard quality grading to ensure consistency.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -62,8 +62,8 @@ export default function Services() {
       color: "from-green-400 to-green-500"
     },
     {
-      title: "3D Field Topography",
-      desc: "High-resolution 3D mapping for precision land leveling, drainage planning, and irrigation system design with centimeter accuracy.",
+      title: "Match with Buyer",
+      desc: "Our smart engine connects the right product with the right buyer—fast, fair, and transparent.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l9 4 9-4-9-4-9 4z" />
@@ -73,8 +73,8 @@ export default function Services() {
       color: "from-green-600 to-green-700"
     },
     {
-      title: "Drone Seeding",
-      desc: "Direct seed planting with 95% germination rates. Ideal for cover crops, reforestation, and hard-to-access areas.",
+      title: "Digital Payment",
+      desc: "Buyers pay directly to our system via RTGS/NEFT/IMPS, and sellers receive timely payouts through our API-integrated disbursal system.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -83,8 +83,8 @@ export default function Services() {
       color: "from-green-300 to-green-400"
     },
     {
-      title: "Pest Hotspot Detection",
-      desc: "Thermal imaging identifies pest infestations early, enabling targeted treatment before significant damage occurs.",
+      title: "Logistics & Delivery",
+      desc: "We manage or facilitate delivery through our partnered logistic networks to ensure timely fulfillment.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -92,16 +92,16 @@ export default function Services() {
       ),
       color: "from-green-700 to-green-800"
     },
-    {
-      title: "Livestock Monitoring",
-      desc: "Automated herd tracking with AI-powered analytics for health monitoring, counting, and pasture management.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-        </svg>
-      ),
-      color: "from-green-200 to-green-300"
-    },
+    // {
+    //   title: "Livestock Monitoring",
+    //   desc: "Automated herd tracking with AI-powered analytics for health monitoring, counting, and pasture management.",
+    //   icon: (
+    //     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+    //     </svg>
+    //   ),
+    //   color: "from-green-200 to-green-300"
+    // },
   ];
 
   const technologyFeatures = [

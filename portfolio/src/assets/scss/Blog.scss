@@ -209,3 +209,10 @@
     color: var(--green-color);
   }
 }
+.service-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-align: left;
+}

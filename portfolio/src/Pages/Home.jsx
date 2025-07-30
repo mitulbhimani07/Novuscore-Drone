@@ -16,7 +16,7 @@ const Banner = () => {
    // useEffect(() => {
    //    document.documentElement.setAttribute("data-theme", theme);
    //  }, [theme]);
-    
+
 
    // const toggleTheme = () => {
    //    const nextTheme = theme === "default" ? "earth" : theme === "earth" ? "forest" : "default";
@@ -25,11 +25,12 @@ const Banner = () => {
    // };
 
    const stats = [
-      { value: 2252, suffix: "+", label: "Farmers Served" },
-      { value: 10896, suffix: "+", label: "Acres Covered" },
-      { value: 70, suffix: "%", label: "Chemical Reduction" },
-      { value: 23, suffix: "", label: "States Operating" }
+      { value: 30, suffix: "+", label: "Trusted by" },
+      { value: 40 , suffix: "+", label: "INR valuation" },
+      { value: 10 , suffix: "Cr+", label: "Net worth " },
+      { value: 20 , suffix: "+", label: "Employees" },
    ];
+
 
    return (
       <div className="banner">
@@ -43,7 +44,7 @@ const Banner = () => {
          {/* Content */}
          <div className="banner__content">
             <div className="banner__grid">
-               
+
                {/* Text content */}
                <motion.div
                   className="banner__text"
@@ -54,8 +55,11 @@ const Banner = () => {
                   <h1>
                      Empowering Indian <span>Agriculture</span> Through Technology
                   </h1>
-                  <p style={{fontSize: "1.2rem"}}>
+                  <p style={{ fontSize: "1.2rem" }}>
                      Welcome to Novuscore Softcom Solution Pvt. Ltd., where innovation meets impact. We are transforming the agricultural ecosystem by bridging the gap between farmers and markets with a tech-enabled platform for the seamless buying and selling of agri-product
+                  </p>
+                  <p style={{ fontSize: "1.2rem" }}>
+                    From Farm to Market—Simplified, Secured, Scalable.
                   </p>
                   <div className="banner__buttons">
                      <Link to="/services" className="inline-block">
@@ -63,7 +67,7 @@ const Banner = () => {
                            className="banner__primary-btn"
                            whileTap={{ scale: 0.95 }}
                         >
-                           Explore Services
+                           Explore Our Platform
                            <FiArrowRight className="ml-2" />
                         </motion.a>
                      </Link>
@@ -73,7 +77,7 @@ const Banner = () => {
                            className="banner__secondary-btn h-[48px]"
                            whileTap={{ scale: 0.95 }}
                         >
-                           Book a Free Demo
+                          Get in Touch
                         </motion.a>
                      </Link>
                   </div>

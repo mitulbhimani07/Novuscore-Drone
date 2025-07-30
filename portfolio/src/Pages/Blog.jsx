@@ -16,7 +16,116 @@ const containerVariants = {
     }
   }
 };
-
+const servicesData = [
+  {
+    title: "Agriculture",
+    points: [
+      "Smarter farming methods",
+      "Better crop production",
+      "Less manual work",
+      "Accurate field results"
+    ]
+  },
+  {
+    title: "Pesticide Spraying",
+    points: [
+      "Even spray coverage",
+      "Less chemical waste",
+      "Saves time and effort",
+      "Safer for the environment"
+    ]
+  },
+  {
+    title: "Fertiliser Broadcasting",
+    points: [
+      "Perfect fertiliser spread",
+      "Healthier soil and crops",
+      "Reduces manual labor",
+      "Quick and easy process"
+    ]
+  },
+  {
+    title: "Direct Seeding",
+    points: [
+      "Fast seed planting",
+      "Cost-saving method",
+      "Higher crop growth",
+      "Minimal soil damage"
+    ]
+  },
+  {
+    title: "Thermal Fogging",
+    points: [
+      "Quick pest control",
+      "Covers big areas",
+      "Safe for plants",
+      "Controlled spraying"
+    ]
+  },
+  {
+    title: "Crop Intelligence",
+    points: [
+      "Live crop updates",
+      "Spot problems early",
+      "AI-based monitoring",
+      "Smarter farm decisions"
+    ]
+  },
+  {
+    title: "Training",
+    points: [
+      "Learn from experts",
+      "Hands-on practice",
+      "Field training included",
+      "Certification provided"
+    ]
+  },
+  {
+    title: "Mosquito Eradication",
+    points: [
+      "Targeted mosquito control",
+      "Eco-friendly fogging",
+      "Wide area coverage",
+      "Quick and effective"
+    ]
+  },
+  {
+    title: "Afforestation",
+    points: [
+      "Fast tree planting",
+      "Grow green cover",
+      "Drone-assisted seeding",
+      "Eco-restoration made easy"
+    ]
+  },
+  {
+    title: "Mapping",
+    points: [
+      "Accurate land maps",
+      "Detailed surveys",
+      "3D farm layouts",
+      "Better planning"
+    ]
+  },
+  {
+    title: "Surveillance",
+    points: [
+      "Live aerial view",
+      "Watch large areas",
+      "Early risk alerts",
+      "24/7 monitoring"
+    ]
+  },
+  {
+    title: "Logistics",
+    points: [
+      "Drone deliveries",
+      "Smarter route plans",
+      "Fast transportation",
+      "Cost-effective service"
+    ]
+  }
+];
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -179,33 +288,24 @@ export default function Blog() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <motion.h2
-            initial={{ y: -10 }}
-            animate={{ y: 0 }}
-            transition={{ type: "spring", stiffness: 100 }}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="blog-header"
           >
-            Our Drone Services
-          </motion.h2>
+            <h1 className="text-[30px]">Our Drone Services</h1>
+            <p>
+              Smart and reliable drone solutions that make farming and industries faster, easier, and more cost-effective with accurate results you can trust.
+            </p>
+          </motion.div>
           <motion.div
             className="services-grid"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {[
-              "Agriculture",
-              "Pesticide Spraying",
-              "Fertiliser Broadcasting",
-              "Direct Seeding",
-              "Thermal Fogging",
-              "Crop Intelligence",
-              "Training",
-              "Mosquito Eradication",
-              "Afforestation",
-              "Mapping",
-              "Surveillance",
-              "Logistics"
-            ].map((service, index) => (
+            {servicesData.map((service, index) => (
               <motion.div
                 key={index}
                 className="service-card"
@@ -219,11 +319,25 @@ export default function Blog() {
                   className="service-icon"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+                  <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                      d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
                   </svg>
                 </motion.div>
-                <h3>{service}</h3>
+                <h3 className="text-lg font-semibold text-center mt-3">{service.title}</h3>
+                <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                  {service.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2 text-gray-600 font-normal">
+                      <span className="mt-1 text-[#0a9396]">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L9 13.414l4.707-4.707z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
               </motion.div>
             ))}
           </motion.div>

@@ -59,48 +59,44 @@ const ServiceCard = ({ title, features }) => (
 );
 
 export default function DroneSolutionsWebsite() {
-  const services = [
-    {
-      title: "Aerial Photography & Videography",
-      features: [
-        "4K Ultra HD resolution",
-        "Cinematic drone footage",
-        "360° panoramic shots",
-        "Real-time video transmission",
-        "Post-production editing"
-      ]
-    },
-    {
-      title: "Industrial Drone Inspections",
-      features: [
-        "Thermal imaging capabilities",
-        "High-resolution zoom cameras",
-        "Automated flight paths",
-        "Detailed inspection reports",
-        "NDT (Non-Destructive Testing)"
-      ]
-    },
-    {
-      title: "Drone Mapping & Surveying",
-      features: [
-        "High-accuracy GPS positioning",
-        "3D terrain modeling",
-        "Orthomosaic map creation",
-        "Volumetric measurements",
-        "GIS data integration"
-      ]
-    },
-    {
-      title: "Drone Delivery Solutions",
-      features: [
-        "Up to 5kg payload capacity",
-        "10km operational range",
-        "Automated flight systems",
-        "Weather-resistant drones",
-        "Real-time tracking"
-      ]
-    }
-  ];
+const services = [
+  {
+    title: "Agri-Tech Solutions",
+    features: [
+      "Digital tools for yield optimization",
+      "Farm-based intelligence systems",
+      "Crop planning support",
+      "Risk management assistance"
+    ]
+  },
+  {
+    title: "Digital Agri-Commerce Platform",
+    features: [
+      "Secure platform for buying and selling agri-products",
+      "Scalable backend support",
+      "Integrated logistics system",
+      "Payments and reconciliation management"
+    ]
+  },
+  {
+    title: "Smart Payment Infrastructure",
+    features: [
+      "Seamless NEFT/RTGS/API-based transactions",
+      "Fast and secure collections",
+      "Automated payouts",
+      "Support for corporate buyers and grassroots suppliers"
+    ]
+  },
+  {
+    title: "Market Linkage",
+    features: [
+      "30+ institutional buyers onboarded",
+      "Direct access to fair market prices",
+      "No middlemen involvement",
+      "Support for farmers and SHGs"
+    ]
+  }
+];
 
   return (
     <div className="drone-solutions">
